@@ -8,7 +8,10 @@
     "test": "vitest run",
     "new-kit": "node tooling/new-kit.mjs",
     "import-kits": "node tooling/import-kit.mjs --all",
-    "verify": "vitest run tests/kits.test.mjs"
+    "verify": "vitest run tests/kits.test.mjs",
+    "license-gate": "node tooling/license-gate.mjs",
+    "publish-kit": "node tooling/publish.mjs",
+    "backfill-urls": "node tooling/backfill-urls.mjs"
   },
   "dependencies": {
     "zod": "^3.23.8"

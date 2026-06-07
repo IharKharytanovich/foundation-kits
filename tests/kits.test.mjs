@@ -3,6 +3,7 @@ import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 import { KitJsonSchema, ManifestSchema, RecipeSchema } from '../tooling/lib/schema.mjs'
 import { sha256File } from '../tooling/lib/sha256.mjs'
+import { artifactUrl } from '../tooling/lib/release-url.mjs'
 
 const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
@@ -55,6 +56,14 @@ describe('seed kits', () => {
         expect(existsSync(join(dir, 'LICENSE'))).toBe(true)
         expect(existsSync(join(dir, 'instruction.md'))).toBe(true)
       })
+
+      if (kit.verified) {
+        it('every artifact carries the correct distribution url', () => {
+          for (const art of kit.artifacts) {
+            expect(art.url, `${art.file} missing url`).toBe(artifactUrl(kit.id, kit.version, art.file))
+          }
+        })
+      }
 
       for (const art of kit.artifacts) {
         it(`artifact ${art.file} integrity (sha256)`, async () => {

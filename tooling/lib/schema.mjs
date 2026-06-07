@@ -8,6 +8,10 @@ const Tag = z.enum(KIT_TAGS)
 const Artifact = z.object({
   file: z.string(),
   sha256: Sha256,
+  // Distribution pointer: where Foundation downloads the bytes. Deterministic
+  // GitHub Release URL (see tooling/lib/release-url.mjs). Optional on skeletons
+  // (pre-publish); required-and-verified at publish time (tooling/publish.mjs).
+  url: z.string().url().optional(),
   wasiTools: z.array(z.string()).optional(),
   multiplexed: z.boolean().optional(),
   stdinAsFile: z.boolean().optional(),

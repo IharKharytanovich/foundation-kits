@@ -1,6 +1,7 @@
 import { mkdirSync, copyFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { sha256File } from './lib/sha256.mjs'
+import { artifactUrl } from './lib/release-url.mjs'
 import { KitJsonSchema, ManifestSchema, RecipeSchema } from './lib/schema.mjs'
 
 /**
@@ -40,7 +41,8 @@ export async function importKit(descriptor, { vendorRoot = 'temp/vendor', root =
 
 	// ── 2. Build kit.json ───────────────────────────────────────────────────
 	const kitArtifacts = artifactRecords.map((a) => {
-		const rec = { file: `artifacts/${a.vendor}`, sha256: a.sha256 }
+		const file = `artifacts/${a.vendor}`
+		const rec = { file, sha256: a.sha256, url: artifactUrl(id, version, file) }
 		// wasi-only fields go on the main (first, non-bundled) artifact only
 		if (runtime === 'wasi' && !a.bundled && descriptor.wasiTools) {
 			rec.wasiTools = descriptor.wasiTools

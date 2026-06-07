@@ -17,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/DendroPy-5.0.8-py3-none-any.whl",
-			"sha256": "6fa3fe71c67cf71d262cf33f12395735de9cd439852d0bd2d229c19df89a2992"
+			"sha256": "6fa3fe71c67cf71d262cf33f12395735de9cd439852d0bd2d229c19df89a2992",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/dendropy@5.0.8/DendroPy-5.0.8-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

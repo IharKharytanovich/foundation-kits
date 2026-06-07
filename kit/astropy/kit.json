@@ -17,15 +17,18 @@
 	"artifacts": [
 		{
 			"file": "artifacts/astropy-7.0.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
-			"sha256": "fd0df73af54366e6f752a02e5a03ff975f834a264464e2e8e7ec6790650ef59e"
+			"sha256": "fd0df73af54366e6f752a02e5a03ff975f834a264464e2e8e7ec6790650ef59e",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/astropy@7.0.1/astropy-7.0.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		},
 		{
 			"file": "artifacts/pyerfa-2.0.1.5-cp39-abi3-pyemscripten_2025_0_wasm32.whl",
-			"sha256": "506dc80ced789e7d3b96c6da4f619c9f1dae92077672184ade7ab0753f3f69ec"
+			"sha256": "506dc80ced789e7d3b96c6da4f619c9f1dae92077672184ade7ab0753f3f69ec",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/astropy@7.0.1/pyerfa-2.0.1.5-cp39-abi3-pyemscripten_2025_0_wasm32.whl"
 		},
 		{
 			"file": "artifacts/astropy_iers_data-0.2025.3.10.0.29.26-py3-none-any.whl",
-			"sha256": "22b2a56468954290aad03c6d672f057111db281350727ff50b7e18920c6e1940"
+			"sha256": "22b2a56468954290aad03c6d672f057111db281350727ff50b7e18920c6e1940",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/astropy@7.0.1/astropy_iers_data-0.2025.3.10.0.29.26-py3-none-any.whl"
 		}
 	],
 	"dependencies": [

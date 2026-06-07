@@ -17,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/pyrodigal-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
-			"sha256": "44aca8abe95d16a633c8df7335e0de025047211b891563cbc4ef64de1a34d238"
+			"sha256": "44aca8abe95d16a633c8df7335e0de025047211b891563cbc4ef64de1a34d238",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/pyrodigal@3.7.0/pyrodigal-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		}
 	],
 	"dependencies": []

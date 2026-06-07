@@ -17,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/networkx-3.4.2-py3-none-any.whl",
-			"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76"
+			"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/networkx@3.4.2/networkx-3.4.2-py3-none-any.whl"
 		}
 	],
 	"dependencies": [

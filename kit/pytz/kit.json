@@ -16,7 +16,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/pytz-2025.2-py2.py3-none-any.whl",
-			"sha256": "d7fb2f11cf7f8dd17e652d5494189f520ee086e9fc71aef4cbb978f5dcfc2878"
+			"sha256": "d7fb2f11cf7f8dd17e652d5494189f520ee086e9fc71aef4cbb978f5dcfc2878",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/pytz@2025.2/pytz-2025.2-py2.py3-none-any.whl"
 		}
 	],
 	"dependencies": []

@@ -16,7 +16,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/decorator-5.2.1-py3-none-any.whl",
-			"sha256": "81065b3b127c99fac4de153a1ed398203e3ae35bd5d0e9e9556fbc3fdc266aaf"
+			"sha256": "81065b3b127c99fac4de153a1ed398203e3ae35bd5d0e9e9556fbc3fdc266aaf",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/decorator@5.2.1/decorator-5.2.1-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

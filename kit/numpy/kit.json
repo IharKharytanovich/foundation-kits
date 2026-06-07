@@ -2,7 +2,10 @@
 	"id": "numpy",
 	"version": "2.2.5",
 	"runtime": "pyodide",
-	"tags": ["math", "core"],
+	"tags": [
+		"math",
+		"core"
+	],
 	"tier": "default",
 	"verified": true,
 	"provenance": {
@@ -14,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/numpy-2.2.5-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
-			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/numpy@2.2.5/numpy-2.2.5-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		}
 	],
 	"dependencies": []

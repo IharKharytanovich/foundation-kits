@@ -16,7 +16,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/packaging-26.2-py3-none-any.whl",
-			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/packaging@26.2/packaging-26.2-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

@@ -62,6 +62,11 @@ describe('importKit', () => {
 		const realSha = await sha256File(copiedPath)
 		expect(kit.artifacts[0].sha256).toBe(realSha)
 
+		// Verify distribution url is stamped
+		expect(kit.artifacts[0].url).toBe(
+			`https://github.com/IharKharytanovich/foundation-kids/releases/download/fakelib@1.0.0/${vendorFile}`,
+		)
+
 		// Verify kit.json fields
 		expect(kit.id).toBe('fakelib')
 		expect(kit.verified).toBe(true)

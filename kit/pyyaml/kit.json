@@ -17,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/pyyaml-6.0.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
-			"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757"
+			"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/pyyaml@6.0.2/pyyaml-6.0.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		}
 	],
 	"dependencies": []

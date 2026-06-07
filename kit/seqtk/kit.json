@@ -2,7 +2,10 @@
 	"id": "seqtk",
 	"version": "1.5-r133",
 	"runtime": "wasi",
-	"tags": ["biology", "sequences"],
+	"tags": [
+		"biology",
+		"sequences"
+	],
 	"tier": "default",
 	"verified": true,
 	"provenance": {
@@ -15,7 +18,17 @@
 		{
 			"file": "artifacts/seqtk.wasm",
 			"sha256": "1ebae080b3f36ee28037ab29b1f50d6ce15b32c44633650ec0b422caada1da2a",
-			"wasiTools": ["seq", "size", "comp", "sample", "subseq", "fqchk", "mergepe", "trimfq"]
+			"wasiTools": [
+				"seq",
+				"size",
+				"comp",
+				"sample",
+				"subseq",
+				"fqchk",
+				"mergepe",
+				"trimfq"
+			],
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/seqtk@1.5-r133/seqtk.wasm"
 		}
 	],
 	"dependencies": []

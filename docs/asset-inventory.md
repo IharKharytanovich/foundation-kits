@@ -119,6 +119,11 @@ findiff, chaospy, pywavelets, uncertainties, dynesty, salib, deap,
 scikit-optimize, six. (`rdkit` требует решения по рантайму для MinimalLib
 `.wasm`+`.cjs`.)
 
+**Правка emcee (BR-005):** `emcee` зависит **только от numpy** — `dill` убран из
+зависимостей. Wheel METADATA содержит лишь `Requires-Dist: numpy`; `scipy`, `h5py`
+и `dill` — опциональные extras, не hard-deps. Поэтому в §4 строка emcee исправлена
+с `numpy, dill` на `numpy`.
+
 ---
 
 ## 5. Карта «исходный ассет → Kit» (трассировка всех 48 whl + 3 не-whl)

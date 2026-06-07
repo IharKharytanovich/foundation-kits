@@ -21,6 +21,17 @@ describe('KitJsonSchema', () => {
   it('rejects a malformed sha256 (not 64 hex)', () => {
     expect(KitJsonSchema.safeParse({ ...valid, artifacts: [{ file: 'a', sha256: 'xyz' }] }).success).toBe(false)
   })
+  it('accepts an artifact carrying a distribution url', () => {
+    const withUrl = { ...valid, artifacts: [{
+      file: 'artifacts/numpy.whl', sha256: 'a'.repeat(64),
+      url: 'https://github.com/org/foundation-kids/releases/download/numpy@2.2.5/numpy.whl',
+    }] }
+    expect(KitJsonSchema.safeParse(withUrl).success).toBe(true)
+  })
+  it('rejects a malformed distribution url', () => {
+    const badUrl = { ...valid, artifacts: [{ file: 'a', sha256: 'a'.repeat(64), url: 'not-a-url' }] }
+    expect(KitJsonSchema.safeParse(badUrl).success).toBe(false)
+  })
 })
 
 describe('ManifestSchema', () => {

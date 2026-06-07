@@ -12,7 +12,8 @@
 		"source": "wasm",
 		"repo": "https://github.com/ViennaRNA/ViennaRNA",
 		"ref": "v2.7.2",
-		"license": "ViennaRNA"
+		"license": "ViennaRNA",
+		"buildNote": "naview.c excluded from the build — it is non-redistributable under the ViennaRNA license. See recipe.build.exclude (architecture §11)."
 	},
 	"artifacts": [
 		{
@@ -22,7 +23,8 @@
 				"RNAfold"
 			],
 			"multiplexed": false,
-			"stdinAsFile": false
+			"stdinAsFile": false,
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/viennarna@2.7.2/RNAfold.wasm"
 		}
 	],
 	"dependencies": []

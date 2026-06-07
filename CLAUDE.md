@@ -43,13 +43,30 @@ A `kit/<id>/` holds four **consumer files** (ship to Foundation) plus one
 - `npm run new-kit <id> -- --runtime wasi|pyodide` — scaffold a kit skeleton.
 - `npm test` — full factory suite (scoped to `tests/`).
 - `npm run verify` — schema-parse + sha256 integrity over all kits.
+- `npm run license-gate -- <id> | --all` — redistribution gate (license +
+  documented exclusions).
+- `npm run publish-kit -- <id>@<ver> [--dry-run]` — assemble + publish a release
+  (4 consumer files + artifacts, `recipe.json` excluded). Tag-pushing `<id>@<ver>`
+  runs the same flow in CI via `.github/workflows/publish.yml`.
+- `npm run backfill-urls` — (re)stamp every `kit.json` `artifacts[].url` from the
+  registry base; run after the base in `tooling/lib/release-url.mjs` changes.
 
-Build and publish are follow-on (see `docs/superpowers/plans/`).
+The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-on
+(see `docs/superpowers/plans/`); publish currently runs where the bytes exist.
 
 ## Conventions
 
 - **Artifacts are never committed.** They live in gitignored `kit/*/artifacts/`
   locally and are distributed via GitHub Releases, content-addressed by `sha256`.
+- **Publish = tag → CI → Release**, one tag (`<id>@<ver>`) per kit. See
+  [.claude/rules/publish.md](.claude/rules/publish.md) — this is the standing
+  pipeline; follow it for every new kit.
+- **`artifacts[].url` is a predicted template URL**
+  (`<base>/<id>@<ver>/<file>`, base in [tooling/lib/release-url.mjs](tooling/lib/release-url.mjs)).
+  It is written into `kit.json` **before** the bytes exist (dangling 404 until
+  then); the file appears at that URL **only after** the `<id>@<ver>` tag is
+  published through CI. Predicted URL and GitHub's real download URL coincide by
+  construction; integrity is guaranteed by `sha256`, not by the link.
 - **Golden is the single source of truth**, and lives inside `manifest.json`
   (`operations[].golden` for strict, `golden` for loose). Tests iterate over
   manifests — a new kit with a manifest is covered automatically.
@@ -64,7 +81,8 @@ Build and publish are follow-on (see `docs/superpowers/plans/`).
 
 ## Pointers
 
-- Conventions in depth: [.claude/rules/](.claude/rules/)
+- Conventions in depth: [.claude/rules/](.claude/rules/) — incl.
+  [publish.md](.claude/rules/publish.md) (tag→CI→Release pipeline + URL template).
 - Workflows: [.claude/skills/](.claude/skills/) — `add-kit`, `verify-kit`, `publish-kit`
 - Large multi-kit work (e.g. importing the remaining 32 kits): `spec-writer` +
   `spec-executor` + the orchestrator.

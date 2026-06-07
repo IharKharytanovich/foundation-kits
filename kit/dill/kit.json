@@ -16,7 +16,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/dill-0.4.1-py3-none-any.whl",
-			"sha256": "1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d"
+			"sha256": "1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/dill@0.4.1/dill-0.4.1-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

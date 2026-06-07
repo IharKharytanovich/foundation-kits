@@ -1,0 +1,60 @@
+name: publish-kit
+
+# Triggered by pushing a `<id>@<version>` tag (e.g. `numpy@2.2.5`). Only a
+# maintainer with push access to this repo can create such a tag, so the publish
+# path is implicitly gated to maintainers. Fork PRs cannot push tags here and
+# the release job is additionally guarded to the canonical (non-fork) repo.
+on:
+  push:
+    tags:
+      - '*@*'
+
+# Least privilege by default; the publish job elevates to contents: write.
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create/update GitHub Releases via the built-in GITHUB_TOKEN
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Parse <id>@<version> tag
+        id: ref
+        run: |
+          ref="${GITHUB_REF_NAME}"
+          {
+            echo "tag=${ref}"
+            echo "id=${ref%@*}"
+            echo "version=${ref#*@}"
+          } >> "$GITHUB_OUTPUT"
+
+      # Read-only checks — run on every trigger, including any fork that manages
+      # to reach this workflow (they get verify only, never publish).
+      - name: Verify (schema + sha256 integrity)
+        run: npm run verify
+
+      - name: Redistribution (license) gate
+        run: node tooling/license-gate.mjs "${{ steps.ref.outputs.id }}"
+
+      # NOTE: artifact bytes are gitignored and are not in the checkout. The
+      # build/vendor toolchain that materializes them in CI is a follow-on plan
+      # (build/, runtime/). Until it lands, publish runs where the bytes exist.
+      - name: Publish payload preview (dry-run)
+        run: node tooling/publish.mjs "${{ steps.ref.outputs.tag }}" --dry-run
+
+      - name: Create / update GitHub Release
+        if: ${{ github.event.repository.fork == false }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tooling/publish.mjs "${{ steps.ref.outputs.tag }}"

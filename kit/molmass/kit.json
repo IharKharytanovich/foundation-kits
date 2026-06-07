@@ -17,7 +17,8 @@
 	"artifacts": [
 		{
 			"file": "artifacts/molmass-2026.1.8-py3-none-any.whl",
-			"sha256": "d7ad83bd542c5bf132a8eca28630ad774c10f0890d9cf51625774838d03d5f8b"
+			"sha256": "d7ad83bd542c5bf132a8eca28630ad774c10f0890d9cf51625774838d03d5f8b",
+			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/molmass@2026.1.8/molmass-2026.1.8-py3-none-any.whl"
 		}
 	],
 	"dependencies": []
