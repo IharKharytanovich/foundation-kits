@@ -1,0 +1,8 @@
+{
+	"kit": "setuptools",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/setuptools-76.0.0-py3-none-any.whl",
+		"sha256": "dd243683e935cb91182252a618555082644e5f58b2274f394ddf8eeb237262ad"
+	}
+}

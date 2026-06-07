@@ -1,0 +1,11 @@
+{
+	"kit": "dill",
+	"mode": "loose",
+	"imports": [
+		"dill"
+	],
+	"golden": {
+		"code": "import dill; str(dill.loads(dill.dumps([1,2,3])))",
+		"expect": "[1, 2, 3]"
+	}
+}

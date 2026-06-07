@@ -1,0 +1,40 @@
+{
+	"id": "networkx",
+	"version": "3.4.2",
+	"runtime": "pyodide",
+	"tags": [
+		"graphs",
+		"biology"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/networkx/networkx",
+		"ref": "v3.4.2",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/networkx-3.4.2-py3-none-any.whl",
+			"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "decorator",
+			"version": "5.2.1",
+			"sha256": "81065b3b127c99fac4de153a1ed398203e3ae35bd5d0e9e9556fbc3fdc266aaf"
+		},
+		{
+			"id": "setuptools",
+			"version": "76.0.0",
+			"sha256": "dd243683e935cb91182252a618555082644e5f58b2274f394ddf8eeb237262ad"
+		}
+	]
+}

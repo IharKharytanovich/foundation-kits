@@ -1,0 +1,23 @@
+{
+	"id": "dill",
+	"version": "0.4.1",
+	"runtime": "pyodide",
+	"tags": [
+		"serialization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/uqfoundation/dill",
+		"ref": "v0.4.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/dill-0.4.1-py3-none-any.whl",
+			"sha256": "1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d"
+		}
+	],
+	"dependencies": []
+}

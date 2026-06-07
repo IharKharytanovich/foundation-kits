@@ -1,0 +1,48 @@
+{
+	"id": "astropy",
+	"version": "7.0.1",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"astronomy"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/astropy/astropy",
+		"ref": "v7.0.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/astropy-7.0.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "fd0df73af54366e6f752a02e5a03ff975f834a264464e2e8e7ec6790650ef59e"
+		},
+		{
+			"file": "artifacts/pyerfa-2.0.1.5-cp39-abi3-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "506dc80ced789e7d3b96c6da4f619c9f1dae92077672184ade7ab0753f3f69ec"
+		},
+		{
+			"file": "artifacts/astropy_iers_data-0.2025.3.10.0.29.26-py3-none-any.whl",
+			"sha256": "22b2a56468954290aad03c6d672f057111db281350727ff50b7e18920c6e1940"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		},
+		{
+			"id": "pyyaml",
+			"version": "6.0.2",
+			"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757"
+		}
+	]
+}

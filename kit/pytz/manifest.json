@@ -1,0 +1,11 @@
+{
+	"kit": "pytz",
+	"mode": "loose",
+	"imports": [
+		"pytz"
+	],
+	"golden": {
+		"code": "import pytz; pytz.timezone('UTC').zone",
+		"expect": "UTC"
+	}
+}

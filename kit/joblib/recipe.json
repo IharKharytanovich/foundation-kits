@@ -1,0 +1,8 @@
+{
+	"kit": "joblib",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/joblib-1.4.2-py3-none-any.whl",
+		"sha256": "f07902625672ca0d92e979870ff501e4138589ff3b2b734680d07863676f9996"
+	}
+}

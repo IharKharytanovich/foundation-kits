@@ -1,0 +1,24 @@
+{
+	"id": "selfies",
+	"version": "2.2.0",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"biology"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/aspuru-guzik-group/selfies",
+		"ref": "v2.2.0",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/selfies-2.2.0-py3-none-any.whl",
+			"sha256": "8b80796832c0b2f33e63d4fa1617ca541338c57b463a4d06cda3da510506ff73"
+		}
+	],
+	"dependencies": []
+}

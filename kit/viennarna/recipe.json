@@ -1,0 +1,15 @@
+{
+	"kit": "viennarna",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/ViennaRNA/ViennaRNA",
+		"ref": "v2.7.2"
+	},
+	"build": {
+		"dockerfile": "build/wasi/Dockerfile",
+		"args": [],
+		"exclude": [
+			"naview.c"
+		]
+	}
+}

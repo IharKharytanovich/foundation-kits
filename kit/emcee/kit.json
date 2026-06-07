@@ -1,0 +1,30 @@
+{
+	"id": "emcee",
+	"version": "3.1.6",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"sampling"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/dfm/emcee",
+		"ref": "v3.1.6",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/emcee-3.1.6-py2.py3-none-any.whl",
+			"sha256": "f2d63752023bdccf744461450e512a5b417ae7d28f18e12acd76a33de87580cb"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

@@ -1,0 +1,29 @@
+{
+	"kit": "viennarna",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "fold",
+			"summary": "MFE secondary structure (dot-bracket + energy)",
+			"tool": "RNAfold",
+			"params": {
+				"sequence": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"--noPS"
+			],
+			"output": {
+				"format": "dot-bracket + MFE"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCC"
+				},
+				"expect": "GGGAAACCC\n(((...)))  ( -1.20)\n"
+			}
+		}
+	]
+}

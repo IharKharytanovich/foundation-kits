@@ -1,0 +1,8 @@
+{
+	"kit": "biopython",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/biopython-1.85-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "561c00232e549c0c22826fb9abf327a7e32f730172e684b5334a702108f86bad"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"id": "viennarna",
+	"version": "2.7.2",
+	"runtime": "wasi",
+	"tags": [
+		"biology",
+		"rna"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/ViennaRNA/ViennaRNA",
+		"ref": "v2.7.2",
+		"license": "ViennaRNA"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/RNAfold.wasm",
+			"sha256": "4c85a771085d8548556d917f6dbd69b25ad5a5aef6aebf5239e7b30a55416ef7",
+			"wasiTools": [
+				"RNAfold"
+			],
+			"multiplexed": false,
+			"stdinAsFile": false
+		}
+	],
+	"dependencies": []
+}

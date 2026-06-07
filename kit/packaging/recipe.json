@@ -1,0 +1,8 @@
+{
+	"kit": "packaging",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/packaging-26.2-py3-none-any.whl",
+		"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"kit": "dendropy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/DendroPy-5.0.8-py3-none-any.whl",
+		"sha256": "6fa3fe71c67cf71d262cf33f12395735de9cd439852d0bd2d229c19df89a2992"
+	}
+}

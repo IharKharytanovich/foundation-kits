@@ -1,0 +1,11 @@
+{
+	"kit": "selfies",
+	"mode": "loose",
+	"imports": [
+		"selfies"
+	],
+	"golden": {
+		"code": "import selfies; selfies.encoder('CCO')",
+		"expect": "[C][C][O]"
+	}
+}

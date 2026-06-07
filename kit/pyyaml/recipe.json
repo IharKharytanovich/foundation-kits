@@ -1,0 +1,8 @@
+{
+	"kit": "pyyaml",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pyyaml-6.0.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757"
+	}
+}

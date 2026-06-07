@@ -1,0 +1,24 @@
+{
+	"id": "dendropy",
+	"version": "5.0.8",
+	"runtime": "pyodide",
+	"tags": [
+		"biology",
+		"phylogenetics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/jeetsukumaran/DendroPy",
+		"ref": "v5.0.8",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/DendroPy-5.0.8-py3-none-any.whl",
+			"sha256": "6fa3fe71c67cf71d262cf33f12395735de9cd439852d0bd2d229c19df89a2992"
+		}
+	],
+	"dependencies": []
+}

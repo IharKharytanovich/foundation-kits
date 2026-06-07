@@ -1,0 +1,23 @@
+{
+	"id": "pytz",
+	"version": "2025.2",
+	"runtime": "pyodide",
+	"tags": [
+		"time"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/stub42/pytz",
+		"ref": "release_2025.2",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pytz-2025.2-py2.py3-none-any.whl",
+			"sha256": "d7fb2f11cf7f8dd17e652d5494189f520ee086e9fc71aef4cbb978f5dcfc2878"
+		}
+	],
+	"dependencies": []
+}

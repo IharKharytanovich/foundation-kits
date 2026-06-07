@@ -1,0 +1,11 @@
+{
+	"kit": "dendropy",
+	"mode": "loose",
+	"imports": [
+		"dendropy"
+	],
+	"golden": {
+		"code": "import dendropy; str(len(dendropy.Tree.get(data='(A,(B,C));',schema='newick').leaf_nodes()))",
+		"expect": "3"
+	}
+}

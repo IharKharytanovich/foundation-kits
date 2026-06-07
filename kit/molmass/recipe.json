@@ -1,0 +1,8 @@
+{
+	"kit": "molmass",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/molmass-2026.1.8-py3-none-any.whl",
+		"sha256": "d7ad83bd542c5bf132a8eca28630ad774c10f0890d9cf51625774838d03d5f8b"
+	}
+}

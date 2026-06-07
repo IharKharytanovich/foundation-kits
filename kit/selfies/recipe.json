@@ -1,0 +1,8 @@
+{
+	"kit": "selfies",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/selfies-2.2.0-py3-none-any.whl",
+		"sha256": "8b80796832c0b2f33e63d4fa1617ca541338c57b463a4d06cda3da510506ff73"
+	}
+}

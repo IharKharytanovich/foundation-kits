@@ -1,0 +1,11 @@
+{
+	"kit": "joblib",
+	"mode": "loose",
+	"imports": [
+		"joblib"
+	],
+	"golden": {
+		"code": "import joblib; joblib.hash([1,2,3])",
+		"expect": "ac03ee32f9d9f64d2504cbd93e913739"
+	}
+}

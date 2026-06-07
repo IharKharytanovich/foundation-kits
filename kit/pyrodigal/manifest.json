@@ -1,0 +1,11 @@
+{
+	"kit": "pyrodigal",
+	"mode": "loose",
+	"imports": [
+		"pyrodigal"
+	],
+	"golden": {
+		"code": "import pyrodigal; pyrodigal.__version__",
+		"expect": "3.7.0"
+	}
+}

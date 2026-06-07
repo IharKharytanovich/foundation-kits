@@ -1,0 +1,30 @@
+{
+	"id": "biopython",
+	"version": "1.85",
+	"runtime": "pyodide",
+	"tags": [
+		"biology",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/biopython/biopython",
+		"ref": "v1.85",
+		"license": "Biopython"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/biopython-1.85-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "561c00232e549c0c22826fb9abf327a7e32f730172e684b5334a702108f86bad"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"id": "decorator",
+	"version": "5.2.1",
+	"runtime": "pyodide",
+	"tags": [
+		"util"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/micheles/decorator",
+		"ref": "v5.2.1",
+		"license": "BSD-2-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/decorator-5.2.1-py3-none-any.whl",
+			"sha256": "81065b3b127c99fac4de153a1ed398203e3ae35bd5d0e9e9556fbc3fdc266aaf"
+		}
+	],
+	"dependencies": []
+}

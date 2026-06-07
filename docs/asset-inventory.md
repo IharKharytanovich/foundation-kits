@@ -54,7 +54,7 @@ pyodide-киты — отдельная сущность, не Kit.
 
 ---
 
-## 4. Все киты (36) — единая таблица
+## 4. Все киты (37) — единая таблица
 
 > У каждого: `instruction.md` (проза) + `kit.json` (метаданные) + `manifest.json`
 > (вызываемая поверхность: операции/params + golden).
@@ -74,7 +74,7 @@ pyodide-киты — отдельная сущность, не Kit.
 | **rdkit** | chemistry | library | RDKit_minimal.wasm + .cjs (6.7М) | — |
 | **molmass** | chemistry, biology | library | molmass (76К) | — |
 | **selfies** | chemistry, biology | library | selfies (36К) | — |
-| **astropy** | physics, astronomy | library | astropy + pyerfa + astropy_iers_data (7.9М) | numpy, packaging, pytz |
+| **astropy** | physics, astronomy | library | astropy + pyerfa + astropy_iers_data (7.9М) | numpy, packaging, pyyaml |
 | **iminuit** | physics, fitting | library | iminuit (208К) | numpy |
 | **lmfit** | physics, fitting | library | lmfit + asteval (120К) | numpy, scipy, uncertainties |
 | **pint** | physics, units | library | pint + flexcache + flexparser + platformdirs + typing_extensions (412К) | — |
@@ -85,8 +85,8 @@ pyodide-киты — отдельная сущность, не Kit.
 | **uncertainties** | physics, statistics | library | uncertainties (60К) | — |
 | **pandas** | data-science, core | library | pandas + python-dateutil (4.5М) | numpy, pytz |
 | **scikit-learn** | data-science, ml | library | scikit_learn + threadpoolctl (5.4М) | numpy, scipy, joblib |
-| **networkx** | graphs, biology | library | networkx + pyparsing (1.1М) | — |
-| **emcee** | statistics, sampling | library | emcee (48К) | numpy, dill |
+| **networkx** | graphs, biology | library | networkx (1.1М) | numpy, decorator, setuptools |
+| **emcee** | statistics, sampling | library | emcee (48К) | numpy |
 | **dynesty** | statistics, sampling | library | dynesty (104К) | numpy, scipy |
 | **salib** | statistics, sensitivity | library | salib + future (1.2М) | numpy, scipy, pandas |
 | **deap** | statistics, optimization | library | deap (92К) | numpy, dill |
@@ -96,12 +96,28 @@ pyodide-киты — отдельная сущность, не Kit.
 | **dill** | serialization | library | dill (120К) | — |
 | **packaging** | util | library | packaging (100К) | — |
 | **setuptools** | util | library | setuptools (932К) | — |
+| **pyyaml** | serialization, util | library | pyyaml (112К) | — |
 | **six** | compat | library | six (12К) | — |
 | **decorator** | util | library | decorator (12К) | — |
 
-Последние 7 — **общие** киты (нужны 2+ другим). Полноценные: с `instruction.md`
-(у `pytz`/`joblib`/`dill` — реальный агентский API: таймзоны, параллелизм,
-сериализация) и манифестом; привязываются явно как любой другой.
+Последние 8 — **общие** киты (нужны 2+ другим): `pytz`, `joblib`, `dill`,
+`packaging`, `setuptools`, `pyyaml`, `six`, `decorator`. Полноценные: с
+`instruction.md` (у `pytz`/`joblib`/`dill` — реальный агентский API: таймзоны,
+параллелизм, сериализация) и манифестом; привязываются явно как любой другой.
+`pyyaml` стал общим в этом батче (потребители: `astropy` + `scikit-optimize`).
+
+### Статус сборки (на 2026-06-07)
+
+**Собрано и проверено — 22 кита** (`npm test` + `npm run verify` зелёные):
+- _Seed (4):_ numpy, scipy, sympy, seqtk.
+- _Этот батч (18):_ pytz, packaging, joblib, dill, pyyaml, decorator, setuptools
+  (7 общих) · biopython, pyrodigal, dendropy, molmass, selfies, viennarna
+  (6 bio/chem) · pandas, astropy, scikit-learn, networkx, emcee (5 sci/data).
+
+**Ещё не собрано — 15 китов:** freesasa, rdkit, iminuit, lmfit, pint, scikit-fem,
+findiff, chaospy, pywavelets, uncertainties, dynesty, salib, deap,
+scikit-optimize, six. (`rdkit` требует решения по рантайму для MinimalLib
+`.wasm`+`.cjs`.)
 
 ---
 
@@ -113,7 +129,7 @@ astropy, iminuit, lmfit, pint, scikit_fem, findiff, chaospy, pywavelets,
 uncertainties, pandas, scikit_learn, networkx, emcee, dynesty, salib, deap,
 scikit_optimize.
 
-**Эксклюзивные deps (15) — вбэндлены в потребителя:**
+**Эксклюзивные deps (13) — вбэндлены в потребителя:**
 
 | whl | → бэндлится в Kit |
 |---|---|
@@ -124,17 +140,19 @@ scikit_optimize.
 | numpoly | chaospy |
 | python_dateutil | pandas |
 | threadpoolctl | scikit-learn |
-| pyparsing | networkx |
 | future | salib |
-| pyyaml | scikit-optimize |
 
-**Общие deps (7) — собственный кит:**
-pytz, joblib, dill, packaging, setuptools, six, decorator.
+`pyparsing` больше не bundled: `networkx` 3.4.2 убрал эту зависимость.
+`pyyaml` повышен из эксклюзивных в **общие** (его делят `astropy` + `scikit-optimize`).
+
+**Общие deps (8) — собственный кит:**
+pytz, joblib, dill, packaging, setuptools, pyyaml, six, decorator.
 
 **Не-whl (3 ассета → 3 кита):**
 `RNAfold.wasm` → viennarna · `seqtk.wasm` → seqtk · `RDKit_minimal.wasm`+`.cjs` → rdkit.
 
-Сверка: 26 + 15 + 7 = **48 whl** ✓ + 2 wasi + rdkit.
+Сверка: 26 + 13 + 8 = **47 whl** ✓ (было 48; `networkx` 3.4.2 убрал `pyparsing`)
++ 2 wasi + rdkit.
 
 ---
 

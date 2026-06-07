@@ -1,0 +1,11 @@
+{
+	"kit": "pyyaml",
+	"mode": "loose",
+	"imports": [
+		"yaml"
+	],
+	"golden": {
+		"code": "import yaml; str(yaml.safe_load('a: 1')['a'])",
+		"expect": "1"
+	}
+}

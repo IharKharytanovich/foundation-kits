@@ -1,0 +1,15 @@
+{
+	"kit": "scikit-learn",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/scikit_learn-1.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "5dd1611a1ee57147a4387e56499bb1def407919ef452efb50beb5229dbe4a3db"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/threadpoolctl-3.5.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/threadpoolctl-3.5.0-py3-none-any.whl",
+			"sha256": "0d768335eaa50416503e8e5c2c8a51eb96fc9b1c051f02be30bf694707d9a981"
+		}
+	]
+}

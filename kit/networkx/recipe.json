@@ -1,0 +1,8 @@
+{
+	"kit": "networkx",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/networkx-3.4.2-py3-none-any.whl",
+		"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76"
+	}
+}

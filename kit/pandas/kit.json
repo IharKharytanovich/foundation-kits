@@ -1,0 +1,39 @@
+{
+	"id": "pandas",
+	"version": "2.3.3",
+	"runtime": "pyodide",
+	"tags": [
+		"data-science",
+		"core"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/pandas-dev/pandas",
+		"ref": "v2.3.3",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pandas-2.3.3-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		},
+		{
+			"file": "artifacts/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+			"sha256": "1fe3a0346ef21bc85b295227256d6aed72aa8116178b019fc5ae5d57fbd213cf"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "pytz",
+			"version": "2025.2",
+			"sha256": "d7fb2f11cf7f8dd17e652d5494189f520ee086e9fc71aef4cbb978f5dcfc2878"
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"kit": "biopython",
+	"mode": "loose",
+	"imports": [
+		"Bio"
+	],
+	"golden": {
+		"code": "from Bio.Seq import Seq; str(Seq('ATGC').reverse_complement())",
+		"expect": "GCAT"
+	}
+}

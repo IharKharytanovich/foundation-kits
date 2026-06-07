@@ -1,0 +1,11 @@
+{
+	"kit": "decorator",
+	"mode": "loose",
+	"imports": [
+		"decorator"
+	],
+	"golden": {
+		"code": "from decorator import decorator; str(callable(decorator))",
+		"expect": "True"
+	}
+}

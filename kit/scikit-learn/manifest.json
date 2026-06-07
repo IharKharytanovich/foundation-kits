@@ -1,0 +1,11 @@
+{
+	"kit": "scikit-learn",
+	"mode": "loose",
+	"imports": [
+		"sklearn"
+	],
+	"golden": {
+		"code": "from sklearn.linear_model import LinearRegression as L; str(round(float(L().fit([[0],[1],[2]],[0,1,2]).coef_[0]),1))",
+		"expect": "1.0"
+	}
+}

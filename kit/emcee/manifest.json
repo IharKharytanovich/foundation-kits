@@ -1,0 +1,11 @@
+{
+	"kit": "emcee",
+	"mode": "loose",
+	"imports": [
+		"emcee"
+	],
+	"golden": {
+		"code": "import emcee; emcee.__version__",
+		"expect": "3.1.6"
+	}
+}

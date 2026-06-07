@@ -1,0 +1,39 @@
+{
+	"id": "scikit-learn",
+	"version": "1.7.0",
+	"runtime": "pyodide",
+	"tags": [
+		"data-science",
+		"ml"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-learn/scikit-learn",
+		"ref": "v1.7.0",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/scikit_learn-1.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "5dd1611a1ee57147a4387e56499bb1def407919ef452efb50beb5229dbe4a3db"
+		},
+		{
+			"file": "artifacts/threadpoolctl-3.5.0-py3-none-any.whl",
+			"sha256": "0d768335eaa50416503e8e5c2c8a51eb96fc9b1c051f02be30bf694707d9a981"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "joblib",
+			"version": "1.4.2",
+			"sha256": "f07902625672ca0d92e979870ff501e4138589ff3b2b734680d07863676f9996"
+		}
+	]
+}

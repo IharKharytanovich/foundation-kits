@@ -1,0 +1,11 @@
+{
+	"kit": "setuptools",
+	"mode": "loose",
+	"imports": [
+		"setuptools"
+	],
+	"golden": {
+		"code": "import setuptools; setuptools.__version__",
+		"expect": "76.0.0"
+	}
+}

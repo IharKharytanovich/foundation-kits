@@ -1,0 +1,11 @@
+{
+	"kit": "molmass",
+	"mode": "loose",
+	"imports": [
+		"molmass"
+	],
+	"golden": {
+		"code": "from molmass import Formula; str(round(Formula('H2O').mass,3))",
+		"expect": "18.015"
+	}
+}

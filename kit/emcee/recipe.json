@@ -1,0 +1,8 @@
+{
+	"kit": "emcee",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/emcee-3.1.6-py2.py3-none-any.whl",
+		"sha256": "f2d63752023bdccf744461450e512a5b417ae7d28f18e12acd76a33de87580cb"
+	}
+}

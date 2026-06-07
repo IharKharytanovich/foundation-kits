@@ -1,0 +1,54 @@
+ViennaRNA Package — Disclaimer and Copyright
+============================================
+
+RNAfold.wasm in this directory is a standalone wasm32-wasi build of the
+`RNAfold` program from the ViennaRNA Package, version 2.7.2
+(https://www.tbi.univie.ac.at/RNA/, https://github.com/ViennaRNA/ViennaRNA).
+
+Upstream license (verbatim, file COPYING of ViennaRNA-2.7.2):
+
+  The programs, library and source code of the Vienna RNA Package are free
+  software. They are distributed in the hope that they will be useful
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+  Permission is granted for research, educational, and commercial use
+  and modification so long as 1) the package and any derived works are not
+  redistributed for any fee, other than media costs, 2) proper credit is
+  given to the authors and the Institute for Theoretical Chemistry of the
+  University of Vienna.
+
+  If you want to include this software in a commercial product, please contact
+  the authors.
+
+  Note that the file ./src/ViennaRNA/plotting/naview.c has its own copyright
+  attached.
+
+Attribution
+-----------
+ViennaRNA Package, Institute for Theoretical Chemistry, University of Vienna.
+Lorenz, R. et al. "ViennaRNA Package 2.0." Algorithms for Molecular Biology
+6:26 (2011).
+
+naview EXCLUDED
+---------------
+The separately-copyrighted file src/ViennaRNA/plotting/naview/naview.c is NOT
+part of this build: the Naview radial-layout plotting algorithm is excluded
+(configure flag `--disable-naview`), and no naview symbols are present in the
+binary. Plotting/GUI/Perl/Python/SWIG components are not built.
+
+Build provenance
+----------------
+  Source:    ViennaRNA-2.7.2 release tarball (pre-generated ./configure +
+             gengetopt *_cmdl.c parsers; NOT a git checkout)
+  Toolchain: wasi-sdk 33.0 (clang 22.1.0), target wasm32-wasip1
+  Runtime:   node:wasi preview1 (standalone WASI — no Emscripten JS glue)
+  Configure: --host=wasm32-wasi --disable-openmp --disable-pthreads
+             --disable-simd --disable-mpfr --disable-lto --disable-naview
+             --disable-unittests --disable-tty-colors --without-svm
+             --without-gsl --without-swig --without-perl --without-python
+             --without-forester --without-kinfold --without-rnalocmin
+             --without-rnaxplorer --without-doc --without-cla --without-check
+  Notes:     bundled dlib-based equilibrium-concentration solver excluded (not
+             used by RNAfold; pulls sockets/threads absent in WASI). Built-in
+             Turner-2004 energy parameters — no external parameter file needed.

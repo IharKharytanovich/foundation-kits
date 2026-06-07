@@ -1,0 +1,24 @@
+{
+	"id": "joblib",
+	"version": "1.4.2",
+	"runtime": "pyodide",
+	"tags": [
+		"parallel",
+		"caching"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/joblib/joblib",
+		"ref": "v1.4.2",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/joblib-1.4.2-py3-none-any.whl",
+			"sha256": "f07902625672ca0d92e979870ff501e4138589ff3b2b734680d07863676f9996"
+		}
+	],
+	"dependencies": []
+}

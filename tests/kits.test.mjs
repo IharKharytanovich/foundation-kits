@@ -7,9 +7,18 @@ import { sha256File } from '../tooling/lib/sha256.mjs'
 const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
 
+const KNOWN_22 = [
+  'astropy', 'biopython', 'decorator', 'dendropy', 'dill', 'emcee',
+  'joblib', 'molmass', 'networkx', 'numpy', 'packaging', 'pandas',
+  'pyrodigal', 'pytz', 'pyyaml', 'scikit-learn', 'scipy', 'selfies',
+  'seqtk', 'setuptools', 'sympy', 'viennarna',
+]
+
 describe('seed kits', () => {
-  it('discovers the 4 seed kits', () => {
-    expect(kitIds.sort()).toEqual(['numpy', 'scipy', 'seqtk', 'sympy'])
+  it('kit dirs are all within the known 22 and include the seeds', () => {
+    expect(new Set(KNOWN_22).size).toBe(22)
+    expect(kitIds.every((id) => KNOWN_22.includes(id))).toBe(true)
+    expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })
 
   for (const id of kitIds) {

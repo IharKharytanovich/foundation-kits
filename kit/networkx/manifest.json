@@ -1,0 +1,11 @@
+{
+	"kit": "networkx",
+	"mode": "loose",
+	"imports": [
+		"networkx"
+	],
+	"golden": {
+		"code": "import networkx as nx; str(nx.shortest_path_length(nx.path_graph(3),0,2))",
+		"expect": "2"
+	}
+}

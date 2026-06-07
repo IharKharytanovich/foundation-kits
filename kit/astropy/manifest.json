@@ -1,0 +1,11 @@
+{
+	"kit": "astropy",
+	"mode": "loose",
+	"imports": [
+		"astropy"
+	],
+	"golden": {
+		"code": "from astropy import units as u; str((1*u.km).to(u.m).value)",
+		"expect": "1000.0"
+	}
+}

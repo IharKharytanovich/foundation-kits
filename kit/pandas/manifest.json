@@ -1,0 +1,11 @@
+{
+	"kit": "pandas",
+	"mode": "loose",
+	"imports": [
+		"pandas"
+	],
+	"golden": {
+		"code": "import pandas as pd; str(pd.Series([1,2,3]).sum())",
+		"expect": "6"
+	}
+}

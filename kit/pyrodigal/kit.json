@@ -1,0 +1,24 @@
+{
+	"id": "pyrodigal",
+	"version": "3.7.0",
+	"runtime": "pyodide",
+	"tags": [
+		"biology",
+		"genomics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/althonos/pyrodigal",
+		"ref": "v3.7.0",
+		"license": "GPL-3.0-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pyrodigal-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "44aca8abe95d16a633c8df7335e0de025047211b891563cbc4ef64de1a34d238"
+		}
+	],
+	"dependencies": []
+}

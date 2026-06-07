@@ -1,0 +1,11 @@
+{
+	"kit": "packaging",
+	"mode": "loose",
+	"imports": [
+		"packaging"
+	],
+	"golden": {
+		"code": "from packaging.version import Version as V; str(V('2.0')>V('1.0'))",
+		"expect": "True"
+	}
+}
