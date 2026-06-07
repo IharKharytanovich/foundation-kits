@@ -1,0 +1,27 @@
+{
+	"id": "scipy",
+	"version": "1.14.1",
+	"runtime": "pyodide",
+	"tags": ["math", "core"],
+	"tier": "default",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scipy/scipy",
+		"ref": "v1.14.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/scipy-1.14.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

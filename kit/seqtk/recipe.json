@@ -1,0 +1,13 @@
+{
+	"kit": "seqtk",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/lh3/seqtk",
+		"ref": "v1.5-r133"
+	},
+	"build": {
+		"dockerfile": "build/wasi/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

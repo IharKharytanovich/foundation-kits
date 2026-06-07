@@ -1,0 +1,9 @@
+{
+	"kit": "scipy",
+	"mode": "loose",
+	"imports": ["scipy"],
+	"golden": {
+		"code": "import scipy.special as sp; str(float(sp.comb(5, 2)))",
+		"expect": "10.0"
+	}
+}

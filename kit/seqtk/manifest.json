@@ -1,0 +1,36 @@
+{
+	"kit": "seqtk",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "size",
+			"summary": "Count sequences and total bases",
+			"tool": "size",
+			"params": {
+				"sequence": { "type": "string" }
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [],
+			"output": { "format": "tsv: <num_seqs>\\t<num_bases>" },
+			"golden": {
+				"input": { "sequence": ">s\nACGTACGT" },
+				"expect": "1\t8\n"
+			}
+		},
+		{
+			"id": "comp",
+			"summary": "Per-sequence nucleotide composition",
+			"tool": "comp",
+			"params": {
+				"sequence": { "type": "string" }
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [],
+			"output": { "format": "tsv: chr length #A #C #G #T ..." },
+			"golden": {
+				"input": { "sequence": ">s\nACGTACGT" },
+				"expect": "s\t0\t2\t2\t2\t2\t0\t0\t0\t4\t0\t0\t0\n"
+			}
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"kit": "numpy",
+	"mode": "loose",
+	"imports": ["numpy"],
+	"golden": {
+		"code": "import numpy as np; str(round(float(np.linalg.det([[1,2],[3,4]])), 4))",
+		"expect": "-2.0"
+	}
+}

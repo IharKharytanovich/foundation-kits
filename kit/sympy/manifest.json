@@ -1,0 +1,9 @@
+{
+	"kit": "sympy",
+	"mode": "loose",
+	"imports": ["sympy"],
+	"golden": {
+		"code": "import sympy; str(sympy.simplify('x + x'))",
+		"expect": "2*x"
+	}
+}

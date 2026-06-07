@@ -1,0 +1,22 @@
+# Artifacts — distributed via GitHub Releases, never committed
+kit/*/artifacts/
+
+# Vendored verification runtime bytes — fetched at setup (follow-on plan)
+runtime/**/*.wasm
+runtime/**/*.whl
+runtime/**/*.zip
+
+# Scratch (also holds temp/vendor/ — local staging cache for kit import, gitignored)
+temp/
+
+# Node
+node_modules/
+
+# Claude config — local, not distributed
+.claude/
+
+# Internal brainstorm/plan/spec artifacts — not part of the public repo
+docs/superpowers/
+
+# OS
+.DS_Store
