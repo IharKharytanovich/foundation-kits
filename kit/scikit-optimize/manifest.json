@@ -1,0 +1,11 @@
+{
+	"kit": "scikit-optimize",
+	"mode": "loose",
+	"imports": [
+		"skopt"
+	],
+	"golden": {
+		"code": "import skopt; skopt.__version__",
+		"expect": "0.10.2"
+	}
+}

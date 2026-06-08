@@ -1,0 +1,11 @@
+{
+	"kit": "iminuit",
+	"mode": "loose",
+	"imports": [
+		"iminuit"
+	],
+	"golden": {
+		"code": "from iminuit import Minuit; str(round(Minuit(lambda x: (x-2)**2, x=0).migrad().values[0], 1))",
+		"expect": "2.0"
+	}
+}

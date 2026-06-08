@@ -1,0 +1,31 @@
+{
+	"id": "deap",
+	"version": "1.4.4",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"optimization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/DEAP/deap",
+		"ref": "v1.4.4",
+		"license": "LGPL-3.0-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/deap-1.4.4-py3-none-any.whl",
+			"sha256": "06c2fcf2e9f870da035c1372c9156ee817c2c31659ee70aae2dcc0849d2c8c49",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/deap@1.4.4/deap-1.4.4-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

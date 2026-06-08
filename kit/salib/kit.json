@@ -1,0 +1,41 @@
+{
+	"id": "salib",
+	"version": "1.5.2",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"uncertainty"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/SALib/SALib",
+		"ref": "v1.5.2",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/salib-1.5.2-py3-none-any.whl",
+			"sha256": "6f4b6bebc1eeed1d081c8f951fa8c2ad7b0cd8a7159d206af48ef137cc806c43",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/salib@1.5.2/salib-1.5.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"kit": "pint",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pint-0.25.3-py3-none-any.whl",
+		"sha256": "27eb25143bd5de9fcc4d5a4b484f16faf6b4615aa93ece6b3373a8c1a3c1b97d"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/flexcache-0.3-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/flexcache-0.3-py3-none-any.whl",
+			"sha256": "d43c9fea82336af6e0115e308d9d33a185390b8346a017564611f1466dcd2e32"
+		},
+		{
+			"file": "artifacts/flexparser-0.4-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/flexparser-0.4-py3-none-any.whl",
+			"sha256": "3738b456192dcb3e15620f324c447721023c0293f6af9955b481e91d00179846"
+		},
+		{
+			"file": "artifacts/platformdirs-4.3.6-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/platformdirs-4.3.6-py3-none-any.whl",
+			"sha256": "8d8799e20ea8fed8ddf78b4ff530504178cb8fe4122036b7f7ad06d1a78fc9c0"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "42190f892f6219350c50e107954f57cb6196acac818fece4a7d21689c94f71de"
+		}
+	]
+}

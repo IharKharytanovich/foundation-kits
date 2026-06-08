@@ -1,0 +1,11 @@
+{
+	"kit": "uncertainties",
+	"mode": "loose",
+	"imports": [
+		"uncertainties"
+	],
+	"golden": {
+		"code": "from uncertainties import ufloat; str((ufloat(2.0, 0.1) + ufloat(3.0, 0.2)).nominal_value)",
+		"expect": "5.0"
+	}
+}

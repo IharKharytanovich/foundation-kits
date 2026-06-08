@@ -1,0 +1,11 @@
+{
+	"kit": "pint",
+	"mode": "loose",
+	"imports": [
+		"pint"
+	],
+	"golden": {
+		"code": "import pint; str(pint.UnitRegistry()('1 km').to('m').magnitude)",
+		"expect": "1000.0"
+	}
+}

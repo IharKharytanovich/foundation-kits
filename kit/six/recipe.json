@@ -1,0 +1,8 @@
+{
+	"kit": "six",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/six-1.17.0-py2.py3-none-any.whl",
+		"sha256": "bc830cfdc71a224b6d0e4337183a87ea53f21b6623deca5771ee3bc866fd8da2"
+	}
+}

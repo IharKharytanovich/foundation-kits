@@ -1,0 +1,11 @@
+{
+	"kit": "pywavelets",
+	"mode": "loose",
+	"imports": [
+		"pywt"
+	],
+	"golden": {
+		"code": "import pywt; str(pywt.dwt_max_level(256, 'haar'))",
+		"expect": "8"
+	}
+}

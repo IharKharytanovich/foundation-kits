@@ -1,0 +1,11 @@
+{
+	"kit": "chaospy",
+	"mode": "loose",
+	"imports": [
+		"chaospy"
+	],
+	"golden": {
+		"code": "import chaospy; str(float(chaospy.E(chaospy.Normal(0, 1))))",
+		"expect": "0.0"
+	}
+}

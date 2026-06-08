@@ -1,0 +1,31 @@
+{
+	"id": "pywavelets",
+	"version": "1.8.0",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"signal"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/PyWavelets/pywt",
+		"ref": "v1.8.0",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pywavelets-1.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "e8b11d6ad77ce1a53875b46a2315415b20863da5830e81833739920d12b75237",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pywavelets@1.8.0/pywavelets-1.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

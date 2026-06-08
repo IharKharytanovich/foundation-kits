@@ -1,0 +1,11 @@
+{
+	"kit": "deap",
+	"mode": "loose",
+	"imports": [
+		"deap"
+	],
+	"golden": {
+		"code": "import deap; deap.__revision__",
+		"expect": "1.4.4"
+	}
+}

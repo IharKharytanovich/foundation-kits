@@ -1,0 +1,15 @@
+{
+	"kit": "scikit-optimize",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/scikit_optimize-0.10.2-py2.py3-none-any.whl",
+		"sha256": "45bc7e879b086133984721f2f6735a86c085073f6c481c2ec665b5c67b44d723"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/pyaml-26.2.1-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pyaml-26.2.1-py3-none-any.whl",
+			"sha256": "6261c2f0a2f33245286c794ad6ec234be33a73d2b05427079fd343e2812a87cf"
+		}
+	]
+}

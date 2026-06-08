@@ -1,0 +1,11 @@
+{
+	"kit": "lmfit",
+	"mode": "loose",
+	"imports": [
+		"lmfit"
+	],
+	"golden": {
+		"code": "from lmfit.models import LinearModel; import numpy as np; str(round(LinearModel().fit(np.array([0.,2.,4.]), x=np.array([0.,1.,2.])).params['slope'].value, 1))",
+		"expect": "2.0"
+	}
+}

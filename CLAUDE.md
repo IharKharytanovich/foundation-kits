@@ -84,5 +84,5 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
 - Conventions in depth: [.claude/rules/](.claude/rules/) — incl.
   [publish.md](.claude/rules/publish.md) (tag→CI→Release pipeline + URL template).
 - Workflows: [.claude/skills/](.claude/skills/) — `add-kit`, `verify-kit`, `publish-kit`
-- Large multi-kit work (e.g. importing the remaining 32 kits): `spec-writer` +
-  `spec-executor` + the orchestrator.
+- Large multi-kit work (e.g. batch-importing kits): `spec-writer` +
+  `spec-executor` + the orchestrator. 36 of 37 kits are built; rdkit is deferred.

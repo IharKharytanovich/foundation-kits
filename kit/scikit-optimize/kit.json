@@ -1,0 +1,61 @@
+{
+	"id": "scikit-optimize",
+	"version": "0.10.2",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"optimization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/holgern/scikit-optimize",
+		"ref": "v0.10.2",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/scikit_optimize-0.10.2-py2.py3-none-any.whl",
+			"sha256": "45bc7e879b086133984721f2f6735a86c085073f6c481c2ec665b5c67b44d723",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-optimize@0.10.2/scikit_optimize-0.10.2-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/pyaml-26.2.1-py3-none-any.whl",
+			"sha256": "6261c2f0a2f33245286c794ad6ec234be33a73d2b05427079fd343e2812a87cf",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-optimize@0.10.2/pyaml-26.2.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "scikit-learn",
+			"version": "1.7.0",
+			"sha256": "5dd1611a1ee57147a4387e56499bb1def407919ef452efb50beb5229dbe4a3db"
+		},
+		{
+			"id": "joblib",
+			"version": "1.4.2",
+			"sha256": "f07902625672ca0d92e979870ff501e4138589ff3b2b734680d07863676f9996"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		},
+		{
+			"id": "pyyaml",
+			"version": "6.0.2",
+			"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757"
+		}
+	]
+}

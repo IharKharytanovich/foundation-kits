@@ -1,0 +1,45 @@
+{
+	"id": "pint",
+	"version": "0.25.3",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"units"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/hgrecco/pint",
+		"ref": "v0.25.3",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pint-0.25.3-py3-none-any.whl",
+			"sha256": "27eb25143bd5de9fcc4d5a4b484f16faf6b4615aa93ece6b3373a8c1a3c1b97d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pint@0.25.3/pint-0.25.3-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/flexcache-0.3-py3-none-any.whl",
+			"sha256": "d43c9fea82336af6e0115e308d9d33a185390b8346a017564611f1466dcd2e32",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pint@0.25.3/flexcache-0.3-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/flexparser-0.4-py3-none-any.whl",
+			"sha256": "3738b456192dcb3e15620f324c447721023c0293f6af9955b481e91d00179846",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pint@0.25.3/flexparser-0.4-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/platformdirs-4.3.6-py3-none-any.whl",
+			"sha256": "8d8799e20ea8fed8ddf78b4ff530504178cb8fe4122036b7f7ad06d1a78fc9c0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pint@0.25.3/platformdirs-4.3.6-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "42190f892f6219350c50e107954f57cb6196acac818fece4a7d21689c94f71de",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pint@0.25.3/typing_extensions-4.15.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

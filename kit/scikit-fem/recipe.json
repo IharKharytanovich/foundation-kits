@@ -1,0 +1,8 @@
+{
+	"kit": "scikit-fem",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/scikit_fem-12.0.1-py3-none-any.whl",
+		"sha256": "b092ad231013550ff69de04e50bbcb58a423aaa241b418b16da67cc1c0fdef0a"
+	}
+}

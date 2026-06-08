@@ -1,0 +1,11 @@
+{
+	"kit": "salib",
+	"mode": "loose",
+	"imports": [
+		"SALib"
+	],
+	"golden": {
+		"code": "import SALib; from importlib.metadata import version; version('SALib')",
+		"expect": "1.5.2"
+	}
+}

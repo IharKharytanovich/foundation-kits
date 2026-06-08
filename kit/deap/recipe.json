@@ -1,0 +1,8 @@
+{
+	"kit": "deap",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/deap-1.4.4-py3-none-any.whl",
+		"sha256": "06c2fcf2e9f870da035c1372c9156ee817c2c31659ee70aae2dcc0849d2c8c49"
+	}
+}

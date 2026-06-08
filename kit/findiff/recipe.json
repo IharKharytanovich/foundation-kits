@@ -1,0 +1,8 @@
+{
+	"kit": "findiff",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/findiff-0.13.1-py3-none-any.whl",
+		"sha256": "4768d2b2774d34505949a280e8118b13502e6dbf3551de14e6f4e52584fd249c"
+	}
+}

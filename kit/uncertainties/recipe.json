@@ -1,0 +1,8 @@
+{
+	"kit": "uncertainties",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/uncertainties-3.2.2-py3-none-any.whl",
+		"sha256": "1f8f8c004a5c27e3baf88c84eb67b77a29e70cbd0bef1e5084fceb2ed7bcaf4d"
+	}
+}

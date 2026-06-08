@@ -1,0 +1,11 @@
+{
+	"kit": "freesasa",
+	"mode": "loose",
+	"imports": [
+		"freesasa"
+	],
+	"golden": {
+		"code": "import freesasa; freesasa.__version__",
+		"expect": "2.2.1"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"id": "iminuit",
+	"version": "2.30.1",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"fitting"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-hep/iminuit",
+		"ref": "v2.30.1",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/iminuit-2.30.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "314158d4b8fb234df11e430c317aab2e9ce7e4764a2ba43bf372466a0ac623d6",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/iminuit@2.30.1/iminuit-2.30.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

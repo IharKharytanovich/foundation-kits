@@ -8,17 +8,19 @@ import { artifactUrl } from '../tooling/lib/release-url.mjs'
 const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
 
-const KNOWN_22 = [
-  'astropy', 'biopython', 'decorator', 'dendropy', 'dill', 'emcee',
-  'joblib', 'molmass', 'networkx', 'numpy', 'packaging', 'pandas',
-  'pyrodigal', 'pytz', 'pyyaml', 'scikit-learn', 'scipy', 'selfies',
-  'seqtk', 'setuptools', 'sympy', 'viennarna',
+const KNOWN_36 = [
+  'astropy', 'biopython', 'chaospy', 'deap', 'decorator', 'dendropy',
+  'dill', 'dynesty', 'emcee', 'findiff', 'freesasa', 'iminuit', 'joblib',
+  'lmfit', 'molmass', 'networkx', 'numpy', 'packaging', 'pandas', 'pint',
+  'pyrodigal', 'pytz', 'pywavelets', 'pyyaml', 'salib', 'scikit-fem',
+  'scikit-learn', 'scikit-optimize', 'scipy', 'selfies', 'seqtk',
+  'setuptools', 'six', 'sympy', 'uncertainties', 'viennarna',
 ]
 
 describe('seed kits', () => {
-  it('kit dirs are all within the known 22 and include the seeds', () => {
-    expect(new Set(KNOWN_22).size).toBe(22)
-    expect(kitIds.every((id) => KNOWN_22.includes(id))).toBe(true)
+  it('kit dirs are all within the known 36 and include the seeds', () => {
+    expect(new Set(KNOWN_36).size).toBe(36)
+    expect(kitIds.every((id) => KNOWN_36.includes(id))).toBe(true)
     expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })
 

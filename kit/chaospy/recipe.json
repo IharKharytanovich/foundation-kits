@@ -1,0 +1,15 @@
+{
+	"kit": "chaospy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/chaospy-4.3.21-py3-none-any.whl",
+		"sha256": "d68b7c54d316df7d9b6354489741043e8085a651696c227e785119b0ebaaf8a1"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/numpoly-1.2.14-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/numpoly-1.2.14-py3-none-any.whl",
+			"sha256": "8dbdc29de9212b415661577bebe186a1d35e14edab80c2969e61a421f2865ea5"
+		}
+	]
+}

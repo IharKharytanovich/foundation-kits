@@ -1,0 +1,15 @@
+{
+	"kit": "lmfit",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/lmfit-1.3.4-py3-none-any.whl",
+		"sha256": "afce1593b42324d37ae2908249b0c55445e2f4c1a0474ff706a8e2f7b5d949fa"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/asteval-1.0.8-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/asteval-1.0.8-py3-none-any.whl",
+			"sha256": "6c64385c6ff859a474953c124987c7ee8354d781c76509b2c598741c4d1d28e9"
+		}
+	]
+}

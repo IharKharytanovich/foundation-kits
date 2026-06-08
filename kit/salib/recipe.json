@@ -1,0 +1,8 @@
+{
+	"kit": "salib",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/salib-1.5.2-py3-none-any.whl",
+		"sha256": "6f4b6bebc1eeed1d081c8f951fa8c2ad7b0cd8a7159d206af48ef137cc806c43"
+	}
+}

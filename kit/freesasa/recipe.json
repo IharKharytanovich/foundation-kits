@@ -1,0 +1,8 @@
+{
+	"kit": "freesasa",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/freesasa-2.2.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "f2d8675df77a08983dbfd7b97cca8f42eec765a80987a367c14bd7377dae3229"
+	}
+}

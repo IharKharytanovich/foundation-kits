@@ -1,0 +1,8 @@
+{
+	"kit": "pywavelets",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/pywavelets-1.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "e8b11d6ad77ce1a53875b46a2315415b20863da5830e81833739920d12b75237"
+	}
+}

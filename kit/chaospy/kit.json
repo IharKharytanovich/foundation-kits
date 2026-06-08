@@ -1,0 +1,46 @@
+{
+	"id": "chaospy",
+	"version": "4.3.21",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"uncertainty"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/jonathf/chaospy",
+		"ref": "v4.3.21",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/chaospy-4.3.21-py3-none-any.whl",
+			"sha256": "d68b7c54d316df7d9b6354489741043e8085a651696c227e785119b0ebaaf8a1",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/chaospy@4.3.21/chaospy-4.3.21-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/numpoly-1.2.14-py3-none-any.whl",
+			"sha256": "8dbdc29de9212b415661577bebe186a1d35e14edab80c2969e61a421f2865ea5",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/chaospy@4.3.21/numpoly-1.2.14-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "setuptools",
+			"version": "76.0.0",
+			"sha256": "dd243683e935cb91182252a618555082644e5f58b2274f394ddf8eeb237262ad"
+		}
+	]
+}

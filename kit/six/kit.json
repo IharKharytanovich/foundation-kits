@@ -1,0 +1,24 @@
+{
+	"id": "six",
+	"version": "1.17.0",
+	"runtime": "pyodide",
+	"tags": [
+		"compat"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/benjaminp/six",
+		"ref": "v1.17.0",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/six-1.17.0-py2.py3-none-any.whl",
+			"sha256": "bc830cfdc71a224b6d0e4337183a87ea53f21b6623deca5771ee3bc866fd8da2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/six@1.17.0/six-1.17.0-py2.py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

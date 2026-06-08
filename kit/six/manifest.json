@@ -1,0 +1,11 @@
+{
+	"kit": "six",
+	"mode": "loose",
+	"imports": [
+		"six"
+	],
+	"golden": {
+		"code": "import six; str(six.PY3)",
+		"expect": "True"
+	}
+}

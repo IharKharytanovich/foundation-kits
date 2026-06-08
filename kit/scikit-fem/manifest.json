@@ -1,0 +1,11 @@
+{
+	"kit": "scikit-fem",
+	"mode": "loose",
+	"imports": [
+		"skfem"
+	],
+	"golden": {
+		"code": "import skfem; str(skfem.MeshTri().p.shape[1])",
+		"expect": "4"
+	}
+}

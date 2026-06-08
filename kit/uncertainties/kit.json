@@ -1,0 +1,25 @@
+{
+	"id": "uncertainties",
+	"version": "3.2.2",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"statistics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/lmfit/uncertainties",
+		"ref": "v3.2.2",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/uncertainties-3.2.2-py3-none-any.whl",
+			"sha256": "1f8f8c004a5c27e3baf88c84eb67b77a29e70cbd0bef1e5084fceb2ed7bcaf4d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/uncertainties@3.2.2/uncertainties-3.2.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

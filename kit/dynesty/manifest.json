@@ -1,0 +1,11 @@
+{
+	"kit": "dynesty",
+	"mode": "loose",
+	"imports": [
+		"dynesty"
+	],
+	"golden": {
+		"code": "import dynesty; dynesty.__version__",
+		"expect": "3.0.0"
+	}
+}

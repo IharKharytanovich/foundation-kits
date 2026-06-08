@@ -19,12 +19,12 @@
 		{
 			"file": "artifacts/RNAfold.wasm",
 			"sha256": "4c85a771085d8548556d917f6dbd69b25ad5a5aef6aebf5239e7b30a55416ef7",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/viennarna@2.7.2/RNAfold.wasm",
 			"wasiTools": [
 				"RNAfold"
 			],
 			"multiplexed": false,
-			"stdinAsFile": false,
-			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/viennarna@2.7.2/RNAfold.wasm"
+			"stdinAsFile": false
 		}
 	],
 	"dependencies": []

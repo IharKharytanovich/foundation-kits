@@ -88,9 +88,9 @@ pyodide-киты — отдельная сущность, не Kit.
 | **networkx** | graphs, biology | library | networkx (1.1М) | numpy, decorator, setuptools |
 | **emcee** | statistics, sampling | library | emcee (48К) | numpy |
 | **dynesty** | statistics, sampling | library | dynesty (104К) | numpy, scipy |
-| **salib** | statistics, sensitivity | library | salib + future (1.2М) | numpy, scipy, pandas |
-| **deap** | statistics, optimization | library | deap (92К) | numpy, dill |
-| **scikit-optimize** | statistics, optimization | library | scikit_optimize + pyyaml (220К) | numpy, scipy, scikit-learn, joblib, packaging |
+| **salib** | statistics, uncertainty | library | salib (80К) | numpy, scipy, pandas |
+| **deap** | statistics, optimization | library | deap (92К) | numpy |
+| **scikit-optimize** | statistics, optimization | library | scikit_optimize + pyaml (220К) | numpy, scipy, scikit-learn, joblib, packaging, pyyaml |
 | **pytz** | time | library | pytz (500К) | — |
 | **joblib** | parallel, caching | library | joblib (172К) | — |
 | **dill** | serialization | library | dill (120К) | — |
@@ -106,23 +106,32 @@ pyodide-киты — отдельная сущность, не Kit.
 параллелизм, сериализация) и манифестом; привязываются явно как любой другой.
 `pyyaml` стал общим в этом батче (потребители: `astropy` + `scikit-optimize`).
 
-### Статус сборки (на 2026-06-07)
+### Статус сборки (на 2026-06-08)
 
-**Собрано и проверено — 22 кита** (`npm test` + `npm run verify` зелёные):
+**Собрано и проверено — 36 китов** (`npm test` + `npm run verify` зелёные):
 - _Seed (4):_ numpy, scipy, sympy, seqtk.
-- _Этот батч (18):_ pytz, packaging, joblib, dill, pyyaml, decorator, setuptools
+- _Batch-1 (18):_ pytz, packaging, joblib, dill, pyyaml, decorator, setuptools
   (7 общих) · biopython, pyrodigal, dendropy, molmass, selfies, viennarna
   (6 bio/chem) · pandas, astropy, scikit-learn, networkx, emcee (5 sci/data).
+- _Batch-2 (14):_ uncertainties, six, pint, findiff, pywavelets, iminuit,
+  freesasa, scikit-fem, chaospy, dynesty, lmfit, salib, deap, scikit-optimize.
 
-**Ещё не собрано — 15 китов:** freesasa, rdkit, iminuit, lmfit, pint, scikit-fem,
-findiff, chaospy, pywavelets, uncertainties, dynesty, salib, deap,
-scikit-optimize, six. (`rdkit` требует решения по рантайму для MinimalLib
-`.wasm`+`.cjs`.)
+**Ещё не собрано — 1 кит:** rdkit. `RDKit_minimal.wasm`+`.cjs` — это
+wasm32-**emscripten** с JS-glue (`initRDKitModule`), не вписывается ни в `wasi`
+(нет CLI через `node:wasi`), ни в `pyodide` (не `.whl`). Отложен до отдельного
+спека на третий runtime-трек.
 
 **Правка emcee (BR-005):** `emcee` зависит **только от numpy** — `dill` убран из
 зависимостей. Wheel METADATA содержит лишь `Requires-Dist: numpy`; `scipy`, `h5py`
 и `dill` — опциональные extras, не hard-deps. Поэтому в §4 строка emcee исправлена
 с `numpy, dill` на `numpy`.
+
+**Правки batch-2:** `salib` tags исправлены с `statistics, sensitivity` на
+`statistics, uncertainty` (`sensitivity` нет в словаре `tags.mjs`). `deap` deps
+исправлены с `numpy, dill` на `numpy` (`dill` — не hard-dep по METADATA; `moocore`
+— нативный C-ext, недоступен в Pyodide, опущен с документированным ограничением).
+`scikit-optimize` deps дополнены `pyyaml` (второй потребитель после `astropy`);
+чистый Python-пакет `pyaml` вбэндлен в артефакты `scikit-optimize`.
 
 ---
 
@@ -145,9 +154,10 @@ scikit_optimize.
 | numpoly | chaospy |
 | python_dateutil | pandas |
 | threadpoolctl | scikit-learn |
-| future | salib |
+| pyaml | scikit-optimize |
 
 `pyparsing` больше не bundled: `networkx` 3.4.2 убрал эту зависимость.
+`future` больше не bundled: `salib` 1.5.2 убрал эту зависимость.
 `pyyaml` повышен из эксклюзивных в **общие** (его делят `astropy` + `scikit-optimize`).
 
 **Общие deps (8) — собственный кит:**

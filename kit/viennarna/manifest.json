@@ -3,8 +3,8 @@
 	"mode": "strict",
 	"operations": [
 		{
-			"id": "fold",
-			"summary": "MFE secondary structure (dot-bracket + energy)",
+			"id": "TODO",
+			"summary": "TODO",
 			"tool": "RNAfold",
 			"params": {
 				"sequence": {
@@ -12,17 +12,15 @@
 				}
 			},
 			"stdinParam": "sequence",
-			"argsTemplate": [
-				"--noPS"
-			],
+			"argsTemplate": [],
 			"output": {
-				"format": "dot-bracket + MFE"
+				"format": "TODO"
 			},
 			"golden": {
 				"input": {
-					"sequence": "GGGAAACCC"
+					"sequence": "TODO"
 				},
-				"expect": "GGGAAACCC\n(((...)))  ( -1.20)\n"
+				"expect": "TODO"
 			}
 		}
 	]

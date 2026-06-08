@@ -1,0 +1,8 @@
+{
+	"kit": "iminuit",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/iminuit-2.30.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "314158d4b8fb234df11e430c317aab2e9ce7e4764a2ba43bf372466a0ac623d6"
+	}
+}

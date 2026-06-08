@@ -1,0 +1,8 @@
+{
+	"kit": "dynesty",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/dynesty-3.0.0-py3-none-any.whl",
+		"sha256": "4cdbbb39c61158f4d882445b064b742fcdc4d03ba9b2ba845801cd2ca6fcb761"
+	}
+}

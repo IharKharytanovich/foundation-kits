@@ -1,0 +1,41 @@
+{
+	"id": "findiff",
+	"version": "0.13.1",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/maroba/findiff",
+		"ref": "v0.13.1",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/findiff-0.13.1-py3-none-any.whl",
+			"sha256": "4768d2b2774d34505949a280e8118b13502e6dbf3551de14e6f4e52584fd249c",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/findiff@0.13.1/findiff-0.13.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "sympy",
+			"version": "1.13.3",
+			"sha256": "87a5b10d3ce6001fe5db3634e73ecfdf1475478bc0dbc114ce5b8c6e7959485f"
+		}
+	]
+}

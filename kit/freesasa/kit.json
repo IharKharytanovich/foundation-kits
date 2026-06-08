@@ -1,0 +1,25 @@
+{
+	"id": "freesasa",
+	"version": "2.2.1",
+	"runtime": "pyodide",
+	"tags": [
+		"biology",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/freesasa/freesasa",
+		"ref": "v2.2.1",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/freesasa-2.2.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "f2d8675df77a08983dbfd7b97cca8f42eec765a80987a367c14bd7377dae3229",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/freesasa@2.2.1/freesasa-2.2.1-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": []
+}

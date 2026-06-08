@@ -1,0 +1,36 @@
+{
+	"id": "dynesty",
+	"version": "3.0.0",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"sampling"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/joshspeagle/dynesty",
+		"ref": "v3.0.0",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/dynesty-3.0.0-py3-none-any.whl",
+			"sha256": "4cdbbb39c61158f4d882445b064b742fcdc4d03ba9b2ba845801cd2ca6fcb761",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/dynesty@3.0.0/dynesty-3.0.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}
