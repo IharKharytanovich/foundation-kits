@@ -1,0 +1,10 @@
+{
+	"kit": "rapier3d",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const w = new handle.World({x:0,y:-9.81,z:0}); const b = w.createRigidBody(handle.RigidBodyDesc.dynamic().setTranslation(0,10,0)); w.createCollider(handle.ColliderDesc.ball(0.5),b); w.timestep=1/60; for(let i=0;i<60;i++) w.step(); return b.translation().y.toFixed(3);",
+		"expect": "5.075"
+	}
+}

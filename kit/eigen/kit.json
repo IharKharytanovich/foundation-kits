@@ -1,0 +1,32 @@
+{
+	"id": "eigen",
+	"version": "0.2.2-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "eigen",
+		"repo": "https://github.com/BertrandBev/eigen-js",
+		"ref": "v0.2.2",
+		"license": "MIT",
+		"buildNote": "Single-threaded Emscripten build; wasm base64-inlined in loader; embeds Eigen-C++ MPL-2.0 (see LICENSE)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/eigen.cjs",
+			"sha256": "77128bdb6a9e0d07c3439fb8a0e4def1a151f20e60f30f32dae47f1d5a502251",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/eigen@0.2.2-1.0.0/eigen.cjs",
+			"role": "loader"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/eigen.cjs",
+		"moduleSystem": "cjs",
+		"initStyle": "default-init",
+		"wasmSupply": "auto"
+	},
+	"dependencies": []
+}

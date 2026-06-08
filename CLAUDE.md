@@ -32,15 +32,18 @@ A `kit/<id>/` holds four **consumer files** (ship to Foundation) plus one
 | File | Role | Ships to Foundation? |
 |---|---|---|
 | `kit.json` | metadata, provenance, `artifacts[].sha256`, deps | yes |
-| `manifest.json` | callable surface (strict/loose) + golden | yes |
+| `manifest.json` | callable surface (strict/loose/callable) + golden | yes |
 | `instruction.md` | agent-facing prose (when/why/when-NOT) | yes |
 | `LICENSE` | upstream license | yes |
 | `recipe.json` | how to build/vendor the artifact | **no — factory-only** |
-| `artifacts/` | the `.whl`/`.wasm` bytes | via Release, never git |
+| `artifacts/` | the `.whl`/`.wasm`/`.cjs`/`.js` bytes | via Release, never git |
 
 ## Pipeline commands
 
-- `npm run new-kit <id> -- --runtime wasi|pyodide` — scaffold a kit skeleton.
+- `npm run new-kit <id> -- --runtime wasi|pyodide|jswasm [--family emscripten|wasm-bindgen]` —
+  scaffold a kit skeleton. `--family` is required for jswasm.
+- `node tooling/vendor-jswasm.mjs <id> | --all` — vendor prebuilt JS-WASM bytes
+  into a jswasm kit (copies artifacts, computes sha256, stamps kit.json + recipe.json).
 - `npm test` — full factory suite (scoped to `tests/`).
 - `npm run verify` — schema-parse + sha256 integrity over all kits.
 - `npm run license-gate -- <id> | --all` — redistribution gate (license +
@@ -68,7 +71,8 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
   published through CI. Predicted URL and GitHub's real download URL coincide by
   construction; integrity is guaranteed by `sha256`, not by the link.
 - **Golden is the single source of truth**, and lives inside `manifest.json`
-  (`operations[].golden` for strict, `golden` for loose). Tests iterate over
+  (`operations[].golden` for strict, `golden` for loose,
+  `operations[].golden` + `scriptGolden` for callable). Tests iterate over
   manifests — a new kit with a manifest is covered automatically.
 - **Tags** come from the controlled vocabulary in
   [tooling/lib/tags.mjs](tooling/lib/tags.mjs) (29 tags, 1–3 per kit).
@@ -83,6 +87,12 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
 
 - Conventions in depth: [.claude/rules/](.claude/rules/) — incl.
   [publish.md](.claude/rules/publish.md) (tag→CI→Release pipeline + URL template).
+- **Publish + validation runbook** — the procedure that works *today* (local
+  publish where the bytes exist, since CI has no artifacts yet) plus the
+  end-to-end download/sha256 validation:
+  [docs/publishing-and-validation.md](docs/publishing-and-validation.md).
+- jswasm track: [.claude/rules/jswasm.md](.claude/rules/jswasm.md) (callable mode,
+  loader, families, vendor workflow).
 - Workflows: [.claude/skills/](.claude/skills/) — `add-kit`, `verify-kit`, `publish-kit`
 - Large multi-kit work (e.g. batch-importing kits): `spec-writer` +
-  `spec-executor` + the orchestrator. 36 of 37 kits are built; rdkit is deferred.
+  `spec-executor` + the orchestrator. 43 kits built (36 wasi/pyodide + 7 jswasm).

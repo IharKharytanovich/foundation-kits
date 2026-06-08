@@ -9,7 +9,7 @@
 > **Язык реализации сущности:** `Kit`. **Папка:** `kits/`. **Привязка:** `domain → kits`.
 > Сущность встаёт в один ряд с `domain / workspace / skill / kit` — односложные
 > образные существительные.
-> **Полная разбивка текущих ассетов на 36 китов:** [asset-inventory.md](asset-inventory.md).
+> **Полная разбивка текущих ассетов на 43 кита:** [asset-inventory.md](asset-inventory.md).
 
 ---
 
@@ -20,9 +20,10 @@
 содержащий **≥1 артефакт** (wasi-бинари и/или Pyodide-`.whl`) + метаданные +
 инструкцию для агента + I/O-контракт с golden-примером.
 
-- **Два формат-трека исполнения:** `wasi` (любой компилируемый язык → wasm32-wasi,
-  через `node:wasi`) и `pyodide/whl` (Python-стек в WASM-песочнице). Вместе
-  закрывают **~75–85% типичных запросов агента**.
+- **Три формат-трека исполнения:** `wasi` (любой компилируемый язык → wasm32-wasi,
+  через `node:wasi`), `pyodide/whl` (Python-стек в WASM-песочнице) и `jswasm`
+  (callable WASM с JS-glue загрузчиком: Emscripten/wasm-bindgen). Вместе
+  закрывают **~80–90% типичных запросов агента**.
 - **Единый тул:** агент вызывает Kit через ОДИН инструмент; разница wasi/whl
   спрятана под капотом. **Инвариант:** два санбокса, **общей ФС нет** — тул не
   должен создавать иллюзию общего стейта.
@@ -55,10 +56,10 @@
 
 | Что | Решение v1 |
 |---|---|
-| Формат-треки | `wasi` + `pyodide/whl` (два, третий не добавляем) |
+| Формат-треки | `wasi` + `pyodide/whl` + `jswasm` (три трека) |
 | Вызов | единый тул `compute`, рантайм спрятан, общей ФС нет |
-| Манифест | вызываемая поверхность кита (**≠ `kit.json`**); `mode: strict\|loose` |
-| strict/loose | strict = именованные операции (argv скрыт); loose = код + import-allow-list |
+| Манифест | вызываемая поверхность кита (**≠ `kit.json`**); `mode: strict\|loose\|callable` |
+| strict/loose/callable | strict = именованные операции (argv скрыт); loose = код + import-allow-list; callable = JS-WASM (операции/скрипты через загруженный модуль) |
 | Pre-flight | валидация на границе → отказ кривого вызова **до** санбокса |
 | Гранулярность | **1 связная инструкция = 1 Kit**; эксклюзивные deps вбэндлены |
 | Оси кита | `tags[]` + `tier`; **нет** `role`/`category` |
@@ -85,7 +86,7 @@ Foundation уже исполняет научный код в двух WASM-пе
   (biopython, astropy, dendropy, deap, chaospy…), часть pure-Python
   (`py3-none-any`), часть портирована под emscripten
   (`pyemscripten_2025_0_wasm32`). Вызов через тул `mathCompute`. Отдельно
-  `bin/rdkit/` → `RDKit_minimal` (MinimalLib-wasm) под `chemAnalyze`/`chemCompare`.
+  `bin/rdkit/` → `RDKit_minimal` (MinimalLib-wasm, jswasm-трек) под `chemAnalyze`/`chemCompare`.
 
 **Проблема масштабирования.** ViennaRNA `RNAfold` показал, что собрать тул в
 wasi реально, но каждый бинарь весит 2–3 МБ. Научных тулзов — десятки-сотни
@@ -117,32 +118,41 @@ Pyodide, HuggingFace Hub, conda, Homebrew, Wasmer, VS Code) делают одн�
 - ❌ GPU / deep learning / онлайн-БД — структурные дыры, не v1 (часть — никогда
   в песочнице).
 - ❌ Ленивая подгрузка инструкций — выбран always-on (см. §7).
-- ❌ Третий формат-трек — нечего добавлять (см. §3).
+- ~~❌ Третий формат-трек~~ — **добавлен:** `jswasm` (callable WASM с JS-glue
+  загрузчиком); см. §3.4.
 
 ---
 
-## 3. Две вселенные исполнения (формат-треки)
+## 3. Три вселенные исполнения (формат-треки)
 
-| | **WASI-трек** | **Pyodide/whl-трек** |
-|---|---|---|
-| Артефакт | `.wasm` (standalone) | `.whl` (Python-колесо) |
-| Из языков | C, C++, Rust, Go(TinyGo), Zig, Swift, Fortran(капризно) | Python + нативка C/C++/Cython/Rust/Fortran, обёрнутая в Python-модуль |
-| Рантайм | `node:wasi` (preview1), без JS-glue | Pyodide (CPython в WASM, wasm32-emscripten) |
-| Изоляция | свой санбокс на запуск, конфликтов нет | общий интерпретатор — `.whl` делят его, версии могут конфликтовать |
-| ФС/сеть | только preopen `/tmp`, сети нет | эмуляция, сети нет |
-| Сегодняшний тул | `wasmCli` | `mathCompute` |
+| | **WASI-трек** | **Pyodide/whl-трек** | **jswasm-трек** |
+|---|---|---|---|
+| Артефакт | `.wasm` (standalone) | `.whl` (Python-колесо) | `.cjs`/`.js` (JS-glue) + `.wasm` |
+| Из языков | C, C++, Rust, Go(TinyGo), Zig, Swift, Fortran(капризно) | Python + нативка C/C++/Cython/Rust/Fortran, обёрнутая в Python-модуль | C/C++ (Emscripten), Rust (wasm-bindgen) — вызываемые WASM с JS-загрузчиком |
+| Рантайм | `node:wasi` (preview1), без JS-glue | Pyodide (CPython в WASM, wasm32-emscripten) | Node.js `require`/`import` → JS-glue → WASM-инстанс |
+| Изоляция | свой санбокс на запуск, конфликтов нет | общий интерпретатор — `.whl` делят его, версии могут конфликтовать | свой загруженный модуль, конфликтов нет |
+| ФС/сеть | только preopen `/tmp`, сети нет | эмуляция, сети нет | нет ФС/сети (callable API) |
+| Манифест | `strict` (именованные операции) | `loose` (код + import-allow-list) | `callable` (операции и/или скрипты) |
 
-**Почему два, а не один.** Индустриальный стандарт «один Python-санбокс, бинари
+**Почему два основных, а не один.** Индустриальный стандарт «один Python-санбокс, бинари
 внутрь через bash» предполагает тяжёлый Linux-контейнер с общей ФС. У нас его
 нет намеренно (in-process, оффлайн, лёгкие). Pyodide физически не может
 `fork/exec` нативный бинарь. Поэтому два движка — это адаптация под наше
 ограничение, а не разнобой.
 
-**Почему не три.** Кандидаты в «третий» мнимые: WASI preview2/Component Model —
-эволюция трека №1 (тот же рантайм, позже); другие языки-в-wasm (webR, SQLite-wasm) —
-это **контент** на существующем треке, не новый механизм; нативная песочница —
-отдельный трек, осознанно v2. Структурную дыру (GPU/потоки/сеть) новым
-wasm-форматом не закрыть.
+**Третий трек — jswasm.** Изначально третий трек не предполагался (см. ниже), но
+практика показала нишу: научные библиотеки, уже собранные под Emscripten
+(MODULARIZE) или wasm-bindgen, с готовым JS-glue загрузчиком — RDKit, GMP, Eigen,
+GEOS, Geodesy, Rapier. Эти пакеты не вписываются ни в `wasi` (нет CLI через
+`node:wasi`), ни в `pyodide` (не `.whl`), но уже распространяются как prebuilt
+npm-пакеты. `jswasm` формализует их: `kit.json` несёт `loader` (как грузить
+JS-entry и найти `.wasm`), манифест в режиме `callable` описывает операции и/или
+скриптовую поверхность. Только однопоточные сборки (без SharedArrayBuffer/worker).
+
+> **Примечание:** ранее этот раздел утверждал «третий трек не нужен». Это
+> оказалось неверно для callable WASM с JS-загрузчиком — они не покрываются ни
+> wasi, ни pyodide. WASI preview2/Component Model по-прежнему эволюция трека №1,
+> а нативная песочница — отложена на v2.
 
 ### 3.1. Покрытие — честная калибровка
 
@@ -152,12 +162,14 @@ wasm-форматом не закрыть.
 | Символика/солверы/оптимизация малого-среднего (sympy, pysat, clingo, scipy.optimize) | высоко |
 | Биоинформатика на уровне либ (Biopython, выравнивание) | хорошо |
 | Биоинформатика CLI (samtools, bwa, seqtk, ViennaRNA, minimap2) | средне-хорошо, но per-tool труд |
-| Хеминформатика (RDKit-дескрипторы) | частично (MinimalLib есть, полный API нет) |
+| Хеминформатика (RDKit-дескрипторы) | хорошо (RDKit MinimalLib через jswasm) |
+| Физика/геометрия (GEOS, Rapier, Geodesy, GMP, Eigen) | хорошо (через jswasm) |
 | Тяжёлая симуляция / HPC (MD, FEM, MPI) | почти нет → v2 |
 | Deep learning / GPU (PyTorch, AlphaFold) | нет → даже v2 без GPU не закроет |
 | Онлайн-данные (BLAST/NCBI, KEGG, PDB-fetch) | нет — это сетевая проблема, не формат |
 
-- **По типичным запросам агента** — два формата дают **~75–85%**.
+- **По типичным запросам агента** — три формата дают **~80–90%** (jswasm добавил
+  хеминформатику, физику, геометрию).
 - **По всему научному софту** — мало (длинный хвост огромен, многое требует
   HPC/GPU/сети). Разные знаменатели, оба верны.
 - **Три дыры, которые не закрывает никакой sandbox-формат:** GPU/DL, HPC-с-потоками,
@@ -185,9 +197,38 @@ wasm-форматом не закрыть.
    (тяжело) либо мимо.
 4. **Не-Python компилируемый тул** ИЛИ C-либа только через CLI? → **wasi**. Это
    ViennaRNA.
+5. **Готовая prebuilt JS-WASM-библиотека** (Emscripten-MODULARIZE или
+   wasm-bindgen) с callable API? → **jswasm**. Это RDKit, GMP, Eigen, GEOS,
+   Geodesy, Rapier.
 
 > Стратегически: **wasi-трек — главный рычаг** для длинного не-Python хвоста (он
-> масштабируется на все языки), whl-трек — специализация под Python-стек.
+> масштабируется на все языки), whl-трек — специализация под Python-стек,
+> jswasm-трек — для научных WASM-библиотек с JS-загрузчиком, уже собранных и
+> распространяемых через npm/CDN.
+
+### 3.4. jswasm-трек — callable WASM с JS-glue
+
+Третий трек для научных библиотек, уже собранных в WASM с JS-загрузчиком
+(Emscripten-MODULARIZE или wasm-bindgen). В отличие от wasi (CLI через
+`node:wasi`) и pyodide (Python-колёса), jswasm-кит загружается как JS-модуль
+(`require`/`import`), инициализируется (factory-функция или авто), и предоставляет
+callable API — методы на загруженном handle.
+
+**Ключевые отличия:**
+- `kit.json` несёт блок `loader` (обязателен iff `runtime === 'jswasm'`):
+  `entry` (JS-файл), `moduleSystem` (cjs/esm), `initStyle` (none/factory/default-init),
+  `wasmSupply` (auto/locateFile/wasmBinary/init-arg).
+- `manifest.json` в режиме `callable`: `operations[]` (типизированные операции
+  с `construct`/`method`/`args`/`result`/`golden`) и/или `scriptable: true` +
+  `scriptGolden` (свободный JS-скрипт по загруженному модулю).
+- Артефакты несут `role` (`loader`/`binary`/`data`; `worker` запрещён — только
+  однопоточные сборки).
+- Две семьи: **emscripten** (2 артефакта: .cjs + .wasm, factory/locateFile) и
+  **wasm-bindgen** (1–3 артефакта: .cjs/js + опц. .wasm, none/auto).
+- Рецепт: `track: 'jswasm-vendor'`, `family`, `source{package, version}`,
+  `vendored[]`. Без блока `build` — вендорим prebuilt-байты.
+
+**Текущие jswasm-киты (7):** rdkit, gmp, eigen, geos, geodesy, rapier2d, rapier3d.
 
 ---
 
@@ -242,7 +283,8 @@ kits/<kit-id>/
 ├── LICENSE             # лицензия upstream (для surfacing на установке)
 └── artifacts/
     ├── RNAfold.wasm    # wasi-бинарь(и)  — ИЛИ
-    └── *.whl           # Pyodide-колесо(а)
+    ├── *.whl           # Pyodide-колесо(а)  — ИЛИ
+    ├── *.cjs + *.wasm  # jswasm: JS-loader + WASM-бинарь
 ```
 
 Три файла — три потребителя: `kit.json` (резолвер/реестр/привязка),
@@ -266,7 +308,7 @@ kits/<kit-id>/
 {
   "id": "viennarna",
   "version": "2.7.2",
-  "runtime": "wasi",                 // "wasi" | "pyodide"
+  "runtime": "wasi",                 // "wasi" | "pyodide" | "jswasm"
   "tags": ["biology", "rna"],        // таксономия, контролируемый словарь (см. §7)
   "tier": "library",                 // "default" (в шаблоне) | "library" (реестр)
   "verified": true,                  // true = собрали мы; false = user-supplied
@@ -307,14 +349,14 @@ kits/<kit-id>/
   ~1–2k токенов. Так агент видит и суждение (проза), и точный API (дайджест) без
   дрейфа доков — потому что дайджест выводится из манифеста, а не пишется руками.
 
-### 5.3. `manifest.json` — вызываемая поверхность (strict/loose)
+### 5.3. `manifest.json` — вызываемая поверхность (strict/loose/callable)
 
 **Манифест ≠ `kit.json`.** `kit.json` несёт метаданные (провенанс, версия,
 sha256, deps, runtime). **Манифест описывает, ЧТО и КАК у кита можно вызвать** —
 поверхность, которую видит и заполняет агент. Сердце предсказуемости и
 проверяемости.
 
-**Два режима (`mode`):**
+**Три режима (`mode`):**
 
 - **`strict` — именованные операции.** Закрытый список операций с
   типизированными параметрами; агент **не видит сырых флагов/argv** — выбирает
@@ -325,6 +367,12 @@ sha256, deps, runtime). **Манифест описывает, ЧТО и КАК 
   API бесконечен и типизировать его нельзя. Агент пишет код; манифест несёт
   **import-allow-list** (какие пакеты разрешены) вместо операций. Модель
   «Code Mode» (§16).
+- **`callable` — JS-WASM-модули.** Для jswasm-китов (Emscripten / wasm-bindgen).
+  Манифест несёт `operations[]` (типизированные callable-операции с `construct`,
+  `method`, `args`, `result`, `golden`) и/или скриптовую поверхность
+  (`scriptable: true` + `scriptGolden{script, expect}`). Рантайм грузит модуль
+  через `loader` из `kit.json`, затем диспетчит операции или выполняет скрипты
+  на загруженном handle. См. §3.4.
 
 ```jsonc
 // strict-кит

@@ -1,0 +1,38 @@
+{
+	"id": "rdkit",
+	"version": "2025.3.4-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"chemistry"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "@rdkit/rdkit",
+		"repo": "https://github.com/rdkit/rdkit",
+		"ref": "2025.3.4-1.0.0",
+		"license": "BSD-3-Clause",
+		"buildNote": "Single-threaded Emscripten-MODULARIZE build (no .worker.js, no SAB)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/RDKit_minimal.cjs",
+			"sha256": "58d3c996ade7e0b0137d4f9363ff6c204b545689428fa0898eeaed579ef788d9",
+			"role": "loader",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/rdkit@2025.3.4-1.0.0/RDKit_minimal.cjs"
+		},
+		{
+			"file": "artifacts/RDKit_minimal.wasm",
+			"sha256": "e0967d44fed59e44a2d07bfc08f3a86821c54a14c95bb7e6e392fe867333b8c8",
+			"role": "binary",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/rdkit@2025.3.4-1.0.0/RDKit_minimal.wasm"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/RDKit_minimal.cjs",
+		"moduleSystem": "cjs",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

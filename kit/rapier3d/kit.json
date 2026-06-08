@@ -1,0 +1,33 @@
+{
+	"id": "rapier3d",
+	"version": "0.19.3-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "@dimforge/rapier3d-compat",
+		"repo": "https://github.com/dimforge/rapier.js",
+		"ref": "v0.19.3",
+		"license": "Apache-2.0",
+		"buildNote": "Single-threaded wasm-bindgen build; wasm base64-inlined in loader"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/rapier3d.cjs",
+			"sha256": "f5396f7f9d76d10ad2cfe7fc4d0362e8fe6dad5c26240f8792a2b3135bdbbe2c",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/rapier3d@0.19.3-1.0.0/rapier3d.cjs",
+			"role": "loader"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/rapier3d.cjs",
+		"moduleSystem": "cjs",
+		"initStyle": "default-init",
+		"wasmSupply": "auto",
+		"initExport": "init"
+	},
+	"dependencies": []
+}

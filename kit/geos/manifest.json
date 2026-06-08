@@ -1,0 +1,10 @@
+{
+	"kit": "geos",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const ctx = handle.GEOS_init_r(); const reader = handle.GEOSWKTReader_create_r(ctx); const wkt = 'POLYGON ((0 0, 1 0, 1 1, 0 1, 0 0))'; const wktPtr = handle.Module._malloc(wkt.length + 1); handle.Module.stringToUTF8(wkt, wktPtr, wkt.length + 1); const geom = handle.GEOSWKTReader_read_r(ctx, reader, wktPtr); handle.Module._free(wktPtr); const areaPtr = handle.Module._malloc(8); handle.GEOSArea_r(ctx, geom, areaPtr); const area = handle.Module.getValue(areaPtr, 'double'); handle.Module._free(areaPtr); handle.GEOSGeom_destroy_r(ctx, geom); handle.GEOSWKTReader_destroy_r(ctx, reader); handle.GEOS_finish_r(ctx); return String(area);",
+		"expect": "1"
+	}
+}

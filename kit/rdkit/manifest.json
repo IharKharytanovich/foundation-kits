@@ -1,0 +1,68 @@
+{
+	"kit": "rdkit",
+	"mode": "callable",
+	"operations": [
+		{
+			"id": "validate_smiles",
+			"summary": "Check whether a SMILES string encodes a valid molecule",
+			"construct": { "factory": "get_mol", "from": "smiles" },
+			"method": "is_valid",
+			"args": [],
+			"params": {
+				"smiles": { "type": "string" }
+			},
+			"result": { "kind": "boolean", "deterministic": true },
+			"golden": { "input": { "smiles": "CCO" }, "expect": "true" }
+		},
+		{
+			"id": "descriptors",
+			"summary": "Compute molecular descriptors (MW, LogP, TPSA, ring counts, …)",
+			"construct": { "factory": "get_mol", "from": "smiles" },
+			"method": "get_descriptors",
+			"args": [],
+			"params": {
+				"smiles": { "type": "string" }
+			},
+			"result": { "kind": "json", "deterministic": true },
+			"golden": {
+				"input": { "smiles": "CCO" },
+				"expect": "{\"exactmw\":46.04186,\"amw\":46.069,\"lipinskiHBA\":1.0,\"lipinskiHBD\":1.0,\"NumRotatableBonds\":0.0,\"NumHBD\":1.0,\"NumHBA\":1.0,\"NumHeavyAtoms\":3.0,\"NumAtoms\":9.0,\"NumHeteroatoms\":1.0,\"NumAmideBonds\":0.0,\"FractionCSP3\":1.0,\"NumRings\":0.0,\"NumAromaticRings\":0.0,\"NumAliphaticRings\":0.0,\"NumSaturatedRings\":0.0,\"NumHeterocycles\":0.0,\"NumAromaticHeterocycles\":0.0,\"NumSaturatedHeterocycles\":0.0,\"NumAliphaticHeterocycles\":0.0,\"NumSpiroAtoms\":0.0,\"NumBridgeheadAtoms\":0.0,\"NumAtomStereoCenters\":0.0,\"NumUnspecifiedAtomStereoCenters\":0.0,\"labuteASA\":19.89842,\"tpsa\":20.23,\"CrippenClogP\":-0.0014,\"CrippenMR\":12.7598,\"chi0v\":2.15432,\"chi1v\":1.02333,\"chi2v\":0.0,\"chi3v\":0.0,\"chi4v\":0.0,\"chi0n\":2.15432,\"chi1n\":1.02333,\"chi2n\":0.0,\"chi3n\":0.0,\"chi4n\":0.0,\"hallKierAlpha\":-0.04,\"kappa1\":2.96,\"kappa2\":1.96,\"kappa3\":1.96,\"Phi\":1.93386}"
+			}
+		},
+		{
+			"id": "canonical_smiles",
+			"summary": "Return the RDKit-canonical SMILES for a molecule",
+			"construct": { "factory": "get_mol", "from": "smiles" },
+			"method": "get_smiles",
+			"args": [],
+			"params": {
+				"smiles": { "type": "string" }
+			},
+			"result": { "kind": "string", "deterministic": true },
+			"golden": { "input": { "smiles": "OCC" }, "expect": "CCO" }
+		},
+		{
+			"id": "morgan_fp",
+			"summary": "Compute a Morgan fingerprint bit-vector as a binary string",
+			"construct": { "factory": "get_mol", "from": "smiles" },
+			"method": "get_morgan_fp",
+			"args": [
+				{ "kind": "scalar", "from": "fp_params" }
+			],
+			"params": {
+				"smiles": { "type": "string" },
+				"fp_params": { "type": "string" }
+			},
+			"result": { "kind": "string", "deterministic": true },
+			"golden": {
+				"input": { "smiles": "CCO", "fp_params": "{\"radius\":2,\"nBits\":64}" },
+				"expect": "0010000000000000100000000000001001000011000000000000000000000000"
+			}
+		}
+	],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const mol = handle.get_mol('CCO'); const v = mol.is_valid(); mol.delete(); return v;",
+		"expect": "true"
+	}
+}

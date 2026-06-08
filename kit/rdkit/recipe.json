@@ -1,0 +1,21 @@
+{
+	"kit": "rdkit",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "@rdkit/rdkit",
+		"version": "2025.3.4-1.0.0"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/RDKit_minimal.cjs",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/rdkit@2025.3.4-1.0.0/RDKit_minimal.cjs",
+			"sha256": "58d3c996ade7e0b0137d4f9363ff6c204b545689428fa0898eeaed579ef788d9"
+		},
+		{
+			"file": "artifacts/RDKit_minimal.wasm",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/rdkit@2025.3.4-1.0.0/RDKit_minimal.wasm",
+			"sha256": "e0967d44fed59e44a2d07bfc08f3a86821c54a14c95bb7e6e392fe867333b8c8"
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"kit": "rapier2d",
+	"track": "jswasm-vendor",
+	"family": "wasm-bindgen",
+	"source": {
+		"package": "@dimforge/rapier2d-compat",
+		"version": "0.19.3"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/rapier2d.cjs",
+			"url": "https://cdn.jsdelivr.net/npm/@dimforge/rapier2d-compat@0.19.3/rapier.cjs",
+			"sha256": "bb4bced508c7f4801fdd67de588bf5f4d06cda2d079b709a971cba9f188f7509"
+		}
+	]
+}

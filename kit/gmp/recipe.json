@@ -1,0 +1,16 @@
+{
+	"kit": "gmp",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "gmp-wasm",
+		"version": "1.3.2"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/gmp.cjs",
+			"url": "https://cdn.jsdelivr.net/npm/gmp-wasm@1.3.2/dist/index.umd.min.js",
+			"sha256": "c2ecb012b8be95aa8981a75220f4057b8564d2c00596b1372f36bafa7c046a0e"
+		}
+	]
+}

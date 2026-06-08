@@ -1,0 +1,10 @@
+{
+	"kit": "eigen",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const M = new handle.Matrix([[1,2],[3,4]]); const d = M.det(); handle.GC.flush(); return String(d);",
+		"expect": "-2"
+	}
+}

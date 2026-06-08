@@ -1,0 +1,10 @@
+{
+	"kit": "gmp",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "return handle.calculate(g => g.Float(22).div(7).toFixed(10));",
+		"expect": "3.1428571429"
+	}
+}

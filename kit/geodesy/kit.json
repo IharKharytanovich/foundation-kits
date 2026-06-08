@@ -1,0 +1,44 @@
+{
+	"id": "geodesy",
+	"version": "0.7.0-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"units"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "geodesy-wasm",
+		"repo": "https://github.com/Rennzie/geodesy-wasm",
+		"ref": "v0.7.0",
+		"license": "Apache-2.0",
+		"buildNote": "Single-threaded wasm-bindgen build; separate .wasm binary; dual Apache-2.0 OR MIT (recorded Apache-2.0)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/index.js",
+			"sha256": "63899073bef8b2cdbda6ff99d90fa980e408b2045ef900542834c67bec8d552e",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/geodesy@0.7.0-1.0.0/index.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/geodesy-wasm.js",
+			"sha256": "13fd574f59445a48cac2bd19637c408792199514ee3f3f1d486061aad1bf810a",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/geodesy@0.7.0-1.0.0/geodesy-wasm.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/geodesy-wasm_bg.wasm",
+			"sha256": "898a90faaf3623306b0aec6a391e982743dc02a40b9656c116fc17c5d3caf2fb",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/geodesy@0.7.0-1.0.0/geodesy-wasm_bg.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/index.js",
+		"moduleSystem": "cjs",
+		"initStyle": "none",
+		"wasmSupply": "auto"
+	},
+	"dependencies": []
+}

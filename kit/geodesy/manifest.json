@@ -1,0 +1,10 @@
+{
+	"kit": "geodesy",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const g = new handle.Geodesy('unitconvert xy_in=deg | utm zone=32'); const o = g.forward([[12,55]]); return o[0][0].toFixed(2)+' '+o[0][1].toFixed(2);",
+		"expect": "691875.63 6098907.83"
+	}
+}

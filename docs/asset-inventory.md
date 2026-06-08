@@ -54,51 +54,57 @@ pyodide-киты — отдельная сущность, не Kit.
 
 ---
 
-## 4. Все киты (37) — единая таблица
+## 4. Все киты (43) — единая таблица
 
 > У каждого: `instruction.md` (проза) + `kit.json` (метаданные) + `manifest.json`
 > (вызываемая поверхность: операции/params + golden).
 > «Зависит от» = только **общие** киты (эксклюзивные deps вбэндлены в артефакты).
 
-| Kit | tags | tier | артефакты (whl/wasi в ките) | зависит от (общие киты) |
-|---|---|---|---|---|
-| **numpy** | math, core | **default** | numpy (2.7М) | — |
-| **scipy** | math, core | **default** | scipy (16М) | numpy |
-| **sympy** | math, symbolic | **default** | sympy + mpmath + gmpy2 (4.7М) | — |
-| **biopython** | biology, sequences | library | biopython (2.6М) | numpy |
-| **freesasa** | biology, structure | library | freesasa (204К) | — |
-| **pyrodigal** | biology, genomics | library | pyrodigal (744К) | — |
-| **dendropy** | biology, phylogenetics | library | DendroPy (456К) | — |
-| **viennarna** | biology, rna | library | RNAfold.wasm (2.3М) | — |
-| **seqtk** | biology, sequences | **default** | seqtk.wasm (448К) | — |
-| **rdkit** | chemistry | library | RDKit_minimal.wasm + .cjs (6.7М) | — |
-| **molmass** | chemistry, biology | library | molmass (76К) | — |
-| **selfies** | chemistry, biology | library | selfies (36К) | — |
-| **astropy** | physics, astronomy | library | astropy + pyerfa + astropy_iers_data (7.9М) | numpy, packaging, pyyaml |
-| **iminuit** | physics, fitting | library | iminuit (208К) | numpy |
-| **lmfit** | physics, fitting | library | lmfit + asteval (120К) | numpy, scipy, uncertainties |
-| **pint** | physics, units | library | pint + flexcache + flexparser + platformdirs + typing_extensions (412К) | — |
-| **scikit-fem** | physics, pde | library | scikit_fem (172К) | numpy, scipy |
-| **findiff** | physics, math | library | findiff (40К) | numpy, scipy |
-| **chaospy** | physics, uncertainty | library | chaospy + numpoly (400К) | numpy, scipy |
-| **pywavelets** | physics, signal | library | pywavelets (896К) | numpy |
-| **uncertainties** | physics, statistics | library | uncertainties (60К) | — |
-| **pandas** | data-science, core | library | pandas + python-dateutil (4.5М) | numpy, pytz |
-| **scikit-learn** | data-science, ml | library | scikit_learn + threadpoolctl (5.4М) | numpy, scipy, joblib |
-| **networkx** | graphs, biology | library | networkx (1.1М) | numpy, decorator, setuptools |
-| **emcee** | statistics, sampling | library | emcee (48К) | numpy |
-| **dynesty** | statistics, sampling | library | dynesty (104К) | numpy, scipy |
-| **salib** | statistics, uncertainty | library | salib (80К) | numpy, scipy, pandas |
-| **deap** | statistics, optimization | library | deap (92К) | numpy |
-| **scikit-optimize** | statistics, optimization | library | scikit_optimize + pyaml (220К) | numpy, scipy, scikit-learn, joblib, packaging, pyyaml |
-| **pytz** | time | library | pytz (500К) | — |
-| **joblib** | parallel, caching | library | joblib (172К) | — |
-| **dill** | serialization | library | dill (120К) | — |
-| **packaging** | util | library | packaging (100К) | — |
-| **setuptools** | util | library | setuptools (932К) | — |
-| **pyyaml** | serialization, util | library | pyyaml (112К) | — |
-| **six** | compat | library | six (12К) | — |
-| **decorator** | util | library | decorator (12К) | — |
+| Kit | tags | tier | runtime | артефакты | зависит от (общие киты) |
+|---|---|---|---|---|---|
+| **numpy** | math, core | **default** | pyodide | numpy (2.7М) | — |
+| **scipy** | math, core | **default** | pyodide | scipy (16М) | numpy |
+| **sympy** | math, symbolic | **default** | pyodide | sympy + mpmath + gmpy2 (4.7М) | — |
+| **biopython** | biology, sequences | library | pyodide | biopython (2.6М) | numpy |
+| **freesasa** | biology, structure | library | pyodide | freesasa (204К) | — |
+| **pyrodigal** | biology, genomics | library | pyodide | pyrodigal (744К) | — |
+| **dendropy** | biology, phylogenetics | library | pyodide | DendroPy (456К) | — |
+| **viennarna** | biology, rna | library | wasi | RNAfold.wasm (2.3М) | — |
+| **seqtk** | biology, sequences | **default** | wasi | seqtk.wasm (448К) | — |
+| **rdkit** | chemistry | library | **jswasm** | RDKit_minimal.cjs + .wasm (6.7М) | — |
+| **molmass** | chemistry, biology | library | pyodide | molmass (76К) | — |
+| **selfies** | chemistry, biology | library | pyodide | selfies (36К) | — |
+| **astropy** | physics, astronomy | library | pyodide | astropy + pyerfa + astropy_iers_data (7.9М) | numpy, packaging, pyyaml |
+| **iminuit** | physics, fitting | library | pyodide | iminuit (208К) | numpy |
+| **lmfit** | physics, fitting | library | pyodide | lmfit + asteval (120К) | numpy, scipy, uncertainties |
+| **pint** | physics, units | library | pyodide | pint + flexcache + flexparser + platformdirs + typing_extensions (412К) | — |
+| **scikit-fem** | physics, pde | library | pyodide | scikit_fem (172К) | numpy, scipy |
+| **findiff** | physics, math | library | pyodide | findiff (40К) | numpy, scipy |
+| **chaospy** | physics, uncertainty | library | pyodide | chaospy + numpoly (400К) | numpy, scipy |
+| **pywavelets** | physics, signal | library | pyodide | pywavelets (896К) | numpy |
+| **uncertainties** | physics, statistics | library | pyodide | uncertainties (60К) | — |
+| **pandas** | data-science, core | library | pyodide | pandas + python-dateutil (4.5М) | numpy, pytz |
+| **scikit-learn** | data-science, ml | library | pyodide | scikit_learn + threadpoolctl (5.4М) | numpy, scipy, joblib |
+| **networkx** | graphs, biology | library | pyodide | networkx (1.1М) | numpy, decorator, setuptools |
+| **emcee** | statistics, sampling | library | pyodide | emcee (48К) | numpy |
+| **dynesty** | statistics, sampling | library | pyodide | dynesty (104К) | numpy, scipy |
+| **salib** | statistics, uncertainty | library | pyodide | salib (80К) | numpy, scipy, pandas |
+| **deap** | statistics, optimization | library | pyodide | deap (92К) | numpy |
+| **scikit-optimize** | statistics, optimization | library | pyodide | scikit_optimize + pyaml (220К) | numpy, scipy, scikit-learn, joblib, packaging, pyyaml |
+| **pytz** | time | library | pyodide | pytz (500К) | — |
+| **joblib** | parallel, caching | library | pyodide | joblib (172К) | — |
+| **dill** | serialization | library | pyodide | dill (120К) | — |
+| **packaging** | util | library | pyodide | packaging (100К) | — |
+| **setuptools** | util | library | pyodide | setuptools (932К) | — |
+| **pyyaml** | serialization, util | library | pyodide | pyyaml (112К) | — |
+| **six** | compat | library | pyodide | six (12К) | — |
+| **decorator** | util | library | pyodide | decorator (12К) | — |
+| **gmp** | math | library | **jswasm** | gmp.cjs (~300К) | — |
+| **eigen** | math | library | **jswasm** | eigen.cjs (~1М) | — |
+| **geos** | math, graphs | library | **jswasm** | geos.mjs (~2.6М) | — |
+| **geodesy** | units | library | **jswasm** | index.js + geodesy-wasm.js + geodesy-wasm_bg.wasm | — |
+| **rapier2d** | physics | library | **jswasm** | rapier2d.cjs (~1.7М) | — |
+| **rapier3d** | physics | library | **jswasm** | rapier3d.cjs (~2.2М) | — |
 
 Последние 8 — **общие** киты (нужны 2+ другим): `pytz`, `joblib`, `dill`,
 `packaging`, `setuptools`, `pyyaml`, `six`, `decorator`. Полноценные: с
@@ -108,18 +114,16 @@ pyodide-киты — отдельная сущность, не Kit.
 
 ### Статус сборки (на 2026-06-08)
 
-**Собрано и проверено — 36 китов** (`npm test` + `npm run verify` зелёные):
+**Собрано и проверено — 43 кита** (`npm test` + `npm run verify` зелёные):
 - _Seed (4):_ numpy, scipy, sympy, seqtk.
 - _Batch-1 (18):_ pytz, packaging, joblib, dill, pyyaml, decorator, setuptools
   (7 общих) · biopython, pyrodigal, dendropy, molmass, selfies, viennarna
   (6 bio/chem) · pandas, astropy, scikit-learn, networkx, emcee (5 sci/data).
 - _Batch-2 (14):_ uncertainties, six, pint, findiff, pywavelets, iminuit,
   freesasa, scikit-fem, chaospy, dynesty, lmfit, salib, deap, scikit-optimize.
-
-**Ещё не собрано — 1 кит:** rdkit. `RDKit_minimal.wasm`+`.cjs` — это
-wasm32-**emscripten** с JS-glue (`initRDKitModule`), не вписывается ни в `wasi`
-(нет CLI через `node:wasi`), ни в `pyodide` (не `.whl`). Отложен до отдельного
-спека на третий runtime-трек.
+- _jswasm (7):_ rdkit (нормализован), gmp, eigen, geos (Emscripten); geodesy,
+  rapier2d, rapier3d (wasm-bindgen). Третий runtime-трек `jswasm` (callable WASM
+  с JS-glue загрузчиком) реализован; все 7 китов publish-ready.
 
 **Правка emcee (BR-005):** `emcee` зависит **только от numpy** — `dill` убран из
 зависимостей. Wheel METADATA содержит лишь `Requires-Dist: numpy`; `scipy`, `h5py`
@@ -163,11 +167,14 @@ scikit_optimize.
 **Общие deps (8) — собственный кит:**
 pytz, joblib, dill, packaging, setuptools, pyyaml, six, decorator.
 
-**Не-whl (3 ассета → 3 кита):**
-`RNAfold.wasm` → viennarna · `seqtk.wasm` → seqtk · `RDKit_minimal.wasm`+`.cjs` → rdkit.
+**Не-whl (9 ассетов → 9 китов):**
+`RNAfold.wasm` → viennarna · `seqtk.wasm` → seqtk · `RDKit_minimal.wasm`+`.cjs` → rdkit ·
+`gmp.cjs` → gmp · `eigen.cjs` → eigen · `geos.mjs` → geos ·
+`index.js`+`geodesy-wasm.js`+`geodesy-wasm_bg.wasm` → geodesy ·
+`rapier2d.cjs` → rapier2d · `rapier3d.cjs` → rapier3d.
 
 Сверка: 26 + 13 + 8 = **47 whl** ✓ (было 48; `networkx` 3.4.2 убрал `pyparsing`)
-+ 2 wasi + rdkit.
++ 2 wasi + 7 jswasm.
 
 ---
 
@@ -177,7 +184,7 @@ pytz, joblib, dill, packaging, setuptools, pyyaml, six, decorator.
 |---|---|---|
 | Инфраструктура (не кит) | движок Pyodide + WASI-рантайм | ~13.7М |
 | **Default** (4 кита) | `numpy` + `scipy` + `sympy`(+mpmath+gmpy2) + `seqtk`(wasi) | ~23.8М → с движком **~37М** |
-| **Library** | 26 капабилити + 7 общих, по требованию | **~37М** |
+| **Library** | 26 капабилити + 7 общих + 7 jswasm, по требованию | **~45М** |
 
 **Было ~74 МБ в npm → default ~37 МБ**, остальное приезжает китами через Library.
 

@@ -1,0 +1,33 @@
+{
+	"id": "gmp",
+	"version": "1.3.2-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "gmp-wasm",
+		"repo": "https://github.com/Daninet/gmp-wasm",
+		"ref": "v1.3.2",
+		"license": "LGPL-3.0-only",
+		"buildNote": "Single-threaded Emscripten build; wasm base64-inlined in loader"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/gmp.cjs",
+			"sha256": "c2ecb012b8be95aa8981a75220f4057b8564d2c00596b1372f36bafa7c046a0e",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/gmp@1.3.2-1.0.0/gmp.cjs",
+			"role": "loader"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/gmp.cjs",
+		"moduleSystem": "cjs",
+		"initStyle": "factory",
+		"wasmSupply": "auto",
+		"initExport": "init"
+	},
+	"dependencies": []
+}

@@ -1,0 +1,32 @@
+{
+	"id": "geos",
+	"version": "3.1.1-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"graphs"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "geos-wasm",
+		"repo": "https://github.com/chrispahm/geos-wasm",
+		"ref": "v3.1.1",
+		"license": "LGPL-3.0-or-later",
+		"buildNote": "Single-threaded Emscripten build; wasm base64-inlined in loader"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/geos.mjs",
+			"sha256": "b04ef48ab717ad3653f7405a9b8733ee7d35b215c9def3f06ee393b67fc2e512",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/geos@3.1.1-1.0.0/geos.mjs",
+			"role": "loader"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/geos.mjs",
+		"moduleSystem": "esm",
+		"initStyle": "factory",
+		"wasmSupply": "auto"
+	},
+	"dependencies": []
+}

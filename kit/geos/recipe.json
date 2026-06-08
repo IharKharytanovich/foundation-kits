@@ -1,0 +1,16 @@
+{
+	"kit": "geos",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "geos-wasm",
+		"version": "3.1.1"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/geos.mjs",
+			"url": "https://cdn.jsdelivr.net/npm/geos-wasm@3.1.1/build/package/geos.esm.js",
+			"sha256": "b04ef48ab717ad3653f7405a9b8733ee7d35b215c9def3f06ee393b67fc2e512"
+		}
+	]
+}

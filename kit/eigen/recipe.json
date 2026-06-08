@@ -1,0 +1,16 @@
+{
+	"kit": "eigen",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "eigen",
+		"version": "0.2.2"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/eigen.cjs",
+			"url": "https://cdn.jsdelivr.net/npm/eigen@0.2.2/dist/index.js",
+			"sha256": "77128bdb6a9e0d07c3439fb8a0e4def1a151f20e60f30f32dae47f1d5a502251"
+		}
+	]
+}

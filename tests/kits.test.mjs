@@ -17,10 +17,15 @@ const KNOWN_36 = [
   'setuptools', 'six', 'sympy', 'uncertainties', 'viennarna',
 ]
 
+const KNOWN_JSWASM = [
+  'eigen', 'geodesy', 'geos', 'gmp', 'rapier2d', 'rapier3d', 'rdkit',
+]
+
 describe('seed kits', () => {
-  it('kit dirs are all within the known 36 and include the seeds', () => {
+  it('kit dirs are all within the known sets and include the seeds', () => {
     expect(new Set(KNOWN_36).size).toBe(36)
-    expect(kitIds.every((id) => KNOWN_36.includes(id))).toBe(true)
+    expect(new Set(KNOWN_JSWASM).size).toBe(7)
+    expect(kitIds.every((id) => KNOWN_36.includes(id) || KNOWN_JSWASM.includes(id))).toBe(true)
     expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })
 
