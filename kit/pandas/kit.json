@@ -18,12 +18,12 @@
 		{
 			"file": "artifacts/pandas-2.3.3-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
 			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/pandas@2.3.3/pandas-2.3.3-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pandas@2.3.3/pandas-2.3.3-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		},
 		{
 			"file": "artifacts/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
 			"sha256": "1fe3a0346ef21bc85b295227256d6aed72aa8116178b019fc5ae5d57fbd213cf",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/pandas@2.3.3/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pandas@2.3.3/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
 		}
 	],
 	"dependencies": [

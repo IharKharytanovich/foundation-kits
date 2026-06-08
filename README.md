@@ -1,4 +1,4 @@
-# foundation-kids
+# foundation-kits
 
 The **kit factory** for [Foundation](https://github.com/) — authors, builds,
 verifies, and publishes **Kits**: portable, sandbox-executable scientific

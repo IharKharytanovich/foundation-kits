@@ -18,7 +18,7 @@
 		{
 			"file": "artifacts/selfies-2.2.0-py3-none-any.whl",
 			"sha256": "8b80796832c0b2f33e63d4fa1617ca541338c57b463a4d06cda3da510506ff73",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/selfies@2.2.0/selfies-2.2.0-py3-none-any.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/selfies@2.2.0/selfies-2.2.0-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

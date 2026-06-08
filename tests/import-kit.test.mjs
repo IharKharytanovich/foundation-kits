@@ -64,7 +64,7 @@ describe('importKit', () => {
 
 		// Verify distribution url is stamped
 		expect(kit.artifacts[0].url).toBe(
-			`https://github.com/IharKharytanovich/foundation-kids/releases/download/fakelib@1.0.0/${vendorFile}`,
+			`https://github.com/IharKharytanovich/foundation-kits/releases/download/fakelib@1.0.0/${vendorFile}`,
 		)
 
 		// Verify kit.json fields

@@ -28,7 +28,7 @@
 				"mergepe",
 				"trimfq"
 			],
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/seqtk@1.5-r133/seqtk.wasm"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/seqtk@1.5-r133/seqtk.wasm"
 		}
 	],
 	"dependencies": []

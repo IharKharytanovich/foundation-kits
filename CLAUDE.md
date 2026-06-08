@@ -1,4 +1,4 @@
-# foundation-kids — agent guide
+# foundation-kits — agent guide
 
 This repo is the **kit factory**: it authors, builds, verifies, and publishes
 **Kits** — portable, sandbox-executable scientific capabilities consumed by the

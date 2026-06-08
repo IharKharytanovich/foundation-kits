@@ -18,7 +18,7 @@
 		{
 			"file": "artifacts/biopython-1.85-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
 			"sha256": "561c00232e549c0c22826fb9abf327a7e32f730172e684b5334a702108f86bad",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/biopython@1.85/biopython-1.85-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/biopython@1.85/biopython-1.85-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		}
 	],
 	"dependencies": [

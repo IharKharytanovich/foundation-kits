@@ -24,7 +24,7 @@
 			],
 			"multiplexed": false,
 			"stdinAsFile": false,
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/viennarna@2.7.2/RNAfold.wasm"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/viennarna@2.7.2/RNAfold.wasm"
 		}
 	],
 	"dependencies": []

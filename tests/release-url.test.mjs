@@ -20,7 +20,7 @@ describe('artifactUrl', () => {
     )
   })
 
-  it('RELEASE_BASE is the foundation-kids releases endpoint', () => {
-    expect(RELEASE_BASE).toMatch(/^https:\/\/github\.com\/.+\/foundation-kids\/releases\/download$/)
+  it('RELEASE_BASE is the foundation-kits releases endpoint', () => {
+    expect(RELEASE_BASE).toMatch(/^https:\/\/github\.com\/.+\/foundation-kits\/releases\/download$/)
   })
 })

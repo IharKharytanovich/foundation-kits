@@ -18,12 +18,12 @@
 		{
 			"file": "artifacts/scikit_learn-1.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
 			"sha256": "5dd1611a1ee57147a4387e56499bb1def407919ef452efb50beb5229dbe4a3db",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/scikit-learn@1.7.0/scikit_learn-1.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-learn@1.7.0/scikit_learn-1.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
 		},
 		{
 			"file": "artifacts/threadpoolctl-3.5.0-py3-none-any.whl",
 			"sha256": "0d768335eaa50416503e8e5c2c8a51eb96fc9b1c051f02be30bf694707d9a981",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/scikit-learn@1.7.0/threadpoolctl-3.5.0-py3-none-any.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-learn@1.7.0/threadpoolctl-3.5.0-py3-none-any.whl"
 		}
 	],
 	"dependencies": [

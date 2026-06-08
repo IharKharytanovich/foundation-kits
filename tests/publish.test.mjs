@@ -151,7 +151,7 @@ describe('preflight', () => {
   it('fails when the stored url does not match the id@version/file it resolves to', async () => {
     writeKit('wrongurl', {
       version: '1.0.0',
-      url: 'https://github.com/IharKharytanovich/foundation-kids/releases/download/wrongurl@9.9.9/wrongurl.whl',
+      url: 'https://github.com/IharKharytanovich/foundation-kits/releases/download/wrongurl@9.9.9/wrongurl.whl',
     })
     const r = await preflight('wrongurl', '1.0.0', { root: TMP_ROOT })
     expect(r.ok).toBe(false)

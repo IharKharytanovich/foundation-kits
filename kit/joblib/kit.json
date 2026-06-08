@@ -18,7 +18,7 @@
 		{
 			"file": "artifacts/joblib-1.4.2-py3-none-any.whl",
 			"sha256": "f07902625672ca0d92e979870ff501e4138589ff3b2b734680d07863676f9996",
-			"url": "https://github.com/IharKharytanovich/foundation-kids/releases/download/joblib@1.4.2/joblib-1.4.2-py3-none-any.whl"
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/joblib@1.4.2/joblib-1.4.2-py3-none-any.whl"
 		}
 	],
 	"dependencies": []

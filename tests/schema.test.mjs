@@ -24,7 +24,7 @@ describe('KitJsonSchema', () => {
   it('accepts an artifact carrying a distribution url', () => {
     const withUrl = { ...valid, artifacts: [{
       file: 'artifacts/numpy.whl', sha256: 'a'.repeat(64),
-      url: 'https://github.com/org/foundation-kids/releases/download/numpy@2.2.5/numpy.whl',
+      url: 'https://github.com/org/foundation-kits/releases/download/numpy@2.2.5/numpy.whl',
     }] }
     expect(KitJsonSchema.safeParse(withUrl).success).toBe(true)
   })
