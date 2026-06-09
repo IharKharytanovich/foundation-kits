@@ -1,0 +1,11 @@
+{
+	"kit": "mendeleev",
+	"mode": "loose",
+	"imports": [
+		"mendeleev"
+	],
+	"golden": {
+		"code": "from mendeleev import element; str(element('Fe').atomic_weight)",
+		"expect": "55.845"
+	}
+}

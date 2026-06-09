@@ -19,6 +19,7 @@ export const REDISTRIBUTABLE = new Set([
   'Python-2.0',
   'CC0-1.0',
   'Unlicense',
+  'PublicDomain',
   'LGPL-2.1-only', 'LGPL-2.1-or-later', 'LGPL-3.0-only', 'LGPL-3.0-or-later',
   'GPL-2.0-only', 'GPL-2.0-or-later', 'GPL-3.0-only', 'GPL-3.0-or-later',
   'Biopython',

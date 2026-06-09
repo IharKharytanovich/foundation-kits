@@ -1,0 +1,11 @@
+{
+	"kit": "chempy",
+	"mode": "loose",
+	"imports": [
+		"chempy"
+	],
+	"golden": {
+		"code": "from chempy import balance_stoichiometry; r,p=balance_stoichiometry({'C2H6','O2'},{'CO2','H2O'}); str(dict(sorted(r.items())))+' -> '+str(dict(sorted(p.items())))",
+		"expect": "{'C2H6': 2, 'O2': 7} -> {'CO2': 4, 'H2O': 6}"
+	}
+}

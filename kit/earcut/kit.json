@@ -1,0 +1,31 @@
+{
+	"id": "earcut",
+	"version": "1.1.5",
+	"runtime": "pyodide",
+	"tags": [
+		"math",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/vojtatom/earcut-python",
+		"ref": "v1.1.5",
+		"license": "ISC"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/earcut-1.1.5-py3-none-any.whl",
+			"sha256": "38351ce7d885f0bab2bdce50c5e4c3b3c6d4c148ff63cd2e65a7caad34c0bfdf",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/earcut@1.1.5/earcut-1.1.5-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

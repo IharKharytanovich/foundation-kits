@@ -1,0 +1,11 @@
+{
+	"kit": "thermo",
+	"mode": "loose",
+	"imports": [
+		"thermo"
+	],
+	"golden": {
+		"code": "from thermo import Chemical; c = Chemical('water', T=300, P=101325); '%.6f' % c.Cp",
+		"expect": "4180.633831"
+	}
+}

@@ -297,11 +297,11 @@ describe('vendorJsWasm', () => {
 })
 
 describe('JSWASM_KITS descriptors', () => {
-	it('has 6 descriptors with valid fields and loader enums', async () => {
+	it('has 7 descriptors with valid fields and loader enums', async () => {
 		const { JSWASM_KITS } = await import('../tooling/jswasm-vendor-data.mjs')
-		expect(JSWASM_KITS).toHaveLength(6)
+		expect(JSWASM_KITS).toHaveLength(7)
 
-		const expectedIds = ['gmp', 'eigen', 'geos', 'geodesy', 'rapier2d', 'rapier3d']
+		const expectedIds = ['gmp', 'eigen', 'geos', 'geodesy', 'rapier2d', 'rapier3d', 'highs-js']
 		expect(JSWASM_KITS.map((d) => d.id).sort()).toEqual(expectedIds.sort())
 
 		for (const desc of JSWASM_KITS) {

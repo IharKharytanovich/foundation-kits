@@ -1,0 +1,11 @@
+{
+	"kit": "periodictable",
+	"mode": "loose",
+	"imports": [
+		"periodictable"
+	],
+	"golden": {
+		"code": "import periodictable; '%.4f'%periodictable.Fe.mass",
+		"expect": "55.8450"
+	}
+}

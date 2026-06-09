@@ -1,0 +1,8 @@
+{
+	"kit": "earcut",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/d8/cd/47b84c0381bb13c3d76f68a49d5c16c7aecda29adebb34fa38730315abd7/earcut-1.1.5.tar.gz",
+		"sha256": "38351ce7d885f0bab2bdce50c5e4c3b3c6d4c148ff63cd2e65a7caad34c0bfdf"
+	}
+}

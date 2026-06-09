@@ -1,0 +1,45 @@
+{
+	"id": "mendeleev",
+	"version": "1.1.0",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/lmmentel/mendeleev",
+		"ref": "v1.1.0",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/mendeleev-1.1.0-py3-none-any.whl",
+			"sha256": "be3f3468d444ba30d0db6eff3b0660a76637b6f34177a7c18860592fcb718a47",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/mendeleev@1.1.0/mendeleev-1.1.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "319717228313f2787bc380138a7c5f1054f8996bd1582d12730062fb4408751e",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/mendeleev@1.1.0/sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "42190f892f6219350c50e107954f57cb6196acac818fece4a7d21689c94f71de",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/mendeleev@1.1.0/typing_extensions-4.15.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		}
+	]
+}

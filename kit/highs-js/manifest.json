@@ -1,0 +1,10 @@
+{
+	"kit": "highs-js",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const sol = handle.solve('Maximize\\n obj: x1 + 2 x2 + 4 x3 + x4\\nSubject To\\n c1: - x1 + x2 + x3 + 10 x4 <= 20\\n c2: x1 - 4 x2 + x3 <= 30\\n c3: x2 - 0.5 x4 = 0\\nBounds\\n 0 <= x1 <= 40\\n 2 <= x4 <= 3\\nEnd'); return sol.Status + ':' + sol.ObjectiveValue;",
+		"expect": "Optimal:87.5"
+	}
+}

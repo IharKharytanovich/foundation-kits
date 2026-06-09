@@ -1,0 +1,39 @@
+{
+	"id": "highs-js",
+	"version": "1.14.2-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"optimization",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "highs",
+		"repo": "https://github.com/lovasoa/highs-js",
+		"ref": "v1.14.2",
+		"license": "MIT",
+		"buildNote": "Single-threaded Emscripten build (no pthreads/SAB/Worker)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/highs.js",
+			"sha256": "402c5cd19913b7546e3c6b3014206707cf9d7990b3d4ddcf3a8dad5abdc4483d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/highs-js@1.14.2-1.0.0/highs.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/highs.wasm",
+			"sha256": "4ffc5d827821d9486e8c8c94a797df5d101281b06bec417e4c79ce41f96a9df9",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/highs-js@1.14.2-1.0.0/highs.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/highs.js",
+		"moduleSystem": "cjs",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

@@ -1,0 +1,20 @@
+{
+	"kit": "mendeleev",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/a9/d3/c94840c7e282c18979513ac257d5099efb0a4149df933d132d75d9229158/mendeleev-1.1.0-py3-none-any.whl",
+		"sha256": "be3f3468d444ba30d0db6eff3b0660a76637b6f34177a7c18860592fcb718a47"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "319717228313f2787bc380138a7c5f1054f8996bd1582d12730062fb4408751e"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "42190f892f6219350c50e107954f57cb6196acac818fece4a7d21689c94f71de"
+		}
+	]
+}

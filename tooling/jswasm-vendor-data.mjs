@@ -205,4 +205,37 @@ export const JSWASM_KITS = [
 		],
 		dependencies: [],
 	},
+
+	// ── Emscripten kits (batch-3) ──────────────────────────────────────────
+
+	{
+		id: 'highs-js',
+		version: '1.14.2-1.0.0',
+		family: 'emscripten',
+		tags: ['optimization', 'math'],
+		tier: 'library',
+		provenance: {
+			source: 'highs',
+			repo: 'https://github.com/lovasoa/highs-js',
+			ref: 'v1.14.2',
+			license: 'MIT',
+			buildNote: 'Single-threaded Emscripten build (no pthreads/SAB/Worker)',
+		},
+		loader: {
+			entry: 'artifacts/highs.js',
+			moduleSystem: 'cjs',
+			initStyle: 'factory',
+			wasmSupply: 'locateFile',
+		},
+		artifacts: [
+			{ vendor: 'highs.js', role: 'loader' },
+			{ vendor: 'highs.wasm', role: 'binary' },
+		],
+		source: { package: 'highs', version: '1.14.2' },
+		vendored: [
+			{ vendor: 'highs.js', url: 'https://cdn.jsdelivr.net/npm/highs@1.14.2/build/highs.js' },
+			{ vendor: 'highs.wasm', url: 'https://cdn.jsdelivr.net/npm/highs@1.14.2/build/highs.wasm' },
+		],
+		dependencies: [],
+	},
 ]

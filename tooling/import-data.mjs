@@ -901,4 +901,219 @@ export const KITS = [
 			expect: '0.10.2',
 		},
 	},
+
+	// ── batch-3 capability kits ────────────────────────────────────────────
+
+	{
+		id: 'periodictable',
+		runtime: 'pyodide',
+		version: '2.1.0',
+		tags: ['chemistry', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/python-periodictable/periodictable',
+			ref: 'v2.1.0',
+			license: 'PublicDomain',
+			buildNote: 'Public domain except cromerman.py which is BSD-3-Clause',
+		},
+		importName: 'periodictable',
+		artifacts: [
+			{ vendor: 'periodictable-2.1.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/44/0d/f494a2ec62ab56ffd44da4f236db374421fe0cd1e39d9ebc9785751eb432/periodictable-2.1.0-py3-none-any.whl' },
+			{ vendor: 'pyparsing-3.2.3-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		// Element lookup — deterministic physical constant (golden.md).
+		golden: {
+			code: "import periodictable; '%.4f'%periodictable.Fe.mass",
+			expect: '55.8450',
+		},
+	},
+
+	{
+		id: 'sgp4',
+		runtime: 'pyodide',
+		version: '2.25',
+		tags: ['astronomy', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/brandon-rhodes/python-sgp4',
+			ref: 'v2.25',
+			license: 'MIT',
+		},
+		importName: 'sgp4',
+		artifacts: [
+			{ vendor: 'sgp4-2.25-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/3a/47/8231e3d4a88341316ec8d0eb98d3a8a972477d8b038555259522735a8371/sgp4-2.25-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [],
+		// ISS TLE propagation — pure deterministic orbital mechanics (golden.md).
+		golden: {
+			code: "from sgp4.api import Satrec,WGS72,jday; s='1 25544U 98067A   19356.27756250  .00001029  00000-0  27858-4 0  9992'; t='2 25544  51.6430 178.1191 0007597  68.3804  18.1540 15.44074047202482'; sat=Satrec.twoline2rv(s,t,WGS72); e,r,v=sat.sgp4(*jday(2019,12,20,12,0,0)); '%.4f, %.4f, %.4f'%(r[0],r[1],r[2])",
+			expect: '-1570.5335, 4022.6890, -5279.8660',
+		},
+	},
+
+	{
+		id: 'earcut',
+		runtime: 'pyodide',
+		version: '1.1.5',
+		tags: ['math', 'structure'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/vojtatom/earcut-python',
+			ref: 'v1.1.5',
+			license: 'ISC',
+		},
+		importName: 'earcut',
+		artifacts: [
+			// Built from sdist (no published wheel); sourceUrl points at the sdist for provenance.
+			{ vendor: 'earcut-1.1.5-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/d8/cd/47b84c0381bb13c3d76f68a49d5c16c7aecda29adebb34fa38730315abd7/earcut-1.1.5.tar.gz' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		// Polygon triangulation — verified deterministic output (golden.md).
+		golden: {
+			code: "from earcut.earcut import earcut; str(earcut([0,0,1,0,1,1,0,1]))",
+			expect: '[2, 3, 0, 0, 1, 2]',
+		},
+	},
+
+	{
+		id: 'autograd',
+		runtime: 'pyodide',
+		version: '1.8.0',
+		tags: ['math', 'optimization'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/HIPS/autograd',
+			ref: 'v1.8.0',
+			license: 'MIT',
+		},
+		importName: 'autograd',
+		artifacts: [
+			{ vendor: 'autograd-1.8.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/84/ea/e16f0c423f7d83cf8b79cae9452040fb7b2e020c7439a167ee7c317de448/autograd-1.8.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		// Reverse-mode AD — grad of x³ at x=2 is 3·4=12 (golden.md).
+		golden: {
+			code: "from autograd import grad; str(grad(lambda x: x**3)(2.0))",
+			expect: '12.0',
+		},
+	},
+
+	{
+		id: 'thermo',
+		runtime: 'pyodide',
+		version: '0.6.0',
+		tags: ['chemistry', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/CalebBell/thermo',
+			ref: 'v0.6.0',
+			license: 'MIT',
+		},
+		importName: 'thermo',
+		artifacts: [
+			{ vendor: 'thermo-0.6.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/8e/bb/37c92edbeb224c54572c7bb486acd7cb0970303e02bf03dacca4a0d74be1/thermo-0.6.0-py3-none-any.whl' },
+			{ vendor: 'fluids-1.3.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/a4/54/b1a42925983c900e436a5b646f301d5e3e7ffb47a2db240d9dbbe0cd7c21/fluids-1.3.0-py3-none-any.whl' },
+			{ vendor: 'chemicals-1.5.2-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/22/f5/59eea489c5faf02e651744057bb93d89aacf6c3c3f404abbc4217b7ceae1/chemicals-1.5.2-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'pandas', version: '2.3.3', sha256: SHA_PANDAS },
+		],
+		// Water heat capacity at 300 K — deterministic thermodynamic property (golden.md).
+		golden: {
+			code: "from thermo import Chemical; c = Chemical('water', T=300, P=101325); '%.6f' % c.Cp",
+			expect: '4180.633831',
+		},
+	},
+
+	{
+		id: 'chempy',
+		runtime: 'pyodide',
+		version: '0.10.1',
+		tags: ['chemistry'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/bjodah/chempy',
+			ref: 'v0.10.1',
+			license: 'BSD-2-Clause',
+		},
+		importName: 'chempy',
+		artifacts: [
+			{ vendor: 'chempy-0.10.1-py2.py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/2e/2f/150990a9106175457f5cefe43bedc7f73c0a535bc783e8043252e941ceee/chempy-0.10.1-py2.py3-none-any.whl' },
+			{ vendor: 'pyparsing-3.2.3-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'sympy', version: '1.13.3', sha256: SHA_SYMPY },
+		],
+		// Ethane combustion balance — deterministic stoichiometry (golden.md).
+		golden: {
+			code: "from chempy import balance_stoichiometry; r,p=balance_stoichiometry({'C2H6','O2'},{'CO2','H2O'}); str(dict(sorted(r.items())))+' -> '+str(dict(sorted(p.items())))",
+			expect: "{'C2H6': 2, 'O2': 7} -> {'CO2': 4, 'H2O': 6}",
+		},
+	},
+
+	{
+		id: 'mendeleev',
+		runtime: 'pyodide',
+		version: '1.1.0',
+		tags: ['chemistry'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/lmmentel/mendeleev',
+			ref: 'v1.1.0',
+			license: 'MIT',
+		},
+		importName: 'mendeleev',
+		artifacts: [
+			{ vendor: 'mendeleev-1.1.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/a9/d3/c94840c7e282c18979513ac257d5099efb0a4149df933d132d75d9229158/mendeleev-1.1.0-py3-none-any.whl' },
+			{ vendor: 'sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl', bundled: true,
+			  sourceUrl: 'https://cdn.jsdelivr.net/pyodide/v0.29.4/full/sqlalchemy-2.0.39-cp313-cp313-pyemscripten_2025_0_wasm32.whl' },
+			{ vendor: 'typing_extensions-4.15.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://cdn.jsdelivr.net/pyodide/v0.29.4/full/typing_extensions-4.15.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'pandas', version: '2.3.3', sha256: SHA_PANDAS },
+		],
+		// Iron atomic weight from bundled SQLite DB — deterministic lookup (golden.md).
+		golden: {
+			code: "from mendeleev import element; str(element('Fe').atomic_weight)",
+			expect: '55.845',
+		},
+	},
 ]

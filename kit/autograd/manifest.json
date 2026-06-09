@@ -1,0 +1,11 @@
+{
+	"kit": "autograd",
+	"mode": "loose",
+	"imports": [
+		"autograd"
+	],
+	"golden": {
+		"code": "from autograd import grad; str(grad(lambda x: x**3)(2.0))",
+		"expect": "12.0"
+	}
+}

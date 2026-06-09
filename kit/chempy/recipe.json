@@ -1,0 +1,15 @@
+{
+	"kit": "chempy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/2e/2f/150990a9106175457f5cefe43bedc7f73c0a535bc783e8043252e941ceee/chempy-0.10.1-py2.py3-none-any.whl",
+		"sha256": "0ac84d10a1d823e3114f45d11ee713937006d161b019d8f4479f5f243347a75d"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/pyparsing-3.2.3-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/05/e7/df2285f3d08fee213f2d041540fa4fc9ca6c2d44cf36d3a035bf2a8d2bcc/pyparsing-3.2.3-py3-none-any.whl",
+			"sha256": "a749938e02d6fd0b59b356ca504a24982314bb090c383e3cf201c95ef7e2bfcf"
+		}
+	]
+}

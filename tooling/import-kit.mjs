@@ -33,7 +33,7 @@ export async function importKit(descriptor, { vendorRoot = 'temp/vendor', root =
 		const dest = join(dir, 'artifacts', art.vendor)
 		copyFileSync(src, dest)
 		const sha256 = await sha256File(dest)
-		artifactRecords.push({ vendor: art.vendor, sha256, bundled: !!art.bundled })
+		artifactRecords.push({ vendor: art.vendor, sha256, bundled: !!art.bundled, sourceUrl: art.sourceUrl })
 	}
 
 	const mainArt = artifactRecords[0]
@@ -77,12 +77,12 @@ export async function importKit(descriptor, { vendorRoot = 'temp/vendor', root =
 		recipeJson = {
 			kit: id,
 			track: 'pypi-vendor',
-			source: { url: descriptor.recipeBase + mainArt.vendor, sha256: mainArt.sha256 },
+			source: { url: mainArt.sourceUrl ?? (descriptor.recipeBase + mainArt.vendor), sha256: mainArt.sha256 },
 		}
 		if (bundledArts.length > 0) {
 			recipeJson.bundled = bundledArts.map((a) => ({
 				file: `artifacts/${a.vendor}`,
-				url: descriptor.recipeBase + a.vendor,
+				url: a.sourceUrl ?? (descriptor.recipeBase + a.vendor),
 				sha256: a.sha256,
 			}))
 		}

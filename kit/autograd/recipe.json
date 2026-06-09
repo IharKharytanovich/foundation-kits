@@ -1,0 +1,8 @@
+{
+	"kit": "autograd",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/84/ea/e16f0c423f7d83cf8b79cae9452040fb7b2e020c7439a167ee7c317de448/autograd-1.8.0-py3-none-any.whl",
+		"sha256": "4ab9084294f814cf56c280adbe19612546a35574d67c574b04933c7d2ecb7d78"
+	}
+}

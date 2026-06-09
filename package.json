@@ -11,7 +11,8 @@
     "verify": "vitest run tests/kits.test.mjs",
     "license-gate": "node tooling/license-gate.mjs",
     "publish-kit": "node tooling/publish.mjs",
-    "backfill-urls": "node tooling/backfill-urls.mjs"
+    "backfill-urls": "node tooling/backfill-urls.mjs",
+    "fetch-vendor": "node tooling/fetch-vendor.mjs"
   },
   "dependencies": {
     "zod": "^3.23.8"

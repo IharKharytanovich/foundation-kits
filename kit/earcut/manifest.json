@@ -1,0 +1,11 @@
+{
+	"kit": "earcut",
+	"mode": "loose",
+	"imports": [
+		"earcut"
+	],
+	"golden": {
+		"code": "from earcut.earcut import earcut; str(earcut([0,0,1,0,1,1,0,1]))",
+		"expect": "[2, 3, 0, 0, 1, 2]"
+	}
+}

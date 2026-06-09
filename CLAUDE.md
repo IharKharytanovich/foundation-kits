@@ -95,4 +95,4 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
   loader, families, vendor workflow).
 - Workflows: [.claude/skills/](.claude/skills/) — `add-kit`, `verify-kit`, `publish-kit`
 - Large multi-kit work (e.g. batch-importing kits): `spec-writer` +
-  `spec-executor` + the orchestrator. 43 kits built (36 wasi/pyodide + 7 jswasm).
+  `spec-executor` + the orchestrator. 51 kits built (43 wasi/pyodide + 8 jswasm).

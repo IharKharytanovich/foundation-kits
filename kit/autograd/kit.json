@@ -1,0 +1,31 @@
+{
+	"id": "autograd",
+	"version": "1.8.0",
+	"runtime": "pyodide",
+	"tags": [
+		"math",
+		"optimization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/HIPS/autograd",
+		"ref": "v1.8.0",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/autograd-1.8.0-py3-none-any.whl",
+			"sha256": "4ab9084294f814cf56c280adbe19612546a35574d67c574b04933c7d2ecb7d78",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/autograd@1.8.0/autograd-1.8.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

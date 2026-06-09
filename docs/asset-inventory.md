@@ -54,7 +54,7 @@ pyodide-киты — отдельная сущность, не Kit.
 
 ---
 
-## 4. Все киты (43) — единая таблица
+## 4. Все киты (51) — единая таблица
 
 > У каждого: `instruction.md` (проза) + `kit.json` (метаданные) + `manifest.json`
 > (вызываемая поверхность: операции/params + golden).
@@ -105,6 +105,14 @@ pyodide-киты — отдельная сущность, не Kit.
 | **geodesy** | units | library | **jswasm** | index.js + geodesy-wasm.js + geodesy-wasm_bg.wasm | — |
 | **rapier2d** | physics | library | **jswasm** | rapier2d.cjs (~1.7М) | — |
 | **rapier3d** | physics | library | **jswasm** | rapier3d.cjs (~2.2М) | — |
+| **periodictable** | chemistry, physics | library | pyodide | periodictable + pyparsing (172К) | numpy |
+| **sgp4** | astronomy, physics | library | pyodide | sgp4 (164К) | — |
+| **earcut** | math, structure | library | pyodide | earcut (12К) | numpy |
+| **autograd** | math, optimization | library | pyodide | autograd (48К) | numpy |
+| **chempy** | chemistry | library | pyodide | chempy + pyparsing (216К) | numpy, scipy, sympy |
+| **thermo** | chemistry, physics | library | pyodide | thermo + fluids + chemicals (3.6М) | numpy, scipy, pandas |
+| **mendeleev** | chemistry | library | pyodide | mendeleev + sqlalchemy + typing_extensions (3.3М) | numpy, pandas |
+| **highs-js** | optimization, math | library | **jswasm** | highs.js + highs.wasm (~3М) | — |
 
 Последние 8 — **общие** киты (нужны 2+ другим): `pytz`, `joblib`, `dill`,
 `packaging`, `setuptools`, `pyyaml`, `six`, `decorator`. Полноценные: с
@@ -112,18 +120,21 @@ pyodide-киты — отдельная сущность, не Kit.
 параллелизм, сериализация) и манифестом; привязываются явно как любой другой.
 `pyyaml` стал общим в этом батче (потребители: `astropy` + `scikit-optimize`).
 
-### Статус сборки (на 2026-06-08)
+### Статус сборки (на 2026-06-09)
 
-**Собрано и проверено — 43 кита** (`npm test` + `npm run verify` зелёные):
+**Собрано и проверено — 51 кит** (`npm test` + `npm run verify` зелёные):
 - _Seed (4):_ numpy, scipy, sympy, seqtk.
 - _Batch-1 (18):_ pytz, packaging, joblib, dill, pyyaml, decorator, setuptools
   (7 общих) · biopython, pyrodigal, dendropy, molmass, selfies, viennarna
   (6 bio/chem) · pandas, astropy, scikit-learn, networkx, emcee (5 sci/data).
 - _Batch-2 (14):_ uncertainties, six, pint, findiff, pywavelets, iminuit,
   freesasa, scikit-fem, chaospy, dynesty, lmfit, salib, deap, scikit-optimize.
-- _jswasm (7):_ rdkit (нормализован), gmp, eigen, geos (Emscripten); geodesy,
-  rapier2d, rapier3d (wasm-bindgen). Третий runtime-трек `jswasm` (callable WASM
-  с JS-glue загрузчиком) реализован; все 7 китов publish-ready.
+- _Batch-3 (7 pyodide):_ periodictable, sgp4, earcut, autograd, chempy, thermo,
+  mendeleev. Turnkey (чистый Python / prebuilt whl); без in-house build.
+- _jswasm (8):_ rdkit (нормализован), gmp, eigen, geos (Emscripten); geodesy,
+  rapier2d, rapier3d (wasm-bindgen); highs-js (Emscripten, LP/MIP solver).
+  Третий runtime-трек `jswasm` (callable WASM с JS-glue загрузчиком) реализован;
+  все 8 китов publish-ready.
 
 **Правка emcee (BR-005):** `emcee` зависит **только от numpy** — `dill` убран из
 зависимостей. Wheel METADATA содержит лишь `Requires-Dist: numpy`; `scipy`, `h5py`
@@ -159,8 +170,14 @@ scikit_optimize.
 | python_dateutil | pandas |
 | threadpoolctl | scikit-learn |
 | pyaml | scikit-optimize |
+| pyparsing | periodictable |
+| pyparsing | chempy |
+| fluids, chemicals | thermo |
+| sqlalchemy, typing_extensions | mendeleev |
 
-`pyparsing` больше не bundled: `networkx` 3.4.2 убрал эту зависимость.
+`pyparsing` больше не bundled в `networkx` (3.4.2 убрал зависимость), но
+вбэндлен в `periodictable` и `chempy` (batch-3; каждый бэндлит свою копию,
+т.к. потребители не пересекаются по единственной зависимости).
 `future` больше не bundled: `salib` 1.5.2 убрал эту зависимость.
 `pyyaml` повышен из эксклюзивных в **общие** (его делят `astropy` + `scikit-optimize`).
 

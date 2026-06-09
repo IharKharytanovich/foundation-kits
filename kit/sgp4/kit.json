@@ -1,0 +1,25 @@
+{
+	"id": "sgp4",
+	"version": "2.25",
+	"runtime": "pyodide",
+	"tags": [
+		"astronomy",
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/brandon-rhodes/python-sgp4",
+		"ref": "v2.25",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/sgp4-2.25-py3-none-any.whl",
+			"sha256": "4f39ecf6c2663109fed04adfe9982815ac83893271b521d92d5b186820f8c78e",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/sgp4@2.25/sgp4-2.25-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

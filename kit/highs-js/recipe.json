@@ -1,0 +1,21 @@
+{
+	"kit": "highs-js",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "highs",
+		"version": "1.14.2"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/highs.js",
+			"url": "https://cdn.jsdelivr.net/npm/highs@1.14.2/build/highs.js",
+			"sha256": "402c5cd19913b7546e3c6b3014206707cf9d7990b3d4ddcf3a8dad5abdc4483d"
+		},
+		{
+			"file": "artifacts/highs.wasm",
+			"url": "https://cdn.jsdelivr.net/npm/highs@1.14.2/build/highs.wasm",
+			"sha256": "4ffc5d827821d9486e8c8c94a797df5d101281b06bec417e4c79ce41f96a9df9"
+		}
+	]
+}
