@@ -17,13 +17,37 @@
 	},
 	"artifacts": [
 		{
-			"file": "artifacts/RNAfold.wasm",
-			"sha256": "4c85a771085d8548556d917f6dbd69b25ad5a5aef6aebf5239e7b30a55416ef7",
-			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/viennarna@2.7.2/RNAfold.wasm",
+			"file": "artifacts/viennarna.wasm",
+			"sha256": "b28d751385c9ad1710cfbfa5207080298a1bfbc91d52615df6c4fc29c199ef6c",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/viennarna@2.7.2/viennarna.wasm",
 			"wasiTools": [
-				"RNAfold"
+				"RNA2Dfold",
+				"RNALalifold",
+				"RNALfold",
+				"RNAPKplex",
+				"RNAaliduplex",
+				"RNAalifold",
+				"RNAcofold",
+				"RNAdistance",
+				"RNAdos",
+				"RNAduplex",
+				"RNAeval",
+				"RNAfold",
+				"RNAheat",
+				"RNAinverse",
+				"RNAmultifold",
+				"RNApaln",
+				"RNAparconv",
+				"RNApdist",
+				"RNAplex",
+				"RNAplfold",
+				"RNAplot",
+				"RNApvmin",
+				"RNAsnoop",
+				"RNAsubopt",
+				"RNAup"
 			],
-			"multiplexed": false,
+			"multiplexed": true,
 			"stdinAsFile": false
 		}
 	],

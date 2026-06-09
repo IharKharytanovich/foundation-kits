@@ -22,7 +22,437 @@
 				"input": {
 					"sequence": "GGGAAACCC"
 				},
-				"expect": "GGGAAACCC\n(((...)))  ( -1.20)\n"
+				"expect": "GGGAAACCC\n(((...))) ( -1.20)\n"
+			}
+		},
+		{
+			"id": "subopt",
+			"summary": "Enumerate suboptimal structures within an energy range",
+			"tool": "RNAsubopt",
+			"params": {
+				"sequence": {
+					"type": "string"
+				},
+				"energy_range": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"-e",
+				"{energy_range}"
+			],
+			"output": {
+				"format": "header line + suboptimal dot-bracket structures with energies"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCC",
+					"energy_range": "1"
+				},
+				"expect": "GGGAAACCC  -1.20   1.00\n(((...)))  -1.20\n((....)).  -1.00\n"
+			}
+		},
+		{
+			"id": "cofold",
+			"summary": "MFE structure of two hybridizing RNA strands",
+			"tool": "RNAcofold",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [
+				"--noPS"
+			],
+			"output": {
+				"format": "dot-bracket + MFE (strands separated by &)"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGAAACCC&CCCAAAGGG"
+				},
+				"expect": "GGGAAACCC&CCCAAAGGG\n(((......&)))...... ( -5.30)\n"
+			}
+		},
+		{
+			"id": "eval",
+			"summary": "Evaluate free energy of a given RNA secondary structure",
+			"tool": "RNAeval",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [],
+			"output": {
+				"format": "sequence + dot-bracket with energy"
+			},
+			"golden": {
+				"input": {
+					"structure": "GGGAAACCC\n(((...)))"
+				},
+				"expect": "GGGAAACCC\n(((...))) ( -1.20)\n"
+			}
+		},
+		{
+			"id": "duplex",
+			"summary": "Predict hybridization structure between two RNA sequences",
+			"tool": "RNAduplex",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [],
+			"output": {
+				"format": "dot-bracket duplex + position range + energy"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGAAACCC\nCCCUUUGGG"
+				},
+				"expect": "(((.&))).   1,4   :   1,4   (-4.80)\n"
+			}
+		},
+		{
+			"id": "alifold",
+			"summary": "Consensus MFE structure from a sequence alignment",
+			"tool": "RNAalifold",
+			"params": {
+				"alignment": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "alignment",
+			"argsTemplate": [
+				"--noPS"
+			],
+			"output": {
+				"format": "consensus dot-bracket + MFE (energy = covariance + MFE)"
+			},
+			"golden": {
+				"input": {
+					"alignment": "CLUSTAL W\n\ns1    GGGAAACCC\ns2    GGGAAACCC"
+				},
+				"expect": "GGGAAACCC\n(((...))) ( -1.20 =  -1.20 +   0.00)\n"
+			}
+		},
+		{
+			"id": "up",
+			"summary": "RNA accessibility — probability of unpaired regions",
+			"tool": "RNAup",
+			"params": {
+				"sequence": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"--no_output_file"
+			],
+			"output": {
+				"format": "accessibility profile (position range, opening energy, unstructured length)"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCC"
+				},
+				"expect": "   3,   6 \t (0.478) \t for u=  4\n"
+			}
+		},
+		{
+			"id": "heat",
+			"summary": "Specific heat of an RNA as a function of temperature",
+			"tool": "RNAheat",
+			"params": {
+				"sequence": {
+					"type": "string"
+				},
+				"tmin": {
+					"type": "string"
+				},
+				"tmax": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"--Tmin",
+				"{tmin}",
+				"--Tmax",
+				"{tmax}"
+			],
+			"output": {
+				"format": "tab-separated temperature (°C) and specific heat (kcal/(mol·K)) pairs"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCC",
+					"tmin": "0",
+					"tmax": "5"
+				},
+				"expect": "0\t0.00571603\n1\t0.0062748\n2\t0.0068075\n3\t0.0074041\n4\t0.00803505\n5\t0.00882194\n"
+			}
+		},
+		{
+			"id": "distance",
+			"summary": "Distance between two RNA secondary structures",
+			"tool": "RNAdistance",
+			"params": {
+				"structures": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structures",
+			"argsTemplate": [],
+			"output": {
+				"format": "distance metric identifier and value"
+			},
+			"golden": {
+				"input": {
+					"structures": ".((..))..\n((...)).."
+				},
+				"expect": "f: 2  \n"
+			}
+		},
+		{
+			"id": "pdist",
+			"summary": "Ensemble base-pair probability distance between two RNA sequences",
+			"tool": "RNApdist",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [],
+			"output": {
+				"format": "ensemble distance value"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGAAACCC\nGGGAAAUCC"
+				},
+				"expect": "2.0018\n"
+			}
+		},
+		{
+			"id": "paln",
+			"summary": "Pairwise structural alignment of two RNA sequences",
+			"tool": "RNApaln",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [
+				"--printAlignment"
+			],
+			"output": {
+				"format": "alignment score followed by aligned sequences with predicted structures"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGGAAAACCCC\nGGGGAAAUCCCC"
+				},
+				"expect": "11.0271\nGGGGAAAACCCC\n((((....))))\nGGGGAAAUCCCC\n((((....))))\n"
+			}
+		},
+		{
+			"id": "plex",
+			"summary": "Fast RNA-RNA interaction prediction",
+			"tool": "RNAplex",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [],
+			"output": {
+				"format": "interaction structure (dot-bracket with &), position ranges, interaction energy, and accessibility info"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGAAACCC\nCCCUUUGGG"
+				},
+				"expect": "(((.&))).   1,4   :   1,4   (-4.80) i:3,j:1 <-4.60>\n\n"
+			}
+		},
+		{
+			"id": "lfold",
+			"summary": "Locally stable secondary structures in a long RNA (sliding window)",
+			"tool": "RNALfold",
+			"params": {
+				"sequence": {
+					"type": "string"
+				},
+				"window_size": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"-L",
+				"{window_size}"
+			],
+			"output": {
+				"format": "local structures with positions + global MFE"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCCGGGAAACCC",
+					"window_size": "15"
+				},
+				"expect": ".(((...))) ( -1.50)    9\n.((....)). ( -0.80)    1\n(((...))). ( -2.90)    1\nGGGAAACCCGGGAAACCC\n ( -4.40)\n"
+			}
+		},
+		{
+			"id": "lalifold",
+			"summary": "Locally stable consensus structures from an RNA alignment (sliding window)",
+			"tool": "RNALalifold",
+			"params": {
+				"alignment": {
+					"type": "string"
+				},
+				"window_size": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "alignment",
+			"argsTemplate": [
+				"-L",
+				"{window_size}"
+			],
+			"output": {
+				"format": "local consensus structures with position ranges"
+			},
+			"golden": {
+				"input": {
+					"alignment": "CLUSTAL W\n\ns1    GGGAAACCCGGGAAACCC\ns2    GGGAAACCCGGGAAACCC",
+					"window_size": "15"
+				},
+				"expect": ".(((...))) ( -1.50)    9 -   18\n(((...))). ( -2.90)    1 -   10\nGGGAAACCCGGGAAACCC\n"
+			}
+		},
+		{
+			"id": "pkplex",
+			"summary": "Pseudoknot prediction in RNA secondary structure",
+			"tool": "RNAPKplex",
+			"params": {
+				"sequence": {
+					"type": "string"
+				},
+				"energyCutoff": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [
+				"-e",
+				"{energyCutoff}"
+			],
+			"output": {
+				"format": "sequence + MFE structure with pseudoknot brackets ([])"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGGAAAACCCCUUUUGGGGAAAACCCC",
+					"energyCutoff": "0"
+				},
+				"expect": "GGGGAAAACCCCUUUUGGGGAAAACCCC\n((((....(((([[[[))))]]]])))) (-17.60)\n(((([[[[((((]]]]))))....)))) (-17.60)\n"
+			}
+		},
+		{
+			"id": "td2fold",
+			"summary": "2D projection of the RNA folding landscape relative to two reference structures",
+			"tool": "RNA2Dfold",
+			"params": {
+				"input": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "input",
+			"argsTemplate": [],
+			"output": {
+				"format": "reference structure info + tab-separated 2D energy landscape table"
+			},
+			"golden": {
+				"input": {
+					"input": "GGGAAACCC\n(((...)))\n(((...)))"
+				},
+				"expect": "GGGAAACCC\n(((...))) ( -1.20)\n(((...))) ( -1.20) <ref 1>\n(((...))) ( -1.20) <ref 2>\nk\tl\tMFE\tMFE-structure\n0\t0\t -1.20\t(((...)))\n1\t1\t  0.90\t((.....))\n2\t2\t  3.20\t.(.....).\n3\t3\t  0.00\t.........\n4\t4\t  2.10\t.(....)..\n5\t5\t -1.00\t((....)).\n"
+			}
+		},
+		{
+			"id": "dos",
+			"summary": "Density of states — count RNA structures per energy band",
+			"tool": "RNAdos",
+			"params": {
+				"sequence": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequence",
+			"argsTemplate": [],
+			"output": {
+				"format": "energy bands with counted structures"
+			},
+			"golden": {
+				"input": {
+					"sequence": "GGGAAACCC"
+				},
+				"expect": "Energy bands with counted structures:\n -1.20\t         1\n -1.00\t         1\n  0.00\t         1\n\n"
+			}
+		},
+		{
+			"id": "multifold",
+			"summary": "MFE structure of multiple interacting RNA strands",
+			"tool": "RNAmultifold",
+			"params": {
+				"sequences": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sequences",
+			"argsTemplate": [],
+			"output": {
+				"format": "dot-bracket + MFE (strands separated by &)"
+			},
+			"golden": {
+				"input": {
+					"sequences": "GGGAAACCC&CCCAAAGGG"
+				},
+				"expect": "GGGAAACCC&CCCAAAGGG\n(((......&)))...... ( -5.30)\n"
+			}
+		},
+		{
+			"id": "parconv",
+			"summary": "Convert energy parameter file from ViennaRNA 1.8.4 to 2.0 format",
+			"tool": "RNAparconv",
+			"params": {
+				"parameters": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "parameters",
+			"argsTemplate": [
+				"--vanilla",
+				"--silent"
+			],
+			"output": {
+				"format": "converted energy parameters in ViennaRNA 2.0 format"
+			},
+			"golden": {
+				"input": {
+					"parameters": "# stack_energies\n  -240  -330  -210  -140  -210  -210\n  -330  -340  -250  -150  -220  -240"
+				},
+				"expect": "## RNAfold parameter file v2.0\n\n# stack\n/*  CG    GC    GU    UG    AU    UA    @  */\n  -240  -330  -210  -140  -210  -210  -330\n  -330  -340  -250  -150  -220  -240     0\n  -210  -250   130   DEF  -140  -130     0\n  -140  -150   DEF    30   -60  -100     0\n  -210  -220  -140   -60  -110   -90     0\n  -210  -240  -130  -100   -90  -130     0\n     0     0     0     0     0     0     0\n\n# stack_enthalpies\n/*  CG    GC    GU    UG    AU    UA    @  */\n -1060 -1340 -1210  -560 -1050 -1040     0\n -1340 -1490 -1260  -830 -1140 -1240     0\n -1210 -1260 -1460 -1350  -880 -1280     0\n  -560  -830 -1350  -930  -320  -700     0\n -1050 -1140  -880  -320  -940  -680     0\n -1040 -1240 -1280  -700  -680  -770     0\n     0     0     0     0     0     0     0\n\n# END\n"
 			}
 		}
 	]

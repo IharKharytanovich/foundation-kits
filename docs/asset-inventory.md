@@ -13,7 +13,7 @@
 |---|---|---|
 | `bin/pyodide` | **65 МБ** | движок Pyodide + **48 `.whl`** |
 | `bin/rdkit` | 6.7 МБ | `RDKit_minimal.wasm` (6.6М) + `.cjs` (128К) |
-| `bin/wasm` | 2.8 МБ | `RNAfold.wasm` (2.3М) + `seqtk.wasm` (448К) + `LICENSE-ViennaRNA` |
+| `bin/wasm` | — | `viennarna.wasm` (multiplexed, pending build) + `seqtk.wasm` (448К) + `LICENSE-ViennaRNA` |
 
 ## 2. Инфраструктура — НЕ киты (всегда в бандле)
 
@@ -69,7 +69,7 @@ pyodide-киты — отдельная сущность, не Kit.
 | **freesasa** | biology, structure | library | pyodide | freesasa (204К) | — |
 | **pyrodigal** | biology, genomics | library | pyodide | pyrodigal (744К) | — |
 | **dendropy** | biology, phylogenetics | library | pyodide | DendroPy (456К) | — |
-| **viennarna** | biology, rna | library | wasi | RNAfold.wasm (2.3М) | — |
+| **viennarna** | biology, rna | library | wasi | viennarna.wasm (multiplexed, 25 tools, 19 ops, `verified:false`) | — |
 | **seqtk** | biology, sequences | **default** | wasi | seqtk.wasm (448К) | — |
 | **rdkit** | chemistry | library | **jswasm** | RDKit_minimal.cjs + .wasm (6.7М) | — |
 | **molmass** | chemistry, biology | library | pyodide | molmass (76К) | — |
@@ -136,6 +136,14 @@ pyodide-киты — отдельная сущность, не Kit.
   Третий runtime-трек `jswasm` (callable WASM с JS-glue загрузчиком) реализован;
   все 8 китов publish-ready.
 
+**viennarna — полная WASI-сборка (in progress):** `viennarna` расширен до
+мультиплексированного `viennarna.wasm` (25 инструментов, 19 операций в
+манифесте, 6 отложены; ранее — один инструмент). Первый `build/wasi/`
+тулчейн (Dockerfile + build.sh + tools.json + gen-dispatch.mjs) создан — см.
+[build/wasi/README.md](../build/wasi/README.md). Кит поставляется с
+`verified:false`; финальная сборка (wasi-sdk/wasmtime → build → sha256 →
+`verified:true` → publish) — ручной шаг мейнтейнера.
+
 **Правка emcee (BR-005):** `emcee` зависит **только от numpy** — `dill` убран из
 зависимостей. Wheel METADATA содержит лишь `Requires-Dist: numpy`; `scipy`, `h5py`
 и `dill` — опциональные extras, не hard-deps. Поэтому в §4 строка emcee исправлена
@@ -185,7 +193,7 @@ scikit_optimize.
 pytz, joblib, dill, packaging, setuptools, pyyaml, six, decorator.
 
 **Не-whl (9 ассетов → 9 китов):**
-`RNAfold.wasm` → viennarna · `seqtk.wasm` → seqtk · `RDKit_minimal.wasm`+`.cjs` → rdkit ·
+`viennarna.wasm` → viennarna · `seqtk.wasm` → seqtk · `RDKit_minimal.wasm`+`.cjs` → rdkit ·
 `gmp.cjs` → gmp · `eigen.cjs` → eigen · `geos.mjs` → geos ·
 `index.js`+`geodesy-wasm.js`+`geodesy-wasm_bg.wasm` → geodesy ·
 `rapier2d.cjs` → rapier2d · `rapier3d.cjs` → rapier3d.
@@ -226,7 +234,7 @@ Library фильтрует/группирует по `tags`.
 
 ## 8. Заметки по миграции с текущего состояния
 
-- **`WASM_MANIFEST`** (seqtk, RNAfold, rdkit) → три кита: `seqtk`, `viennarna`,
+- **`WASM_MANIFEST`** (seqtk, viennarna, rdkit) → три кита: `seqtk`, `viennarna`,
   `rdkit`. Поля `sha256` / `wasiTools` / `multiplexed` / `stdinAsFile`
   переезжают в `kit.json`.
 - **`compute/worker.ts`**: трёхуровневая загрузка (preload `numpy/scipy/sympy` →

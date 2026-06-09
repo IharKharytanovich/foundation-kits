@@ -7,7 +7,21 @@
 	},
 	"build": {
 		"dockerfile": "build/wasi/Dockerfile",
-		"args": [],
+		"args": [
+			"--host=wasm32-wasi",
+			"--disable-openmp",
+			"--disable-pthreads",
+			"--without-perl",
+			"--without-python",
+			"--without-swig",
+			"--without-gsl",
+			"--disable-mpfr",
+			"--without-svm",
+			"--without-rnaxplorer",
+			"--without-forester",
+			"--without-kinfold",
+			"--disable-naview"
+		],
 		"exclude": [
 			"naview.c"
 		]

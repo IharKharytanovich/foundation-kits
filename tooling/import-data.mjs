@@ -316,16 +316,38 @@ export const KITS = [
 			buildNote: 'naview.c excluded from the build — it is non-redistributable under the ViennaRNA license. See recipe.build.exclude (architecture §11).',
 		},
 		artifacts: [
-			{ vendor: 'RNAfold.wasm' },
+			{ vendor: 'viennarna.wasm' },
 		],
 		dependencies: [],
 		// wasi-specific fields (no golden, no importName, no recipeBase)
-		wasiTools: ['RNAfold'],
-		multiplexed: false,
+		// One multiplexed binary dispatches all 25 ViennaRNA CLI on argv[1]
+		// (build/wasi/tools.json is the source of truth for the tool list).
+		wasiTools: [
+			'RNA2Dfold', 'RNALalifold', 'RNALfold', 'RNAPKplex', 'RNAaliduplex',
+			'RNAalifold', 'RNAcofold', 'RNAdistance', 'RNAdos', 'RNAduplex',
+			'RNAeval', 'RNAfold', 'RNAheat', 'RNAinverse', 'RNAmultifold',
+			'RNApaln', 'RNAparconv', 'RNApdist', 'RNAplex', 'RNAplfold',
+			'RNAplot', 'RNApvmin', 'RNAsnoop', 'RNAsubopt', 'RNAup',
+		],
+		multiplexed: true,
 		stdinAsFile: false,
 		build: {
 			dockerfile: 'build/wasi/Dockerfile',
-			args: [],
+			args: [
+				'--host=wasm32-wasi',
+				'--disable-openmp',
+				'--disable-pthreads',
+				'--without-perl',
+				'--without-python',
+				'--without-swig',
+				'--without-gsl',
+				'--disable-mpfr',
+				'--without-svm',
+				'--without-rnaxplorer',
+				'--without-forester',
+				'--without-kinfold',
+				'--disable-naview',
+			],
 			exclude: ['naview.c'],
 		},
 	},
