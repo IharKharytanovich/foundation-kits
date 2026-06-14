@@ -1,0 +1,11 @@
+{
+	"kit": "statsmodels",
+	"mode": "loose",
+	"imports": [
+		"statsmodels"
+	],
+	"golden": {
+		"code": "import numpy as np, statsmodels.api as sm; x=np.array([1.,2.,3.,4.,5.]); y=np.array([2.,4.,6.,8.,10.]); m=sm.OLS(y,sm.add_constant(x)).fit(); str((round(float(m.params[1]),4), round(float(m.rsquared),4)))",
+		"expect": "(2.0, 1.0)"
+	}
+}

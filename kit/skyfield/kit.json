@@ -1,0 +1,52 @@
+{
+	"id": "skyfield",
+	"version": "1.54",
+	"runtime": "pyodide",
+	"tags": [
+		"astronomy",
+		"time"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/brandon-rhodes/python-skyfield",
+		"ref": "v1.54",
+		"license": "MIT",
+		"buildNote": "Bundles jplephem 2.24 (MIT), de421.bsp (US-gov public domain), certifi 2026.5.20 (MPL-2.0)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/skyfield-1.54-py3-none-any.whl",
+			"sha256": "c9b313185448963ea7fa4cf8e4298ba028b179b80ebd4c5675497519f21c04a2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/skyfield@1.54/skyfield-1.54-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/jplephem-2.24-py3-none-any.whl",
+			"sha256": "2de15608a0f13010a71a0a8af8765646d5884402006dac0dd7639d7db13629ac",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/skyfield@1.54/jplephem-2.24-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/de421.bsp",
+			"sha256": "a20a7139da04cbc462454634918e9a9ca69127044e2cc9d4f9c16e238d2deedc",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/skyfield@1.54/de421.bsp"
+		},
+		{
+			"file": "artifacts/certifi-2026.5.20-py3-none-any.whl",
+			"sha256": "3c52e209ba0a4ad7aebe60436a4ab349c39e1e602e8c134221e546902ad25897",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/skyfield@1.54/certifi-2026.5.20-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "sgp4",
+			"version": "2.25",
+			"sha256": "4f39ecf6c2663109fed04adfe9982815ac83893271b521d92d5b186820f8c78e"
+		}
+	]
+}

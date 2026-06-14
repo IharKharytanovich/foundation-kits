@@ -1,0 +1,31 @@
+{
+	"id": "spglib",
+	"version": "2.7.0",
+	"runtime": "wasi",
+	"tags": [
+		"structure",
+		"chemistry"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/spglib/spglib",
+		"ref": "v2.7.0",
+		"license": "BSD-3-Clause",
+		"buildNote": "Single-threaded wasi-sdk cross-compile (CMake, static libsymspg + thin CLI wrapper). Pure C99, no external deps, no threading. No confirmed wasm32-wasi prior art — build feasibility verified by code inspection (no POSIX-only APIs beyond stdio). wasm-opt -Oz + strip."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/spglib.wasm",
+			"sha256": "ea05ad4d00a185f31660d34a23c4af8b1a8a0b3368a8297b47666bb791cba542",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/spglib@2.7.0/spglib.wasm",
+			"wasiTools": [
+				"spglib"
+			],
+			"multiplexed": false,
+			"stdinAsFile": false
+		}
+	],
+	"dependencies": []
+}

@@ -1,0 +1,11 @@
+{
+	"kit": "control",
+	"mode": "loose",
+	"imports": [
+		"control"
+	],
+	"golden": {
+		"code": "import control; g=control.TransferFunction([1],[1,2,1]); str(round(float(control.dcgain(g)),4))",
+		"expect": "1.0"
+	}
+}

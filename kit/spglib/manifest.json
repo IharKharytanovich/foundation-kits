@@ -1,0 +1,121 @@
+{
+	"kit": "spglib",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "get-spacegroup",
+			"summary": "Determine the space group of a crystal structure (international symbol + ITA number)",
+			"tool": "spglib",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [
+				"spacegroup"
+			],
+			"output": {
+				"format": "text: <international_symbol> (<spacegroup_number>)"
+			},
+			"golden": {
+				"input": {
+					"structure": "2.87 0.0 0.0\n0.0 2.87 0.0\n0.0 0.0 2.87\n2\n0.0 0.0 0.0\n0.5 0.5 0.5\n1 1\n1e-5"
+				},
+				"expect": "Im-3m (229)\n"
+			}
+		},
+		{
+			"id": "get-dataset",
+			"summary": "Full symmetry dataset: international + Hall symbol, Hall number, point group, operation count, atom count, and per-atom Wyckoff letters",
+			"tool": "spglib",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [
+				"dataset"
+			],
+			"output": {
+				"format": "text: labeled key/value lines (international, number, hall_symbol, hall_number, pointgroup, n_operations, n_atoms, wyckoffs)"
+			},
+			"golden": {
+				"input": {
+					"structure": "2.87 0.0 0.0\n0.0 2.87 0.0\n0.0 0.0 2.87\n2\n0.0 0.0 0.0\n0.5 0.5 0.5\n1 1\n1e-5"
+				},
+				"expect": "international: Im-3m\nnumber: 229\nhall_symbol: -I 4 2 3\nhall_number: 529\npointgroup: m-3m\nn_operations: 96\nn_atoms: 2\nwyckoffs: a a\n"
+			}
+		},
+		{
+			"id": "get-symmetry",
+			"summary": "List all symmetry operations (rotation matrix + translation vector) of the crystal",
+			"tool": "spglib",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [
+				"symmetry"
+			],
+			"output": {
+				"format": "text: 'n_operations: N' then N lines of '9 rotation ints   3 translation floats'"
+			},
+			"golden": {
+				"input": {
+					"structure": "3.0 0.0 0.0\n1.0 4.0 0.0\n1.0 1.0 5.0\n1\n0.0 0.0 0.0\n1\n1e-5"
+				},
+				"expect": "n_operations: 2\n 1  0  0   0  1  0   0  0  1   0.000000 0.000000 0.000000\n-1  0  0   0 -1  0   0  0 -1   0.000000 0.000000 0.000000\n"
+			}
+		},
+		{
+			"id": "find-primitive",
+			"summary": "Reduce a cell to its primitive cell (smallest repeating unit): primitive lattice vectors + atoms",
+			"tool": "spglib",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [
+				"primitive"
+			],
+			"output": {
+				"format": "text: 'lattice:' + 3 basis-vector rows, 'atoms: M' + M lines of 'fx fy fz type'"
+			},
+			"golden": {
+				"input": {
+					"structure": "2.87 0.0 0.0\n0.0 2.87 0.0\n0.0 0.0 2.87\n2\n0.0 0.0 0.0\n0.5 0.5 0.5\n1 1\n1e-5"
+				},
+				"expect": "lattice:\n-1.435000 1.435000 1.435000\n1.435000 -1.435000 1.435000\n1.435000 1.435000 -1.435000\natoms: 1\n0.000000 0.000000 0.000000  1\n"
+			}
+		},
+		{
+			"id": "standardize-cell",
+			"summary": "Compute the standardized conventional cell (idealized lattice + symmetrized atom positions per ITA conventions)",
+			"tool": "spglib",
+			"params": {
+				"structure": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "structure",
+			"argsTemplate": [
+				"standardize"
+			],
+			"output": {
+				"format": "text: 'lattice:' + 3 basis-vector rows, 'atoms: M' + M lines of 'fx fy fz type'"
+			},
+			"golden": {
+				"input": {
+					"structure": "2.87 0.0 0.0\n0.0 2.87 0.0\n0.0 0.0 2.87\n2\n0.0 0.0 0.0\n0.5 0.5 0.5\n1 1\n1e-5"
+				},
+				"expect": "lattice:\n2.870000 0.000000 0.000000\n0.000000 2.870000 0.000000\n0.000000 0.000000 2.870000\natoms: 2\n0.000000 0.000000 0.000000  1\n0.500000 0.500000 0.500000  1\n"
+			}
+		}
+	]
+}

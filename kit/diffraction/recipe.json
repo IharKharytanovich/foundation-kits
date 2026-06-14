@@ -1,0 +1,8 @@
+{
+	"kit": "diffraction",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/bb/92/b7bbffc01432c63ea79295686b42a4959dacb298e6f39a95029600acb73b/dans_diffraction-3.4.0-py3-none-any.whl",
+		"sha256": "d19a522b37655970dfa9f0eaa1abbea6a20643c9b5473cb613d80d5362180746"
+	}
+}

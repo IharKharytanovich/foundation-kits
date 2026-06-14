@@ -1,0 +1,20 @@
+{
+	"kit": "spglib",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/spglib/spglib",
+		"ref": "v2.7.0"
+	},
+	"build": {
+		"dockerfile": "build/spglib/Dockerfile",
+		"args": [
+			"-DSPGLIB_SHARED_LIBS=OFF",
+			"-DSPGLIB_WITH_TESTS=OFF",
+			"-DSPGLIB_WITH_Fortran=OFF",
+			"-DSPGLIB_WITH_Python=OFF",
+			"-DSPGLIB_USE_OMP=OFF",
+			"-DCMAKE_BUILD_TYPE=MinSizeRel"
+		],
+		"exclude": []
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"kit": "skyfield",
+	"mode": "loose",
+	"imports": [
+		"skyfield"
+	],
+	"golden": {
+		"code": "from skyfield.api import load_file; from skyfield import api; ts=api.load.timescale(builtin=True); eph=load_file('artifacts/de421.bsp'); t=ts.tt_jd(2451545.0); ra,dec,dist=eph['earth'].at(t).observe(eph['mars']).radec(); f'{round(ra._degrees,4)} {round(dec.degrees,4)} {round(dist.au,6)}'",
+		"expect": "330.524 -13.1807 1.849684"
+	}
+}

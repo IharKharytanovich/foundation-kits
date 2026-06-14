@@ -1,0 +1,21 @@
+{
+	"kit": "coolprop",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "CoolProp",
+		"version": "7.2.0"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/coolprop.js",
+			"url": "https://sourceforge.net/projects/coolprop/files/CoolProp/7.2.0/Javascript/coolprop.js/download",
+			"sha256": "8a4993ac260a98c4a7053c9f42bbb58bc0fb2ebd3411c8d13df7bbb1fc511b2b"
+		},
+		{
+			"file": "artifacts/coolprop.wasm",
+			"url": "https://sourceforge.net/projects/coolprop/files/CoolProp/7.2.0/Javascript/coolprop.wasm/download",
+			"sha256": "cb77d0381fbe639bffb65a3e8fa44ff8e2a110f21c18125c89a9b336135bd194"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"id": "raytracing",
+	"version": "1.4.7",
+	"runtime": "pyodide",
+	"tags": [
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/DCC-Lab/RayTracing",
+		"ref": "v1.4.7",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/raytracing-1.4.7-py3-none-any.whl",
+			"sha256": "7326406d9364ab19cb3a4e0df6fb2bf3205656d5bea62314a9ebee9d08115c19",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/raytracing@1.4.7/raytracing-1.4.7-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

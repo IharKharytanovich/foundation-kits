@@ -1,0 +1,52 @@
+{
+	"kit": "edlib",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "distance",
+			"summary": "Levenshtein edit distance between two sequences (NW/HW/SHW mode)",
+			"tool": "edlib",
+			"params": {
+				"input": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "input",
+			"argsTemplate": [
+				"distance"
+			],
+			"output": {
+				"format": "integer edit distance on stdout, newline-terminated"
+			},
+			"golden": {
+				"input": {
+					"input": "NW\nkitten\nsitting"
+				},
+				"expect": "3\n"
+			}
+		},
+		{
+			"id": "align",
+			"summary": "Edit distance + alignment path (CIGAR) between two sequences",
+			"tool": "edlib",
+			"params": {
+				"input": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "input",
+			"argsTemplate": [
+				"align"
+			],
+			"output": {
+				"format": "<distance>\\t<cigar> on stdout, newline-terminated"
+			},
+			"golden": {
+				"input": {
+					"input": "SHW\nACT\nACTG"
+				},
+				"expect": "0\t3=\n"
+			}
+		}
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"kit": "scikit-image",
+	"mode": "loose",
+	"imports": [
+		"skimage"
+	],
+	"golden": {
+		"code": "from skimage.data import camera; from skimage.filters import threshold_otsu; str(int(threshold_otsu(camera())))",
+		"expect": "102"
+	}
+}

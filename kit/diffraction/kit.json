@@ -1,0 +1,31 @@
+{
+	"id": "diffraction",
+	"version": "3.4.0",
+	"runtime": "pyodide",
+	"tags": [
+		"structure",
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/DanPorter/Dans_Diffraction",
+		"ref": "v3.4.0",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/dans_diffraction-3.4.0-py3-none-any.whl",
+			"sha256": "d19a522b37655970dfa9f0eaa1abbea6a20643c9b5473cb613d80d5362180746",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/diffraction@3.4.0/dans_diffraction-3.4.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

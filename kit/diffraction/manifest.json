@@ -1,0 +1,11 @@
+{
+	"kit": "diffraction",
+	"mode": "loose",
+	"imports": [
+		"Dans_Diffraction"
+	],
+	"golden": {
+		"code": "import Dans_Diffraction as dd; xtl=dd.Crystal(); xtl.Cell.a=4.0; xtl.Cell.b=4.0; xtl.Cell.c=4.0; str(round(float(xtl.Cell.dspace([1,1,0])[0]),4))",
+		"expect": "2.8284"
+	}
+}

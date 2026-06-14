@@ -1,0 +1,8 @@
+{
+	"kit": "raytracing",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/b6/59/e7f760e6fa31075cf1067ad5359bb7a6b24e201bd7c5550162292f0b9eb8/raytracing-1.4.7-py3-none-any.whl",
+		"sha256": "7326406d9364ab19cb3a4e0df6fb2bf3205656d5bea62314a9ebee9d08115c19"
+	}
+}

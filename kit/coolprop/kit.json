@@ -1,0 +1,39 @@
+{
+	"id": "coolprop",
+	"version": "7.2.0-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"chemistry",
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "CoolProp",
+		"repo": "https://github.com/CoolProp/CoolProp",
+		"ref": "v7.2.0",
+		"license": "MIT",
+		"buildNote": "Official single-threaded Emscripten build; vendored from SourceForge"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/coolprop.js",
+			"sha256": "8a4993ac260a98c4a7053c9f42bbb58bc0fb2ebd3411c8d13df7bbb1fc511b2b",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/coolprop@7.2.0-1.0.0/coolprop.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/coolprop.wasm",
+			"sha256": "cb77d0381fbe639bffb65a3e8fa44ff8e2a110f21c18125c89a9b336135bd194",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/coolprop@7.2.0-1.0.0/coolprop.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/coolprop.js",
+		"moduleSystem": "esm",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

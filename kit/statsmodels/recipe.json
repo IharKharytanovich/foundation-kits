@@ -1,0 +1,15 @@
+{
+	"kit": "statsmodels",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/statsmodels-0.14.4-cp313-cp313-pyodide_2025_0_wasm32.whl",
+		"sha256": "6a5762920de3429abb587771320355cd4b8c5023b04f7f0c4cd9ea6bbcdbc0ba"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/patsy-1.0.1-py2.py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/patsy-1.0.1-py2.py3-none-any.whl",
+			"sha256": "4ec184afa0b153f0f4cabf4a1603077df73c7a5c7392a0bd251f8a40171673a3"
+		}
+	]
+}

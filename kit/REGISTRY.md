@@ -8,7 +8,7 @@ description, and publish status. Source of truth for kit *definitions* is each
   (see [.claude/rules/publish.md](../.claude/rules/publish.md)).
 - Regenerate descriptions from each kit's `instruction.md` first paragraph.
 
-**61 kits** — 48 pyodide · 3 wasi · 10 jswasm. 51 published; 10 pending first publish.
+**70 kits** — 54 pyodide · 5 wasi · 11 jswasm. 51 published; 19 pending first publish.
 
 | Kit | Version | Runtime | Description | Published |
 |---|---|---|---|---|
@@ -18,12 +18,16 @@ description, and publish status. Source of truth for kit *definitions* is each
 | biopython | 1.85 | pyodide | Computational molecular biology: sequences, file formats, alignments, structures (import `Bio`). | ✅ |
 | chaospy | 4.3.21 | pyodide | Uncertainty quantification via polynomial chaos expansions. | ✅ |
 | chempy | 0.10.1 | pyodide | Chemistry: stoichiometry, reaction balancing, kinetics, equilibrium. | ✅ |
+| control | 0.10.2 | pyodide | Feedback control systems: transfer functions, state-space, Bode/Nyquist, LQR. | ❌ |
+| coolprop | 7.2.0-1.0.0 | jswasm | Reference thermophysical fluid properties via multiparameter EOS (PropsSI). | ❌ |
 | deap | 1.4.4 | pyodide | Evolutionary computation: genetic algorithms, GP, evolution strategies, NSGA-II. | ✅ |
 | decorator | 5.2.1 | pyodide | Write signature-preserving Python decorators. | ✅ |
 | dendropy | 5.0.8 | pyodide | Phylogenetic computing: trees, character matrices, Newick/Nexus/NeXML I/O. | ✅ |
+| diffraction | 3.4.0 | pyodide | X-ray and neutron diffraction simulation (d-spacings, powder patterns). | ❌ |
 | dill | 0.4.1 | pyodide | Extends `pickle` to serialize lambdas, closures, generators, and more. | ✅ |
 | dynesty | 3.0.0 | pyodide | Dynamic nested sampling for Bayesian posteriors and evidences. | ✅ |
 | earcut | 1.1.5 | pyodide | Fast, robust polygon triangulation (ear-clipping, holes supported). | ✅ |
+| edlib | 1.2.7 | wasi | Fast edit-distance and alignment (Levenshtein, CIGAR) between sequences. | ❌ |
 | eigen | 0.2.2-1.0.0 | jswasm | Eigen C++ linear algebra (decomposition, solving, eigenvalues) in WASM. | ✅ |
 | emcee | 3.1.6 | pyodide | Affine-invariant ensemble MCMC sampler for Bayesian parameter estimation. | ✅ |
 | findiff | 0.13.1 | pyodide | Finite-difference numerical derivatives on arbitrary-dimensional grids. | ✅ |
@@ -55,9 +59,11 @@ description, and publish status. Source of truth for kit *definitions* is each
 | pyyaml | 6.0.2 | pyodide | YAML 1.1 parser and emitter (import `yaml`). | ✅ |
 | rapier2d | 0.19.3-1.0.0 | jswasm | 2D physics engine (Rapier, Rust→WASM). | ✅ |
 | rapier3d | 0.19.3-1.0.0 | jswasm | 3D physics engine (Rapier, Rust→WASM). | ✅ |
+| raytracing | 1.4.7 | pyodide | Paraxial ABCD ray-transfer matrix optics (lenses, mirrors, spaces). | ❌ |
 | rdkit | 2025.3.4-1.0.0 | jswasm | Cheminformatics toolkit over SMILES (RDKit, WASM). | ✅ |
 | salib | 1.5.2 | pyodide | Global sensitivity analysis: Sobol', Morris, FAST, DGSM, PAWN, HDMR. | ✅ |
 | scikit-fem | 12.0.1 | pyodide | Finite element assembly for PDEs (import `skfem`). | ✅ |
+| scikit-image | 0.25.2 | pyodide | Image processing on NumPy arrays: filtering, morphology, segmentation, features (import `skimage`). | ❌ |
 | scikit-learn | 1.7.0 | pyodide | Machine learning: classification, regression, clustering (import `sklearn`). | ✅ |
 | scikit-optimize | 0.10.2 | pyodide | Bayesian optimization of expensive black-box functions (import `skopt`). | ✅ |
 | scipy | 1.14.1 | pyodide | Scientific computing: optimization, integration, interpolation, signal, sparse. | ✅ |
@@ -65,7 +71,10 @@ description, and publish status. Source of truth for kit *definitions* is each
 | seqtk | 1.5-r133 | wasi | Fast FASTA/FASTQ sequence processing toolkit. | ✅ |
 | setuptools | 76.0.0 | pyodide | Packaging toolkit; ships `pkg_resources` for distribution discovery. | ✅ |
 | sgp4 | 2.25 | pyodide | SGP4 satellite orbit propagation from TLE sets. | ✅ |
+| skyfield | 1.54 | pyodide | High-precision positional astronomy with bundled JPL DE421 ephemeris. | ❌ |
 | six | 1.17.0 | pyodide | Python 2/3 compatibility helpers. | ✅ |
+| spglib | 2.7.0 | wasi | Crystal symmetry: space-group determination, primitive cells, symmetry operations. | ❌ |
+| statsmodels | 0.14.4 | pyodide | Statistical modelling, hypothesis testing, and econometrics (OLS, GLM, ARIMA). | ❌ |
 | sympy | 1.13.3 | pyodide | Symbolic mathematics: algebra, calculus, equation solving — exact results. | ✅ |
 | thermo | 0.6.0 | pyodide | Chemical-engineering thermodynamics: thermophysical property estimation. | ✅ |
 | tifffile | 2026.6.1 | pyodide | Scientific TIFF/OME-TIFF/BigTIFF read/write over numpy arrays. | ❌ |

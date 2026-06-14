@@ -29,6 +29,9 @@ const SHA_DILL     = '1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248
 const SHA_PANDAS   = '2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923'
 const SHA_SCIKIT_LEARN = '5dd1611a1ee57147a4387e56499bb1def407919ef452efb50beb5229dbe4a3db'
 const SHA_UNCERTAINTIES = '1f8f8c004a5c27e3baf88c84eb67b77a29e70cbd0bef1e5084fceb2ed7bcaf4d'
+const SHA_NETWORKX = '27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76'
+const SHA_TIFFFILE  = '0d7382d2769b855b81ce358528e2b40c16d48aa39031746efa81215205332a8d'
+const SHA_PYWAVELETS = 'e8b11d6ad77ce1a53875b46a2315415b20863da5830e81833739920d12b75237'
 
 const CDN = 'https://cdn.jsdelivr.net/pyodide/v0.28.0/full/'
 
@@ -1356,5 +1359,193 @@ export const KITS = [
 				golden: { input: { fasta: '>chr1\nACGTACGTACGT', name: 'chr1' }, expect: '12' },
 			},
 		],
+	},
+
+	// ── batch-5 capability kits ────────────────────────────────────────────
+
+	{
+		id: 'statsmodels',
+		runtime: 'pyodide',
+		version: '0.14.4',
+		tags: ['statistics', 'data-science'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/statsmodels/statsmodels',
+			ref: 'v0.14.4',
+			license: 'BSD-3-Clause',
+		},
+		importName: 'statsmodels',
+		artifacts: [
+			{ vendor: 'statsmodels-0.14.4-cp313-cp313-pyodide_2025_0_wasm32.whl' },
+			{ vendor: 'patsy-1.0.1-py2.py3-none-any.whl', bundled: true },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'pandas', version: '2.3.3', sha256: SHA_PANDAS },
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		golden: {
+			code: "import numpy as np, statsmodels.api as sm; x=np.array([1.,2.,3.,4.,5.]); y=np.array([2.,4.,6.,8.,10.]); m=sm.OLS(y,sm.add_constant(x)).fit(); str((round(float(m.params[1]),4), round(float(m.rsquared),4)))",
+			expect: '(2.0, 1.0)',
+		},
+	},
+
+	{
+		id: 'scikit-image',
+		runtime: 'pyodide',
+		version: '0.25.2',
+		tags: ['data-science', 'signal'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/scikit-image/scikit-image',
+			ref: 'v0.25.2',
+			license: 'BSD-3-Clause',
+			buildNote: 'LICENSE.txt bundles a few BSD-2-Clause sub-files for bundled third-party code.',
+		},
+		importName: 'skimage',
+		artifacts: [
+			{ vendor: 'scikit_image-0.25.2-cp313-cp313-pyodide_2025_0_wasm32.whl' },
+			{ vendor: 'pillow-11.2.1-cp313-cp313-pyodide_2025_0_wasm32.whl', bundled: true },
+			{ vendor: 'imageio-2.37.0-py3-none-any.whl', bundled: true },
+			{ vendor: 'lazy_loader-0.4-py3-none-any.whl', bundled: true },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'networkx', version: '3.4.2', sha256: SHA_NETWORKX },
+			{ id: 'pywavelets', version: '1.8.0', sha256: SHA_PYWAVELETS },
+			{ id: 'tifffile', version: '2026.6.1', sha256: SHA_TIFFFILE },
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		golden: {
+			code: "from skimage.data import camera; from skimage.filters import threshold_otsu; str(int(threshold_otsu(camera())))",
+			expect: '102',
+		},
+	},
+
+	{
+		id: 'control',
+		runtime: 'pyodide',
+		version: '0.10.2',
+		tags: ['signal', 'math'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/python-control/python-control',
+			ref: '0.10.2',
+			license: 'BSD-3-Clause',
+		},
+		importName: 'control',
+		artifacts: [
+			{ vendor: 'control-0.10.2-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/f2/0a/9f4c2a811b065c92f2483f26657dca373699388c959193ef27a644af1805/control-0.10.2-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+		],
+		// matplotlib is an unconditional METADATA dep but cannot be provided in Pyodide
+		// (native/heavy); plotting functions are unavailable — documented in instruction.md.
+		golden: {
+			code: "import control; g=control.TransferFunction([1],[1,2,1]); str(round(float(control.dcgain(g)),4))",
+			expect: '1.0',
+		},
+	},
+
+	// ── batch-6 scientific kits ────────────────────────────────────────────
+
+	{
+		id: 'skyfield',
+		runtime: 'pyodide',
+		version: '1.54',
+		tags: ['astronomy', 'time'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/brandon-rhodes/python-skyfield',
+			ref: 'v1.54',
+			license: 'MIT',
+			buildNote: 'Bundles jplephem 2.24 (MIT), de421.bsp (US-gov public domain), certifi 2026.5.20 (MPL-2.0)',
+		},
+		importName: 'skyfield',
+		artifacts: [
+			{ vendor: 'skyfield-1.54-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/e7/8a/f196038b2bea40c372d900803dac0d5e4eab578cb05b92ff7172ced4c1cf/skyfield-1.54-py3-none-any.whl' },
+			{ vendor: 'jplephem-2.24-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/9d/3f/b9d5739352badc11ca637c8f72525d519458622936bc3313ddefdc7dee96/jplephem-2.24-py3-none-any.whl' },
+			{ vendor: 'de421.bsp', bundled: true,
+			  sourceUrl: 'https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp' },
+			{ vendor: 'certifi-2026.5.20-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/59/8c/57e832b7af6d7c5abe66eb3fbe3a3a32f4d11ea23a1aa7131371035be991/certifi-2026.5.20-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'sgp4', version: '2.25', sha256: '4f39ecf6c2663109fed04adfe9982815ac83893271b521d92d5b186820f8c78e' },
+		],
+		golden: {
+			code: "from skyfield.api import load_file; from skyfield import api; ts=api.load.timescale(builtin=True); eph=load_file('artifacts/de421.bsp'); t=ts.tt_jd(2451545.0); ra,dec,dist=eph['earth'].at(t).observe(eph['mars']).radec(); f'{round(ra._degrees,4)} {round(dec.degrees,4)} {round(dist.au,6)}'",
+			expect: '330.524 -13.1807 1.849684',
+		},
+	},
+
+	{
+		id: 'diffraction',
+		runtime: 'pyodide',
+		version: '3.4.0',
+		tags: ['structure', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/DanPorter/Dans_Diffraction',
+			ref: 'v3.4.0',
+			license: 'Apache-2.0',
+		},
+		importName: 'Dans_Diffraction',
+		artifacts: [
+			{ vendor: 'dans_diffraction-3.4.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/bb/92/b7bbffc01432c63ea79295686b42a4959dacb298e6f39a95029600acb73b/dans_diffraction-3.4.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		golden: {
+			code: "import Dans_Diffraction as dd; xtl=dd.Crystal(); xtl.Cell.a=4.0; xtl.Cell.b=4.0; xtl.Cell.c=4.0; str(round(float(xtl.Cell.dspace([1,1,0])[0]),4))",
+			expect: '2.8284',
+		},
+	},
+
+	{
+		id: 'raytracing',
+		runtime: 'pyodide',
+		version: '1.4.7',
+		tags: ['physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/DCC-Lab/RayTracing',
+			ref: 'v1.4.7',
+			license: 'MIT',
+		},
+		importName: 'raytracing',
+		artifacts: [
+			{ vendor: 'raytracing-1.4.7-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/b6/59/e7f760e6fa31075cf1067ad5359bb7a6b24e201bd7c5550162292f0b9eb8/raytracing-1.4.7-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		golden: {
+			code: "from raytracing import Space, Lens; m=Space(d=10)*Lens(f=5); f'A={round(m.A,1)} B={round(m.B,1)} C={round(m.C,1)} D={round(m.D,1)}'",
+			expect: 'A=-1.0 B=10.0 C=-0.2 D=1.0',
+		},
 	},
 ]

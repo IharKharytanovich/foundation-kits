@@ -1,0 +1,51 @@
+{
+	"id": "statsmodels",
+	"version": "0.14.4",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"data-science"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/statsmodels/statsmodels",
+		"ref": "v0.14.4",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/statsmodels-0.14.4-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "6a5762920de3429abb587771320355cd4b8c5023b04f7f0c4cd9ea6bbcdbc0ba",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/statsmodels@0.14.4/statsmodels-0.14.4-cp313-cp313-pyodide_2025_0_wasm32.whl"
+		},
+		{
+			"file": "artifacts/patsy-1.0.1-py2.py3-none-any.whl",
+			"sha256": "4ec184afa0b153f0f4cabf4a1603077df73c7a5c7392a0bd251f8a40171673a3",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/statsmodels@0.14.4/patsy-1.0.1-py2.py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

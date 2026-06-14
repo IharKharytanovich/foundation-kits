@@ -1,0 +1,10 @@
+{
+	"kit": "coolprop",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "return String(handle.PropsSI('D','T',298.15,'P',101325,'Water'))",
+		"expect": "997.047636760347"
+	}
+}

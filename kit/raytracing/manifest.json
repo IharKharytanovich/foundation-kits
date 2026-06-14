@@ -1,0 +1,11 @@
+{
+	"kit": "raytracing",
+	"mode": "loose",
+	"imports": [
+		"raytracing"
+	],
+	"golden": {
+		"code": "from raytracing import Space, Lens; m=Space(d=10)*Lens(f=5); f'A={round(m.A,1)} B={round(m.B,1)} C={round(m.C,1)} D={round(m.D,1)}'",
+		"expect": "A=-1.0 B=10.0 C=-0.2 D=1.0"
+	}
+}

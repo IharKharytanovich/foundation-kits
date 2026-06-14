@@ -1,0 +1,13 @@
+{
+	"kit": "edlib",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/Martinsos/edlib",
+		"ref": "v1.2.7"
+	},
+	"build": {
+		"dockerfile": "build/edlib/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

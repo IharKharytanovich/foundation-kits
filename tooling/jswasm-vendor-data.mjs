@@ -308,4 +308,37 @@ export const JSWASM_KITS = [
 		],
 		dependencies: [],
 	},
+
+	// ── batch-6 Emscripten kits ────────────────────────────────────────────
+
+	{
+		id: 'coolprop',
+		version: '7.2.0-1.0.0',
+		family: 'emscripten',
+		tags: ['chemistry', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'CoolProp',
+			repo: 'https://github.com/CoolProp/CoolProp',
+			ref: 'v7.2.0',
+			license: 'MIT',
+			buildNote: 'Official single-threaded Emscripten build; vendored from SourceForge',
+		},
+		loader: {
+			entry: 'artifacts/coolprop.js',
+			moduleSystem: 'esm',
+			initStyle: 'factory',
+			wasmSupply: 'locateFile',
+		},
+		artifacts: [
+			{ vendor: 'coolprop.js', role: 'loader' },
+			{ vendor: 'coolprop.wasm', role: 'binary' },
+		],
+		source: { package: 'CoolProp', version: '7.2.0' },
+		vendored: [
+			{ vendor: 'coolprop.js', url: 'https://sourceforge.net/projects/coolprop/files/CoolProp/7.2.0/Javascript/coolprop.js/download' },
+			{ vendor: 'coolprop.wasm', url: 'https://sourceforge.net/projects/coolprop/files/CoolProp/7.2.0/Javascript/coolprop.wasm/download' },
+		],
+		dependencies: [],
+	},
 ]

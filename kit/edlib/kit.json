@@ -1,0 +1,31 @@
+{
+	"id": "edlib",
+	"version": "1.2.7",
+	"runtime": "wasi",
+	"tags": [
+		"sequences",
+		"genomics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/Martinsos/edlib",
+		"ref": "v1.2.7",
+		"license": "MIT",
+		"buildNote": "Single-threaded wasi-sdk clang++ build; -fno-exceptions -fno-rtti; no threads/SAB; thin C driver over the edlib C API"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/edlib.wasm",
+			"sha256": "3690c26e99a9727b5d4d255ef80d0c080225aa561125edc55a449e98d6439367",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/edlib@1.2.7/edlib.wasm",
+			"wasiTools": [
+				"edlib"
+			],
+			"multiplexed": false,
+			"stdinAsFile": false
+		}
+	],
+	"dependencies": []
+}

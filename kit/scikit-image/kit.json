@@ -1,0 +1,72 @@
+{
+	"id": "scikit-image",
+	"version": "0.25.2",
+	"runtime": "pyodide",
+	"tags": [
+		"data-science",
+		"signal"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-image/scikit-image",
+		"ref": "v0.25.2",
+		"license": "BSD-3-Clause",
+		"buildNote": "LICENSE.txt bundles a few BSD-2-Clause sub-files for bundled third-party code."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/scikit_image-0.25.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "edeb5b71745a84ad52162eb2b8223d5e5f4755291ab62d22a81409a09d7547de",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-image@0.25.2/scikit_image-0.25.2-cp313-cp313-pyodide_2025_0_wasm32.whl"
+		},
+		{
+			"file": "artifacts/pillow-11.2.1-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "426001442cb5ae22937e2eb7844c0a004c2e17daa8115de860e33d281da96a62",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-image@0.25.2/pillow-11.2.1-cp313-cp313-pyodide_2025_0_wasm32.whl"
+		},
+		{
+			"file": "artifacts/imageio-2.37.0-py3-none-any.whl",
+			"sha256": "197c2454781c216c2cbebfc370bea23413a08ade1e78a3babd07eea9fa6f540f",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-image@0.25.2/imageio-2.37.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/lazy_loader-0.4-py3-none-any.whl",
+			"sha256": "922fd3357bd62c5dff8759a3be9b62d9da75aed5f94b8107b67898b566fe7136",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/scikit-image@0.25.2/lazy_loader-0.4-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "networkx",
+			"version": "3.4.2",
+			"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76"
+		},
+		{
+			"id": "pywavelets",
+			"version": "1.8.0",
+			"sha256": "e8b11d6ad77ce1a53875b46a2315415b20863da5830e81833739920d12b75237"
+		},
+		{
+			"id": "tifffile",
+			"version": "2026.6.1",
+			"sha256": "0d7382d2769b855b81ce358528e2b40c16d48aa39031746efa81215205332a8d"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}
