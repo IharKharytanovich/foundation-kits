@@ -1138,4 +1138,223 @@ export const KITS = [
 			expect: '55.845',
 		},
 	},
+
+	// ── batch-4 capability kits ────────────────────────────────────────────
+
+	{
+		id: 'pyteomics',
+		runtime: 'pyodide',
+		version: '5.0',
+		tags: ['chemistry', 'biology'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/levitsky/pyteomics',
+			ref: 'v5.0',
+			license: 'Apache-2.0',
+		},
+		importName: 'pyteomics',
+		artifacts: [
+			{ vendor: 'pyteomics-5.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/0f/87/8914db559e9c5378a509c99631f87ce5612517182b3f0b426f2996522e8b/pyteomics-5.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [],
+		// Monoisotopic mass of the hexapeptide PEPTIDE — deterministic lookup (golden.md).
+		golden: {
+			code: "from pyteomics import mass; str(round(mass.calculate_mass(sequence='PEPTIDE'),4))",
+			expect: '799.36',
+		},
+	},
+
+	{
+		id: 'tifffile',
+		runtime: 'pyodide',
+		version: '2026.6.1',
+		tags: ['serialization', 'data-science'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/cgohlke/tifffile',
+			ref: 'v2026.6.1',
+			license: 'BSD-3-Clause',
+		},
+		importName: 'tifffile',
+		artifacts: [
+			{ vendor: 'tifffile-2026.6.1-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/81/59/208f71d70ddc6184f79b8c6d87d46eb7d7b12c19186a817dec9c9c3f3693/tifffile-2026.6.1-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		// Round-trip a small numpy array through a TIFF in memory — deterministic shape (golden.md).
+		golden: {
+			code: "import numpy as np, tifffile, io; a=np.arange(6,dtype=np.uint8).reshape(2,3); b=io.BytesIO(); tifffile.imwrite(b,a); b.seek(0); str(tifffile.imread(b).shape)",
+			expect: '(2, 3)',
+		},
+	},
+
+	{
+		id: 'trimesh',
+		runtime: 'pyodide',
+		version: '4.12.2',
+		tags: ['math', 'structure'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/mikedh/trimesh',
+			ref: '4.12.2',
+			license: 'MIT',
+		},
+		importName: 'trimesh',
+		artifacts: [
+			{ vendor: 'trimesh-4.12.2-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/05/98/716a473cfb24750858ddd5d14e6527539dd206583a46408d08eeb2844a75/trimesh-4.12.2-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+		],
+		// Box mesh: volume, watertight, face count — deterministic creation primitive (golden.md).
+		golden: {
+			code: "import trimesh; m=trimesh.creation.box(extents=[2,2,2]); str((float(round(m.volume,6)), m.is_watertight, len(m.faces)))",
+			expect: '(8.0, True, 12)',
+		},
+	},
+
+	{
+		id: 'intervaltree',
+		runtime: 'pyodide',
+		version: '3.2.1',
+		tags: ['genomics', 'util'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/chaimleib/intervaltree',
+			ref: '3.2.1',
+			license: 'Apache-2.0',
+		},
+		importName: 'intervaltree',
+		artifacts: [
+			{ vendor: 'intervaltree-3.2.1-py2.py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/83/7f/8a80a1c7c2ed05822b5a2b312d2995f30c533641f8198366ba2e26a7bb03/intervaltree-3.2.1-py2.py3-none-any.whl' },
+			{ vendor: 'sortedcontainers-2.4.0-py2.py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [],
+		// Overlap query on two intervals — deterministic sorted data list (golden.md).
+		golden: {
+			code: "from intervaltree import IntervalTree; t=IntervalTree(); t[100:200]='A'; t[150:250]='B'; str(sorted(iv.data for iv in t[160:170]))",
+			expect: "['A', 'B']",
+		},
+	},
+
+	// ── batch-4 wave B — particle + ase ────────────────────────────────────
+
+	{
+		id: 'particle',
+		runtime: 'pyodide',
+		version: '0.26.2',
+		tags: ['physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/scikit-hep/particle',
+			ref: 'v0.26.2',
+			license: 'BSD-3-Clause',
+		},
+		importName: 'particle',
+		artifacts: [
+			{ vendor: 'particle-0.26.2-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/b3/91/7e3a06fac8ad91252c316442d8f40c69c8825a9c8726d54d8aca04037580/particle-0.26.2-py3-none-any.whl' },
+			{ vendor: 'hepunits-2.4.5-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/44/9b/5fc3458204ecbd9094ce6b3b7850515f7a2f44926093cdfaa6395f88ba10/hepunits-2.4.5-py3-none-any.whl' },
+			{ vendor: 'attrs-26.1.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [],
+		// PDG pion+ lookup — deterministic name, mass, charge triple (golden.md).
+		golden: {
+			code: "from particle import Particle; p=Particle.from_pdgid(211); str((p.name, round(p.mass,5), p.charge))",
+			expect: "('pi+', 139.57039, 1.0)",
+		},
+	},
+
+	{
+		id: 'ase',
+		runtime: 'pyodide',
+		version: '3.28.0',
+		tags: ['chemistry', 'structure'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://gitlab.com/ase/ase',
+			ref: 'v3.28.0',
+			license: 'LGPL-2.1-or-later',
+		},
+		importName: 'ase',
+		artifacts: [
+			{ vendor: 'ase-3.28.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/6c/25/4f103d1bedb3593718713b3f743df7b3ff3fc68d36d6666c30265ef59c8a/ase-3.28.0-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+		],
+		// FCC Cu unit cell volume — deterministic geometry (golden.md).
+		golden: {
+			code: "from ase.build import bulk; str(round(bulk('Cu','fcc',a=3.6).get_volume(),6))",
+			expect: '11.664',
+		},
+	},
+
+	{
+		id: 'pyfaidx',
+		runtime: 'pyodide',
+		version: '0.9.0.4',
+		tags: ['biology', 'sequences'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/mdshw5/pyfaidx',
+			ref: 'v0.9.0.4',
+			license: 'BSD-3-Clause',
+		},
+		artifacts: [
+			{ vendor: 'pyfaidx-0.9.0.4-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/b5/2c/44d47df76193b31fa4a7c662531076e6ec9a0f2f3017171f47c466211537/pyfaidx-0.9.0.4-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		mode: 'strict',
+		operations: [
+			{
+				id: 'subsequence',
+				summary: 'Extract a subsequence by region chr:start-end (1-based inclusive)',
+				params: { fasta: { type: 'string' }, region: { type: 'string' } },
+				output: { format: 'text' },
+				golden: { input: { fasta: '>chr1\nACGTACGTACGT', region: 'chr1:3-6' }, expect: 'GTAC' },
+			},
+			{
+				id: 'reverse_complement',
+				summary: 'Extract a subsequence and return its reverse complement',
+				params: { fasta: { type: 'string' }, region: { type: 'string' } },
+				output: { format: 'text' },
+				golden: { input: { fasta: '>chr1\nACGTACGTACGT', region: 'chr1:1-3' }, expect: 'CGT' },
+			},
+			{
+				id: 'length',
+				summary: 'Return the length of a named sequence',
+				params: { fasta: { type: 'string' }, name: { type: 'string' } },
+				output: { format: 'text' },
+				golden: { input: { fasta: '>chr1\nACGTACGTACGT', name: 'chr1' }, expect: '12' },
+			},
+		],
+	},
 ]

@@ -1,0 +1,198 @@
+{
+	"kit": "z3",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "solve",
+			"summary": "Decide satisfiability of an SMT-LIB2 script (sat/unsat/unknown)",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat | unsat | unknown verdict on stdout"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x Int)\n(assert (and (> x 2) (< x 5)))\n(check-sat)\n"
+				},
+				"expect": "sat\n"
+			}
+		},
+		{
+			"id": "model",
+			"summary": "Solve and return a satisfying assignment via (get-model)",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat verdict followed by an SMT-LIB2 (define-fun ...) model block"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x Int)\n(declare-const y Int)\n(assert (= (+ x y) 10))\n(assert (= (- x y) 4))\n(check-sat)\n(get-model)\n"
+				},
+				"expect": "sat\n(\n  (define-fun y () Int\n    3)\n  (define-fun x () Int\n    7)\n)\n"
+			}
+		},
+		{
+			"id": "eval",
+			"summary": "Evaluate terms in the model via (get-value (...))",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat verdict followed by ((term value) ...) pairs"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const a Int)\n(declare-const b Int)\n(assert (= a 6))\n(assert (= b 7))\n(check-sat)\n(get-value ((* a b)))\n"
+				},
+				"expect": "sat\n(((* a b) 42))\n"
+			}
+		},
+		{
+			"id": "optimize",
+			"summary": "Optimization modulo theories — (maximize)/(minimize) an objective",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat verdict followed by an (objectives ...) block"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x Int)\n(assert (>= x 0))\n(assert (<= x 5))\n(maximize x)\n(check-sat)\n(get-objectives)\n"
+				},
+				"expect": "sat\n(objectives\n (x 5)\n)\n"
+			}
+		},
+		{
+			"id": "prove",
+			"summary": "Prove a theorem by asserting its negation and checking unsat",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "unsat = theorem proved; sat = a counterexample exists"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x Int)\n(declare-const y Int)\n(assert (> x 0))\n(assert (> y 0))\n(assert (<= (+ x y) 0))\n(check-sat)\n"
+				},
+				"expect": "unsat\n"
+			}
+		},
+		{
+			"id": "bitvector",
+			"summary": "Solve over fixed-width bit-vectors (machine arithmetic, bitwise ops)",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat verdict followed by ((var #xNN)) bit-vector value(s)"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x (_ BitVec 8))\n(assert (= (bvand x #x0f) #x05))\n(assert (= (bvand x #xf0) #x30))\n(check-sat)\n(get-value (x))\n"
+				},
+				"expect": "sat\n((x #x35))\n"
+			}
+		},
+		{
+			"id": "unsat-core",
+			"summary": "Return the minimal conflicting subset of named assertions",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "unsat verdict followed by (name ...) of the conflicting assertions"
+			},
+			"golden": {
+				"input": {
+					"script": "(set-option :produce-unsat-cores true)\n(declare-const x Int)\n(assert (! (> x 10) :named c1))\n(assert (! (< x 5) :named c2))\n(check-sat)\n(get-unsat-core)\n"
+				},
+				"expect": "unsat\n(c1 c2)\n"
+			}
+		},
+		{
+			"id": "real",
+			"summary": "Exact real (rational) arithmetic — solve and read fractional values",
+			"tool": "z3",
+			"params": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "script",
+			"argsTemplate": [
+				"-smt2",
+				"-in"
+			],
+			"output": {
+				"format": "sat verdict followed by an exact rational value, e.g. (/ 1.0 3.0)"
+			},
+			"golden": {
+				"input": {
+					"script": "(declare-const x Real)\n(assert (= (* 3 x) 1))\n(check-sat)\n(get-value (x))\n"
+				},
+				"expect": "sat\n((x (/ 1.0 3.0)))\n"
+			}
+		}
+	]
+}

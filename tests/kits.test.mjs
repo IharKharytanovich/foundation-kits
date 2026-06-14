@@ -9,24 +9,24 @@ const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
 
 const KNOWN_PYODIDE_WASI = [
-  'astropy', 'autograd', 'biopython', 'chaospy', 'chempy', 'deap',
+  'ase', 'astropy', 'autograd', 'biopython', 'chaospy', 'chempy', 'deap',
   'decorator', 'dendropy', 'dill', 'dynesty', 'earcut', 'emcee',
-  'findiff', 'freesasa', 'iminuit', 'joblib', 'lmfit', 'mendeleev',
-  'molmass', 'networkx', 'numpy', 'packaging', 'pandas', 'periodictable',
-  'pint', 'pyrodigal', 'pytz', 'pywavelets', 'pyyaml', 'salib',
+  'findiff', 'freesasa', 'iminuit', 'intervaltree', 'joblib', 'lmfit', 'mendeleev',
+  'molmass', 'networkx', 'numpy', 'packaging', 'pandas', 'particle', 'periodictable',
+  'pint', 'pyfaidx', 'pyrodigal', 'pyteomics', 'pytz', 'pywavelets', 'pyyaml', 'salib',
   'scikit-fem', 'scikit-learn', 'scikit-optimize', 'scipy', 'selfies',
   'seqtk', 'setuptools', 'sgp4', 'six', 'sympy', 'thermo',
-  'uncertainties', 'viennarna',
+  'tifffile', 'trimesh', 'uncertainties', 'viennarna', 'z3',
 ]
 
 const KNOWN_JSWASM = [
-  'eigen', 'geodesy', 'geos', 'gmp', 'highs-js', 'rapier2d', 'rapier3d', 'rdkit',
+  'eigen', 'geodesy', 'geos', 'gmp', 'highs-js', 'manifold', 'meshoptimizer', 'rapier2d', 'rapier3d', 'rdkit',
 ]
 
 describe('seed kits', () => {
   it('kit dirs are all within the known sets and include the seeds', () => {
-    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(43)
-    expect(new Set(KNOWN_JSWASM).size).toBe(8)
+    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(51)
+    expect(new Set(KNOWN_JSWASM).size).toBe(10)
     expect(kitIds.every((id) => KNOWN_PYODIDE_WASI.includes(id) || KNOWN_JSWASM.includes(id))).toBe(true)
     expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })

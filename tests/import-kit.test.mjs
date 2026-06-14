@@ -133,6 +133,90 @@ describe('importKit', () => {
 		expect(RecipeSchema.safeParse(recipe).success).toBe(true)
 	})
 
+	it('imports a pyodide strict-mode kit with typed operations', async () => {
+		const vendorFile = 'strictlib-1.0.0-py3-none-any.whl'
+		writeFakeVendor('pyodide', vendorFile)
+
+		const descriptor = {
+			id: 'strictlib',
+			runtime: 'pyodide',
+			version: '1.0.0',
+			tags: ['util'],
+			tier: 'library',
+			provenance: { source: 'pypi', repo: 'https://github.com/fake/strictlib', ref: 'v1.0.0', license: 'MIT' },
+			artifacts: [{ vendor: vendorFile, sourceUrl: 'https://example.com/' + vendorFile }],
+			dependencies: [],
+			mode: 'strict',
+			operations: [
+				{
+					id: 'greet',
+					summary: 'Say hello',
+					params: { name: { type: 'string' } },
+					output: { format: 'text' },
+					golden: { input: { name: 'world' }, expect: 'hello world' },
+				},
+			],
+		}
+
+		const dir = await importKit(descriptor, { vendorRoot: TMP_VENDOR, root: TMP_ROOT })
+
+		const manifest = JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8'))
+		const kit = JSON.parse(readFileSync(join(dir, 'kit.json'), 'utf8'))
+		const recipe = JSON.parse(readFileSync(join(dir, 'recipe.json'), 'utf8'))
+
+		// manifest: strict with operations
+		expect(manifest.mode).toBe('strict')
+		expect(manifest.operations).toHaveLength(1)
+		expect(manifest.operations[0].id).toBe('greet')
+		expect(manifest.operations[0].golden.expect).toBe('hello world')
+		// Must NOT have loose-only fields
+		expect(manifest.imports).toBeUndefined()
+		expect(manifest.golden).toBeUndefined()
+
+		// kit.json: pyodide runtime
+		expect(kit.runtime).toBe('pyodide')
+
+		// recipe: pypi-vendor (same as loose)
+		expect(recipe.track).toBe('pypi-vendor')
+
+		// Schema validation
+		expect(KitJsonSchema.safeParse(kit).success).toBe(true)
+		expect(ManifestSchema.safeParse(manifest).success).toBe(true)
+		expect(RecipeSchema.safeParse(recipe).success).toBe(true)
+	})
+
+	it('imports a pyodide kit without mode as loose (default path unchanged)', async () => {
+		const vendorFile = 'looselib-1.0.0-py3-none-any.whl'
+		writeFakeVendor('pyodide', vendorFile)
+
+		const descriptor = {
+			id: 'looselib',
+			runtime: 'pyodide',
+			version: '1.0.0',
+			tags: ['util'],
+			tier: 'library',
+			provenance: { source: 'pypi', repo: 'https://github.com/fake/looselib', ref: 'v1.0.0', license: 'MIT' },
+			importName: 'looselib',
+			artifacts: [{ vendor: vendorFile, sourceUrl: 'https://example.com/' + vendorFile }],
+			dependencies: [],
+			golden: { code: "import looselib; looselib.run()", expect: 'ok' },
+		}
+
+		const dir = await importKit(descriptor, { vendorRoot: TMP_VENDOR, root: TMP_ROOT })
+
+		const manifest = JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8'))
+
+		// manifest: loose (default path)
+		expect(manifest.mode).toBe('loose')
+		expect(manifest.imports).toEqual(['looselib'])
+		expect(manifest.golden.code).toBe("import looselib; looselib.run()")
+		// Must NOT have strict-only fields
+		expect(manifest.operations).toBeUndefined()
+
+		// Schema validation
+		expect(ManifestSchema.safeParse(manifest).success).toBe(true)
+	})
+
 	it('imports a wasi kit with strict manifest skeleton', async () => {
 		const wasmFile = 'FakeTool.wasm'
 		writeFakeVendor('wasm', wasmFile, 'wasm-binary-content')

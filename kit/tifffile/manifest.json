@@ -1,0 +1,11 @@
+{
+	"kit": "tifffile",
+	"mode": "loose",
+	"imports": [
+		"tifffile"
+	],
+	"golden": {
+		"code": "import numpy as np, tifffile, io; a=np.arange(6,dtype=np.uint8).reshape(2,3); b=io.BytesIO(); tifffile.imwrite(b,a); b.seek(0); str(tifffile.imread(b).shape)",
+		"expect": "(2, 3)"
+	}
+}

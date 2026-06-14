@@ -1,0 +1,36 @@
+{
+	"id": "ase",
+	"version": "3.28.0",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://gitlab.com/ase/ase",
+		"ref": "v3.28.0",
+		"license": "LGPL-2.1-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/ase-3.28.0-py3-none-any.whl",
+			"sha256": "0e24056302d7307b7247f90de281de15e3031c14cf400bedb1116c3b0d0e50b8",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/ase@3.28.0/ase-3.28.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"id": "intervaltree",
+	"version": "3.2.1",
+	"runtime": "pyodide",
+	"tags": [
+		"genomics",
+		"util"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/chaimleib/intervaltree",
+		"ref": "3.2.1",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/intervaltree-3.2.1-py2.py3-none-any.whl",
+			"sha256": "a8a8381bbd35d48ceebee932c77ffc988492d22fb1d27d0ba1d74a7694eb8f0b",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/intervaltree@3.2.1/intervaltree-3.2.1-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+			"sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/intervaltree@3.2.1/sortedcontainers-2.4.0-py2.py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

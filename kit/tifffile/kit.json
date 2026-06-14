@@ -1,0 +1,31 @@
+{
+	"id": "tifffile",
+	"version": "2026.6.1",
+	"runtime": "pyodide",
+	"tags": [
+		"serialization",
+		"data-science"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/cgohlke/tifffile",
+		"ref": "v2026.6.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/tifffile-2026.6.1-py3-none-any.whl",
+			"sha256": "0d7382d2769b855b81ce358528e2b40c16d48aa39031746efa81215205332a8d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/tifffile@2026.6.1/tifffile-2026.6.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

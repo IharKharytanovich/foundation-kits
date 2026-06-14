@@ -1,0 +1,8 @@
+{
+	"kit": "pyteomics",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/0f/87/8914db559e9c5378a509c99631f87ce5612517182b3f0b426f2996522e8b/pyteomics-5.0-py3-none-any.whl",
+		"sha256": "cb3372b50aa9945a32ecf84e68fc043ffec566fa8c30e09c4fe591dfc9b9bda0"
+	}
+}

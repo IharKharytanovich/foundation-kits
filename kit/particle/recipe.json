@@ -1,0 +1,20 @@
+{
+	"kit": "particle",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/b3/91/7e3a06fac8ad91252c316442d8f40c69c8825a9c8726d54d8aca04037580/particle-0.26.2-py3-none-any.whl",
+		"sha256": "dc99fbcb2b02c520dd1f3a369446c706466b033f29771255977a96071af41128"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/hepunits-2.4.5-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/44/9b/5fc3458204ecbd9094ce6b3b7850515f7a2f44926093cdfaa6395f88ba10/hepunits-2.4.5-py3-none-any.whl",
+			"sha256": "4813336fbc192a6b7bfcc4ec6dbac260669915bca7c945b67bd603b55297f239"
+		},
+		{
+			"file": "artifacts/attrs-26.1.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl",
+			"sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+		}
+	]
+}

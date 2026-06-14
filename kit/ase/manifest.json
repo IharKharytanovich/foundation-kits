@@ -1,0 +1,11 @@
+{
+	"kit": "ase",
+	"mode": "loose",
+	"imports": [
+		"ase"
+	],
+	"golden": {
+		"code": "from ase.build import bulk; str(round(bulk('Cu','fcc',a=3.6).get_volume(),6))",
+		"expect": "11.664"
+	}
+}

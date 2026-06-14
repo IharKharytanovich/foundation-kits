@@ -109,6 +109,12 @@ export async function importKit(descriptor, { vendorRoot = 'temp/vendor', root =
 				},
 			],
 		}
+	} else if (descriptor.mode === 'strict') {
+		manifestJson = {
+			kit: id,
+			mode: 'strict',
+			operations: descriptor.operations,
+		}
 	} else {
 		manifestJson = {
 			kit: id,

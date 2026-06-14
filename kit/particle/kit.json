@@ -1,0 +1,34 @@
+{
+	"id": "particle",
+	"version": "0.26.2",
+	"runtime": "pyodide",
+	"tags": [
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-hep/particle",
+		"ref": "v0.26.2",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/particle-0.26.2-py3-none-any.whl",
+			"sha256": "dc99fbcb2b02c520dd1f3a369446c706466b033f29771255977a96071af41128",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/particle@0.26.2/particle-0.26.2-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/hepunits-2.4.5-py3-none-any.whl",
+			"sha256": "4813336fbc192a6b7bfcc4ec6dbac260669915bca7c945b67bd603b55297f239",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/particle@0.26.2/hepunits-2.4.5-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/attrs-26.1.0-py3-none-any.whl",
+			"sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/particle@0.26.2/attrs-26.1.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

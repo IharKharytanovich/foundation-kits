@@ -1,0 +1,11 @@
+{
+	"kit": "particle",
+	"mode": "loose",
+	"imports": [
+		"particle"
+	],
+	"golden": {
+		"code": "from particle import Particle; p=Particle.from_pdgid(211); str((p.name, round(p.mass,5), p.charge))",
+		"expect": "('pi+', 139.57039, 1.0)"
+	}
+}

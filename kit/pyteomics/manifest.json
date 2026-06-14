@@ -1,0 +1,11 @@
+{
+	"kit": "pyteomics",
+	"mode": "loose",
+	"imports": [
+		"pyteomics"
+	],
+	"golden": {
+		"code": "from pyteomics import mass; str(round(mass.calculate_mass(sequence='PEPTIDE'),4))",
+		"expect": "799.36"
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"kit": "trimesh",
+	"mode": "loose",
+	"imports": [
+		"trimesh"
+	],
+	"golden": {
+		"code": "import trimesh; m=trimesh.creation.box(extents=[2,2,2]); str((float(round(m.volume,6)), m.is_watertight, len(m.faces)))",
+		"expect": "(8.0, True, 12)"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"id": "trimesh",
+	"version": "4.12.2",
+	"runtime": "pyodide",
+	"tags": [
+		"math",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/mikedh/trimesh",
+		"ref": "4.12.2",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/trimesh-4.12.2-py3-none-any.whl",
+			"sha256": "b5b5afa63c5272345f2858f7676bc8c217dc8a89f4fadf6193fe10a81b5ff2aa",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/trimesh@4.12.2/trimesh-4.12.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

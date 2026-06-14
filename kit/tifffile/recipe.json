@@ -1,0 +1,8 @@
+{
+	"kit": "tifffile",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/81/59/208f71d70ddc6184f79b8c6d87d46eb7d7b12c19186a817dec9c9c3f3693/tifffile-2026.6.1-py3-none-any.whl",
+		"sha256": "0d7382d2769b855b81ce358528e2b40c16d48aa39031746efa81215205332a8d"
+	}
+}

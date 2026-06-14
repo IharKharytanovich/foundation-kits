@@ -1,0 +1,11 @@
+{
+	"kit": "intervaltree",
+	"mode": "loose",
+	"imports": [
+		"intervaltree"
+	],
+	"golden": {
+		"code": "from intervaltree import IntervalTree; t=IntervalTree(); t[100:200]='A'; t[150:250]='B'; str(sorted(iv.data for iv in t[160:170]))",
+		"expect": "['A', 'B']"
+	}
+}

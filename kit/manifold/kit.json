@@ -1,0 +1,39 @@
+{
+	"id": "manifold",
+	"version": "3.5.1-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"math",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "manifold-3d",
+		"repo": "https://github.com/elalish/manifold",
+		"ref": "v3.5.1",
+		"license": "Apache-2.0",
+		"buildNote": "Single-threaded Emscripten build; separate .wasm binary; manifold.js is ESM (type:module)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/manifold.js",
+			"sha256": "860b5c9702a807d1f93b9eb5b4fce15dd1de1af35c508301791986bc4e70c552",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/manifold@3.5.1-1.0.0/manifold.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/manifold.wasm",
+			"sha256": "73e3b419ad31294f6b1cc478173944e50efc4a34bfdeeff0107bdfc12975f11c",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/manifold@3.5.1-1.0.0/manifold.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/manifold.js",
+		"moduleSystem": "esm",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

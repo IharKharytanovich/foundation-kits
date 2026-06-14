@@ -238,4 +238,74 @@ export const JSWASM_KITS = [
 		],
 		dependencies: [],
 	},
+
+	// ── batch-4 Emscripten kits ────────────────────────────────────────────
+
+	{
+		id: 'manifold',
+		version: '3.5.1-1.0.0',
+		family: 'emscripten',
+		tags: ['math', 'structure'],
+		tier: 'library',
+		provenance: {
+			source: 'manifold-3d',
+			repo: 'https://github.com/elalish/manifold',
+			ref: 'v3.5.1',
+			license: 'Apache-2.0',
+			buildNote: 'Single-threaded Emscripten build; separate .wasm binary; manifold.js is ESM (type:module)',
+		},
+		loader: {
+			entry: 'artifacts/manifold.js',
+			moduleSystem: 'esm',
+			initStyle: 'factory',
+			wasmSupply: 'locateFile',
+		},
+		artifacts: [
+			{ vendor: 'manifold.js', role: 'loader' },
+			{ vendor: 'manifold.wasm', role: 'binary' },
+		],
+		source: { package: 'manifold-3d', version: '3.5.1' },
+		vendored: [
+			{ vendor: 'manifold.js', url: 'https://cdn.jsdelivr.net/npm/manifold-3d@3.5.1/manifold.js' },
+			{ vendor: 'manifold.wasm', url: 'https://cdn.jsdelivr.net/npm/manifold-3d@3.5.1/manifold.wasm' },
+		],
+		dependencies: [],
+	},
+
+	{
+		id: 'meshoptimizer',
+		version: '1.1.1-1.0.0',
+		family: 'emscripten',
+		tags: ['math', 'structure'],
+		tier: 'library',
+		provenance: {
+			source: 'meshoptimizer',
+			repo: 'https://github.com/zeux/meshoptimizer',
+			ref: 'v1.1.1',
+			license: 'MIT',
+			buildNote: 'Single-threaded WASM build (wasi-sdk); base64-inlined wasm in each JS module; five ESM files with inter-module re-exports',
+		},
+		loader: {
+			entry: 'artifacts/index.js',
+			moduleSystem: 'esm',
+			initStyle: 'none',
+			wasmSupply: 'auto',
+		},
+		artifacts: [
+			{ vendor: 'index.js', role: 'loader' },
+			{ vendor: 'meshopt_simplifier.js', role: 'loader' },
+			{ vendor: 'meshopt_encoder.js', role: 'loader' },
+			{ vendor: 'meshopt_decoder.mjs', role: 'loader' },
+			{ vendor: 'meshopt_clusterizer.js', role: 'loader' },
+		],
+		source: { package: 'meshoptimizer', version: '1.1.1' },
+		vendored: [
+			{ vendor: 'index.js', url: 'https://cdn.jsdelivr.net/npm/meshoptimizer@1.1.1/index.js' },
+			{ vendor: 'meshopt_simplifier.js', url: 'https://cdn.jsdelivr.net/npm/meshoptimizer@1.1.1/meshopt_simplifier.js' },
+			{ vendor: 'meshopt_encoder.js', url: 'https://cdn.jsdelivr.net/npm/meshoptimizer@1.1.1/meshopt_encoder.js' },
+			{ vendor: 'meshopt_decoder.mjs', url: 'https://cdn.jsdelivr.net/npm/meshoptimizer@1.1.1/meshopt_decoder.mjs' },
+			{ vendor: 'meshopt_clusterizer.js', url: 'https://cdn.jsdelivr.net/npm/meshoptimizer@1.1.1/meshopt_clusterizer.js' },
+		],
+		dependencies: [],
+	},
 ]

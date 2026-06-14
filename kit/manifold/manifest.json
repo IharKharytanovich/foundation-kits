@@ -1,0 +1,10 @@
+{
+	"kit": "manifold",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "handle.setup(); const { Manifold } = handle; const big = new Manifold.cube([2, 2, 2]); const small = new Manifold.cube([1, 1, 1]); return String(big.subtract(small).volume());",
+		"expect": "7"
+	}
+}

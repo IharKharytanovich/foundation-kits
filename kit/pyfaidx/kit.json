@@ -1,0 +1,31 @@
+{
+	"id": "pyfaidx",
+	"version": "0.9.0.4",
+	"runtime": "pyodide",
+	"tags": [
+		"biology",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/mdshw5/pyfaidx",
+		"ref": "v0.9.0.4",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pyfaidx-0.9.0.4-py3-none-any.whl",
+			"sha256": "18b223b7ba8c66b988a8ce00011500961cb2aeb7fa97d05a293cf472acdd0009",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyfaidx@0.9.0.4/pyfaidx-0.9.0.4-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

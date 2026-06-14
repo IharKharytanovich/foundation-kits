@@ -1,0 +1,8 @@
+{
+	"kit": "ase",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/6c/25/4f103d1bedb3593718713b3f743df7b3ff3fc68d36d6666c30265ef59c8a/ase-3.28.0-py3-none-any.whl",
+		"sha256": "0e24056302d7307b7247f90de281de15e3031c14cf400bedb1116c3b0d0e50b8"
+	}
+}

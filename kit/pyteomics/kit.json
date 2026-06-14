@@ -1,0 +1,25 @@
+{
+	"id": "pyteomics",
+	"version": "5.0",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"biology"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/levitsky/pyteomics",
+		"ref": "v5.0",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pyteomics-5.0-py3-none-any.whl",
+			"sha256": "cb3372b50aa9945a32ecf84e68fc043ffec566fa8c30e09c4fe591dfc9b9bda0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyteomics@5.0/pyteomics-5.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

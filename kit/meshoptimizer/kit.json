@@ -1,0 +1,57 @@
+{
+	"id": "meshoptimizer",
+	"version": "1.1.1-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"math",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "meshoptimizer",
+		"repo": "https://github.com/zeux/meshoptimizer",
+		"ref": "v1.1.1",
+		"license": "MIT",
+		"buildNote": "Single-threaded WASM build (wasi-sdk); base64-inlined wasm in each JS module; five ESM files with inter-module re-exports"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/index.js",
+			"sha256": "f813b93618618437e042a11512ad0023faf1106795941d0522a742176718ad66",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/meshoptimizer@1.1.1-1.0.0/index.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/meshopt_simplifier.js",
+			"sha256": "d2e80c60a84c700947f97ab4678cc222a5b9ab409a0745eef2dcaa79bb1ef922",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/meshoptimizer@1.1.1-1.0.0/meshopt_simplifier.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/meshopt_encoder.js",
+			"sha256": "1838ec71953c9008ad2eb06bb2ab34c588e3403ed7db2206420b72dcdef208cd",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/meshoptimizer@1.1.1-1.0.0/meshopt_encoder.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/meshopt_decoder.mjs",
+			"sha256": "d428e73a000057c6c94bfcedc3412d0c2dc14ca8800e88553aab05113ad2bf19",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/meshoptimizer@1.1.1-1.0.0/meshopt_decoder.mjs",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/meshopt_clusterizer.js",
+			"sha256": "5fad5dde71f5a0736082d303164969da887ec9b5479f3b50c307d4d67e0844e9",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/meshoptimizer@1.1.1-1.0.0/meshopt_clusterizer.js",
+			"role": "loader"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/index.js",
+		"moduleSystem": "esm",
+		"initStyle": "none",
+		"wasmSupply": "auto"
+	},
+	"dependencies": []
+}

@@ -13,6 +13,7 @@ Background: [docs/architecture.md](docs/architecture.md) ·
 
 ```
 kit/<id>/        Kit definitions — source of truth (in git)
+kit/REGISTRY.md  Flat index of every kit (name · version · runtime · desc · published)
 tooling/         Pipeline (Node .mjs): new-kit scaffolder + lib/ (schema, sha256, tags)
 tests/           vitest — schema-parse + integrity over every kit/*
 docs/            Architecture + design specs + plans (docs/superpowers/)
@@ -85,6 +86,8 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
 
 ## Pointers
 
+- **Kit registry** — flat index of all kits (name, version, runtime, one-line
+  description, publish status): [kit/REGISTRY.md](kit/REGISTRY.md).
 - Conventions in depth: [.claude/rules/](.claude/rules/) — incl.
   [publish.md](.claude/rules/publish.md) (tag→CI→Release pipeline + URL template).
 - **Publish + validation runbook** — the procedure that works *today* (local
@@ -93,6 +96,7 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
   [docs/publishing-and-validation.md](docs/publishing-and-validation.md).
 - jswasm track: [.claude/rules/jswasm.md](.claude/rules/jswasm.md) (callable mode,
   loader, families, vendor workflow).
-- Workflows: [.claude/skills/](.claude/skills/) — `add-kit`, `verify-kit`, `publish-kit`
+- Workflows: [.claude/skills/](.claude/skills/) — `scout-kits` (find/vet new kit
+  candidates → spec-writer), `add-kit`, `verify-kit`, `publish-kit`
 - Large multi-kit work (e.g. batch-importing kits): `spec-writer` +
-  `spec-executor` + the orchestrator. 51 kits built (43 wasi/pyodide + 8 jswasm).
+  `spec-executor` + the orchestrator. 56 kits built (46 wasi/pyodide + 10 jswasm).

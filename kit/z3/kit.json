@@ -1,0 +1,31 @@
+{
+	"id": "z3",
+	"version": "4.16.0",
+	"runtime": "wasi",
+	"tags": [
+		"symbolic",
+		"optimization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/Z3Prover/z3",
+		"ref": "z3-4.16.0",
+		"license": "MIT",
+		"buildNote": "Single-threaded wasi-sdk 33 build (CMake, target 'shell'); Z3_SINGLE_THREADED + Z3_POLLING_TIMER; C++ exceptions via -fwasm-exceptions (-wasm-use-legacy-eh=false, -lunwind), LTO off (wasi-sdk #629). WASM lacks fenv rounding modes (force-include shim defines FE_UPWARD/DOWNWARD/TOWARDZERO for hwf.cpp) and signals/mmap/fork (wasi-emulated-signal/mman/process-clocks/getpid + pthread_atfork no-op stub). wasm-opt -Oz + strip. No threads/SAB. Built + smoke-tested 8/8 goldens on arm64 via build/z3/."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/z3.wasm",
+			"sha256": "8ac74cd220e117cd6fd80b23972d76a79123ab7120003f0d6ab44480fd04cee8",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/z3@4.16.0/z3.wasm",
+			"wasiTools": [
+				"z3"
+			],
+			"multiplexed": false,
+			"stdinAsFile": false
+		}
+	],
+	"dependencies": []
+}
