@@ -1,72 +1,11 @@
 {
 	"kit": "pyfaidx",
-	"mode": "strict",
-	"operations": [
-		{
-			"id": "subsequence",
-			"summary": "Extract a subsequence by region chr:start-end (1-based inclusive)",
-			"params": {
-				"fasta": {
-					"type": "string"
-				},
-				"region": {
-					"type": "string"
-				}
-			},
-			"output": {
-				"format": "text"
-			},
-			"golden": {
-				"input": {
-					"fasta": ">chr1\nACGTACGTACGT",
-					"region": "chr1:3-6"
-				},
-				"expect": "GTAC"
-			}
-		},
-		{
-			"id": "reverse_complement",
-			"summary": "Extract a subsequence and return its reverse complement",
-			"params": {
-				"fasta": {
-					"type": "string"
-				},
-				"region": {
-					"type": "string"
-				}
-			},
-			"output": {
-				"format": "text"
-			},
-			"golden": {
-				"input": {
-					"fasta": ">chr1\nACGTACGTACGT",
-					"region": "chr1:1-3"
-				},
-				"expect": "CGT"
-			}
-		},
-		{
-			"id": "length",
-			"summary": "Return the length of a named sequence",
-			"params": {
-				"fasta": {
-					"type": "string"
-				},
-				"name": {
-					"type": "string"
-				}
-			},
-			"output": {
-				"format": "text"
-			},
-			"golden": {
-				"input": {
-					"fasta": ">chr1\nACGTACGTACGT",
-					"name": "chr1"
-				},
-				"expect": "12"
-			}
-		}
-	]
+	"mode": "loose",
+	"imports": [
+		"pyfaidx"
+	],
+	"golden": {
+		"code": "from pyfaidx import Fasta; open('/tmp/pf.fa','w').write('>chr1\\nACGTACGTACGT\\n'); str(Fasta('/tmp/pf.fa')['chr1'][2:6])",
+		"expect": "GTAC"
+	}
 }

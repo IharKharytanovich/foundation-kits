@@ -3,13 +3,12 @@
 pyfaidx provides efficient, pythonic random access to FASTA subsequences. It
 implements `samtools faidx`-style indexing in pure Python, enabling fast region
 extraction from large FASTA files without loading the entire file into memory.
-pyfaidx supports subsequence extraction, reverse-complement retrieval, and
-sequence-length queries using a typed operation interface.
+You write Python against the `pyfaidx` API in the sandbox — index a FASTA, then
+slice records by coordinate, retrieve reverse complements, or query lengths.
 
 ## When to Use
 
 - Extracting specific genomic regions from a FASTA file by coordinates
-  (`chr:start-end`, 1-based inclusive)
 - Retrieving reverse-complement sequences for a given region
 - Querying the length of a named sequence (chromosome, contig, scaffold)
 - Random access into large reference genomes without full-file loading
@@ -24,33 +23,36 @@ sequence-length queries using a typed operation interface.
 - Prokaryotic gene prediction or ORF finding (use **pyrodigal**)
 - Numerical array operations on sequence-derived data (use **numpy**)
 
-## Operations
+## Capabilities
 
-| Operation | Summary |
+| Area | Key API |
 |---|---|
-| `subsequence` | Extract a subsequence by region `chr:start-end` (1-based inclusive) |
-| `reverse_complement` | Extract a subsequence and return its reverse complement |
-| `length` | Return the length of a named sequence |
+| Open / index | `Fasta(path)` — builds a `.fai` index, returns a mapping of name → record |
+| Coordinate slicing | `fasta['chr1'][start:end]` — 0-based half-open slice, returns a `Sequence` |
+| Region string | `fasta['chr1'][start-1:end]` for 1-based inclusive `chr:start-end` regions |
+| Reverse complement | `(-fasta['chr1'][start:end])` or `seq.reverse.complement` |
+| Length | `len(fasta['chr1'])` — length of a named record |
+| Sequence value | `str(seq)` — the nucleotide string of a `Sequence` |
 
-Pick an operation and supply its parameters. The runtime handles FASTA indexing
-and invocation.
+`pyfaidx` reads from a file path, so write FASTA text to a file (e.g. under
+`/tmp`) before indexing.
 
 ## Worked Example
 
 Extract a subsequence from a short FASTA input:
 
-**Operation**: `subsequence`
-**Parameters**: `{ "fasta": ">chr1\nACGTACGTACGT", "region": "chr1:3-6" }`
-**Output**: `GTAC`
+```python
+from pyfaidx import Fasta
+open('/tmp/pf.fa', 'w').write('>chr1\nACGTACGTACGT\n')
+str(Fasta('/tmp/pf.fa')['chr1'][2:6])
+# → "GTAC"
+```
 
-Retrieve the reverse complement of a region:
+Retrieve the reverse complement of a region, and query a record's length:
 
-**Operation**: `reverse_complement`
-**Parameters**: `{ "fasta": ">chr1\nACGTACGTACGT", "region": "chr1:1-3" }`
-**Output**: `CGT`
-
-Query the length of a sequence record:
-
-**Operation**: `length`
-**Parameters**: `{ "fasta": ">chr1\nACGTACGTACGT", "name": "chr1" }`
-**Output**: `12`
+```python
+from pyfaidx import Fasta
+fasta = Fasta('/tmp/pf.fa')
+str(-fasta['chr1'][0:3])   # reverse complement of "ACG" → "CGT"
+len(fasta['chr1'])          # → 12
+```
