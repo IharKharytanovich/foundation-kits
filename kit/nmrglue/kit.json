@@ -1,0 +1,36 @@
+{
+	"id": "nmrglue",
+	"version": "0.11",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"signal"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/jjhelmus/nmrglue",
+		"ref": "v0.11",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/nmrglue-0.11-py2.py3-none-any.whl",
+			"sha256": "6e698b07cd71d12034664a3414ce0bb7bf5cd87cf750b03e33e439fb31dc13bd",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/nmrglue@0.11/nmrglue-0.11-py2.py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

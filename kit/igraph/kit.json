@@ -1,0 +1,30 @@
+{
+	"id": "igraph",
+	"version": "0.11.8",
+	"runtime": "pyodide",
+	"tags": [
+		"graphs",
+		"data-science"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/igraph/python-igraph",
+		"ref": "0.11.8",
+		"license": "GPL-2.0-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/igraph-0.11.8-cp39-abi3-pyodide_2025_0_wasm32.whl",
+			"sha256": "0a59cc54fa0a084db9caab5a99d5b87baf03280b72f0372761157f3d9cbc2dcb",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/igraph@0.11.8/igraph-0.11.8-cp39-abi3-pyodide_2025_0_wasm32.whl"
+		},
+		{
+			"file": "artifacts/texttable-1.7.0-py2.py3-none-any.whl",
+			"sha256": "a366ef149d93f3d7716df490d86970a8c80b9d1781f7fb158c5ccef114b43dc6",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/igraph@0.11.8/texttable-1.7.0-py2.py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

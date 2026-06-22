@@ -1,0 +1,42 @@
+{
+	"id": "galpy",
+	"version": "1.10.2",
+	"runtime": "pyodide",
+	"tags": [
+		"astronomy",
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/jobovy/galpy",
+		"ref": "v1.10.2",
+		"license": "BSD-3-Clause",
+		"buildNote": "Pyodide-built compiled wheel (GSL-backed) from the v0.28.0 CDN; pin 1.10.2 (NOT PyPI HEAD 1.11.2). matplotlib plotting unavailable in Pyodide."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/galpy-1.10.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "22676bf99298cf19700b8aa94d86faa8c83251574ca19141c2e463ec0b493fb3",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/galpy@1.10.2/galpy-1.10.2-cp313-cp313-pyodide_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

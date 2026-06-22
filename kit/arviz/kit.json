@@ -1,0 +1,78 @@
+{
+	"id": "arviz",
+	"version": "1.2.0",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"sampling",
+		"uncertainty"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/arviz-devs/arviz",
+		"ref": "v1.2.0",
+		"license": "Apache-2.0",
+		"buildNote": "Bundles arviz-base 1.2.0 (Apache-2.0), arviz-stats 1.2.0 (Apache-2.0), arviz-plots 1.2.0 (Apache-2.0), xarray 2025.1.2 (Apache-2.0), lazy_loader 0.4 (BSD-3-Clause), typing_extensions 4.14.0 (PSF-2.0) — exclusive deps. matplotlib/bokeh/plotly plotting backends unavailable in Pyodide."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/arviz-1.2.0-py3-none-any.whl",
+			"sha256": "3b2b313b4b57ebb2e028c5237e4eacbd4f56084d0162128f8f1f42266c7cf515",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/arviz-1.2.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/arviz_base-1.2.0-py3-none-any.whl",
+			"sha256": "a3f7023b665823068ff4b973bb6205eacc65f3c0a446cc099d7e5326b50f1ffc",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/arviz_base-1.2.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/arviz_stats-1.2.0-py3-none-any.whl",
+			"sha256": "f9084addeb1abdbab6e9816f0a063118bc4ff7c48ce9141a4dad20b0e41410ae",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/arviz_stats-1.2.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/arviz_plots-1.2.0-py3-none-any.whl",
+			"sha256": "2e16ed95ce6d6fbb171d60f7300f50c520ebeeb132be7539591a018076f66f16",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/arviz_plots-1.2.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/xarray-2025.1.2-py3-none-any.whl",
+			"sha256": "02a4f88148fcfb864a8261197662906763b7b087f347cee12144ed5779dde482",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/xarray-2025.1.2-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/lazy_loader-0.4-py3-none-any.whl",
+			"sha256": "922fd3357bd62c5dff8759a3be9b62d9da75aed5f94b8107b67898b566fe7136",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/lazy_loader-0.4-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.14.0-py3-none-any.whl",
+			"sha256": "ea55f317ad44571eea7bfaa916b81c857181f0a0971ab97b2fe251c01b510f90",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/arviz@1.2.0/typing_extensions-4.14.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"id": "kalign",
+	"version": "3.3.1-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"biology",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "kalign",
+		"repo": "https://github.com/TimoLassmann/kalign",
+		"ref": "v3.3.1",
+		"license": "Apache-2.0",
+		"buildNote": "Single-threaded biowasm v3 Emscripten build (USE_PTHREADS=0, no SAB)"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/kalign.js",
+			"sha256": "e9fcb1299e4580bdd2694cbce3096f5a320ab0d2cf62919cdcfacf00c37293e9",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/kalign@3.3.1-1.0.0/kalign.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/kalign.wasm",
+			"sha256": "722a42e7dfa1a8012e1dd35b5cc444b24ca059d95ead4ce7f9e36f6277951a02",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/kalign@3.3.1-1.0.0/kalign.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/kalign.js",
+		"moduleSystem": "cjs",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

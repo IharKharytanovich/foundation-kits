@@ -1,0 +1,9 @@
+{
+	"kit": "pybaselines",
+	"mode": "loose",
+	"imports": ["pybaselines"],
+	"golden": {
+		"code": "import numpy as np\nfrom pybaselines import Baseline\nx = np.arange(20, dtype=float)\ny = np.array([1.0, 2.0, 1.5, 3.0, 2.5, 4.0, 3.5, 5.0, 4.5, 6.0, 5.5, 7.0, 6.5, 5.0, 4.0, 3.0, 2.0, 1.5, 1.0, 0.5])\nbaseline_fitter = Baseline(x_data=x)\nbaseline, params = baseline_fitter.asls(y, lam=1e3, p=0.01)\nprint(str(np.round(baseline, 4).tolist()))",
+		"expect": "[1.2401, 1.2238, 1.2073, 1.1903, 1.1726, 1.154, 1.1343, 1.1134, 1.091, 1.0671, 1.0417, 1.0146, 0.986, 0.9558, 0.9243, 0.8916, 0.858, 0.8236, 0.7887, 0.7535]"
+	}
+}

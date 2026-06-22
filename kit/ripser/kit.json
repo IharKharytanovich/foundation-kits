@@ -1,0 +1,31 @@
+{
+	"id": "ripser",
+	"version": "1.2.1",
+	"runtime": "wasi",
+	"tags": [
+		"math",
+		"data-science"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/Ripser/ripser",
+		"ref": "v1.2.1",
+		"license": "MIT",
+		"buildNote": "Single-threaded wasi-sdk clang++ compile of ripser.cpp (single translation unit, already a CLI with main()) — no thin driver needed. No external deps, no threading. Upstream Emscripten/WASM demo (live.ripser.org) is the single-threaded precedent. wasm-opt -Oz + strip."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/ripser.wasm",
+			"sha256": "d468b869e9880030ee3f3c61c7ba3875841752d23bafa85bfaadc1a66df1973d",
+			"wasiTools": [
+				"ripser"
+			],
+			"multiplexed": false,
+			"stdinAsFile": true,
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/ripser@1.2.1/ripser.wasm"
+		}
+	],
+	"dependencies": []
+}

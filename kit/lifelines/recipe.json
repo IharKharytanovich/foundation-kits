@@ -1,0 +1,35 @@
+{
+	"kit": "lifelines",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/8a/fb/5ed80a8932630d4ae33af186a87008c9b48f02bc515380acc1a4b1fec162/lifelines-0.30.3-py3-none-any.whl",
+		"sha256": "44802480a28d6cb836c7fea4a54ec0ba220eb31c6d7444589637a8bd66066e8c"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/autograd_gamma-0.4.2-py2.py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/0a/07/d99339c9420b58b723a9189d1373e5c3889758b2202a1a7fe4a3b7a10c5a/autograd_gamma-0.4.2-py2.py3-none-any.whl",
+			"sha256": "83fd9c76ffa6803710124404fc6e4ef33d2a01557d26f7dd36073aa2be05fb1d"
+		},
+		{
+			"file": "artifacts/formulaic-1.1.1-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/d2/c2/a34097e53efe70a538ae97574ff9e9866e60fc1c792c19da5fd6b56ce7b5/formulaic-1.1.1-py3-none-any.whl",
+			"sha256": "bbb7e38f99e4bcdc62cb0a6a818ad33b370b4e98e9e4f0b276561448482c8268"
+		},
+		{
+			"file": "artifacts/interface_meta-1.3.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/02/3f/a6ec28c88e2d8e54d32598a1e0b5208a4baa72a8e7f6e241beab5731eb9d/interface_meta-1.3.0-py3-none-any.whl",
+			"sha256": "de35dc5241431886e709e20a14d6597ed07c9f1e8b4bfcffde2190ca5b700ee8"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.14.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/typing_extensions-4.14.0-py3-none-any.whl",
+			"sha256": "ea55f317ad44571eea7bfaa916b81c857181f0a0971ab97b2fe251c01b510f90"
+		},
+		{
+			"file": "artifacts/wrapt-1.17.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/wrapt-1.17.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "749ad6578f49a76218f7b9a081d22610752a8f76cbb845dc604c364bcdf8d828"
+		}
+	]
+}

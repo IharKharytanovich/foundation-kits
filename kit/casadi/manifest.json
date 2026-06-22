@@ -1,0 +1,9 @@
+{
+	"kit": "casadi",
+	"mode": "loose",
+	"imports": ["casadi"],
+	"golden": {
+		"code": "import casadi; x = casadi.SX.sym('x'); f = x**2; grad = casadi.jacobian(f, x); fn = casadi.Function('fn', [x], [grad]); result = fn(3.0); print(str(int(float(result))))",
+		"expect": "6"
+	}
+}

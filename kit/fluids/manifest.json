@@ -1,0 +1,11 @@
+{
+	"kit": "fluids",
+	"mode": "loose",
+	"imports": [
+		"fluids"
+	],
+	"golden": {
+		"code": "import fluids; str(fluids.Reynolds(V=2.5, D=0.25, rho=1000, mu=1e-3))",
+		"expect": "625000.0"
+	}
+}

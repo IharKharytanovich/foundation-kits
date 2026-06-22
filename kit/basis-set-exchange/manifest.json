@@ -1,0 +1,11 @@
+{
+	"kit": "basis-set-exchange",
+	"mode": "loose",
+	"imports": [
+		"basis_set_exchange"
+	],
+	"golden": {
+		"code": "import basis_set_exchange as bse; str('3.42525091' in bse.get_basis('sto-3g',elements=[1],fmt='nwchem'))",
+		"expect": "True"
+	}
+}

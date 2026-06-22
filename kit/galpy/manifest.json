@@ -1,0 +1,11 @@
+{
+	"kit": "galpy",
+	"mode": "loose",
+	"imports": [
+		"galpy"
+	],
+	"golden": {
+		"code": "from galpy.potential import MiyamotoNagaiPotential, vcirc; p=MiyamotoNagaiPotential(a=0.5,b=0.0375,normalize=1.); '%.1f'%float(vcirc(p,1.))",
+		"expect": "1.0"
+	}
+}

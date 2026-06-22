@@ -1,0 +1,30 @@
+{
+	"kit": "basis-set-exchange",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/9a/64/6e8f5d1bd239ea91c0e8658b77183249cfe5106c97142711d168dbd04376/basis_set_exchange-0.12-py3-none-any.whl",
+		"sha256": "8d20ea9075fa100bff28f7562333c1fc75c9723215ba4d498e05e6fa8e1594a8"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/jsonschema-4.23.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/jsonschema-4.23.0-py3-none-any.whl",
+			"sha256": "63ab394acb0e7574b2921e594c08f7a2fca3da47bf4649b6689c1b209ecbc3ef"
+		},
+		{
+			"file": "artifacts/argcomplete-3.6.3-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/74/f5/9373290775639cb67a2fce7f629a1c240dce9f12fe927bc32b2736e16dfc/argcomplete-3.6.3-py3-none-any.whl",
+			"sha256": "f5007b3a600ccac5d25bbce33089211dfd49eab4a7718da3f10e3082525a92ce"
+		},
+		{
+			"file": "artifacts/Unidecode-1.4.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/8f/b7/559f59d57d18b44c6d1250d2eeaa676e028b9c527431f5d0736478a73ba1/Unidecode-1.4.0-py3-none-any.whl",
+			"sha256": "c3c7606c27503ad8d501270406e345ddb480a7b5f38827eafe4fa82a137f0021"
+		},
+		{
+			"file": "artifacts/regex-2024.11.6-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/regex-2024.11.6-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "bd05caf01bfb89d74aa3db160ebae3ae343a35540c98657f08167ba4c4ce325d"
+		}
+	]
+}

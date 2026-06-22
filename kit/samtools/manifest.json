@@ -1,0 +1,48 @@
+{
+	"kit": "samtools",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "count-reverse",
+			"summary": "Count reverse-strand alignment records (FLAG 16) in a SAM stream",
+			"tool": "samtools",
+			"params": {
+				"sam": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sam",
+			"argsTemplate": ["view", "-c", "-f", "16", "-"],
+			"output": {
+				"format": "integer count on stdout, newline-terminated"
+			},
+			"golden": {
+				"input": {
+					"sam": "@HD\tVN:1.6\tSO:coordinate\n@SQ\tSN:ref\tLN:45\nr1\t0\tref\t1\t60\t4M\t*\t0\t0\tACGT\t*\nr2\t16\tref\t5\t60\t4M\t*\t0\t0\tTTGA\t*\n"
+				},
+				"expect": "1\n"
+			}
+		},
+		{
+			"id": "view",
+			"summary": "Filter/convert SAM records (reverse-strand selection)",
+			"tool": "samtools",
+			"params": {
+				"sam": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "sam",
+			"argsTemplate": ["view", "-f", "16", "-"],
+			"output": {
+				"format": "SAM record lines on stdout"
+			},
+			"golden": {
+				"input": {
+					"sam": "@HD\tVN:1.6\tSO:coordinate\n@SQ\tSN:ref\tLN:45\nr1\t0\tref\t1\t60\t4M\t*\t0\t0\tACGT\t*\nr2\t16\tref\t5\t60\t4M\t*\t0\t0\tTTGA\t*\n"
+				},
+				"expect": "r2\t16\tref\t5\t60\t4M\t*\t0\t0\tTTGA\t*\n"
+			}
+		}
+	]
+}

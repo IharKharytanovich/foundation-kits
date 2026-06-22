@@ -1,0 +1,8 @@
+{
+	"kit": "fluids",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/a4/54/b1a42925983c900e436a5b646f301d5e3e7ffb47a2db240d9dbbe0cd7c21/fluids-1.3.0-py3-none-any.whl",
+		"sha256": "7432f8b2fa4d4c52861c6b73aa855a8c0cfafd155fccaedc37a2255ce392203b"
+	}
+}

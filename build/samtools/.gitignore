@@ -1,0 +1,6 @@
+# Generated build artifact — never committed
+dispatch.c
+
+# Build output
+*.wasm
+out/

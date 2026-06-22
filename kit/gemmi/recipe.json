@@ -1,0 +1,21 @@
+{
+	"kit": "gemmi",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "project-gemmi/wasm",
+		"version": "0.6.7-115-g76f405ea"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/convert.js",
+			"url": "https://raw.githubusercontent.com/project-gemmi/wasm/075e2a01d4bd243ea33171a2c2f9834eaf0ea655/convert/convert.js",
+			"sha256": "1bf6d6dbb3f6fb64ef52be018d9a0c297113570d222cfd3db6357069e6e780bd"
+		},
+		{
+			"file": "artifacts/convert.wasm",
+			"url": "https://raw.githubusercontent.com/project-gemmi/wasm/075e2a01d4bd243ea33171a2c2f9834eaf0ea655/convert/convert.wasm",
+			"sha256": "21ade3a8bc6ebc8f71d1f983700ab7fdab7e26dccd7005f7768ad41594c18a42"
+		}
+	]
+}

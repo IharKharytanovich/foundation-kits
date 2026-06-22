@@ -1,0 +1,9 @@
+{
+	"kit": "flint",
+	"mode": "loose",
+	"imports": ["flint"],
+	"golden": {
+		"code": "import flint; str(flint.fmpz_poly([-1,0,1]).factor())",
+		"expect": "(1, [(x + (-1), 1), (x + 1, 1)])"
+	}
+}

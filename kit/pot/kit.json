@@ -1,0 +1,38 @@
+{
+	"id": "pot",
+	"version": "0.9.6.post1",
+	"runtime": "pyodide",
+	"tags": [
+		"optimization",
+		"ml",
+		"statistics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/PythonOT/POT",
+		"ref": "0.9.6.post1",
+		"license": "MIT",
+		"buildNote": "Built from source to a single-threaded pyodide emscripten wheel (Cython + C++ EMD network-simplex; OpenMP auto-disabled by POT's check_openmp_support under emcc). Toolchain: pyodide-build 0.35.1 xbuildenv 0.28.0 + emscripten 4.0.9, Python 3.13.2 — produces platform tag pyemscripten_2025_0_wasm32, matching the repo's numpy/scipy/casadi cohort. Reproducible build in build/pot/. Wheel validated in a real pyodide 0.28.0 venv against numpy 2.2.5 + scipy 1.14.1: golden ot.emd2([0.5,0.5],[0.0,1.0],[[0,1],[1,0]]) == 0.5."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pot-0.9.6.post1-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "4d698e48f6645aeafc5e8b478a2eb5b0e7233ba6764590dbe931852afe795037",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pot@0.9.6.post1/pot-0.9.6.post1-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

@@ -9,24 +9,24 @@ const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
 
 const KNOWN_PYODIDE_WASI = [
-  'ase', 'astropy', 'autograd', 'biopython', 'chaospy', 'chempy', 'control', 'deap',
+  'arviz', 'ase', 'astropy', 'autograd', 'basis-set-exchange', 'biopython', 'casadi', 'chaospy', 'chempy', 'cirq', 'control', 'cvxpy', 'deap',
   'decorator', 'dendropy', 'diffraction', 'dill', 'dynesty', 'earcut', 'edlib', 'emcee',
-  'findiff', 'freesasa', 'iminuit', 'intervaltree', 'joblib', 'lmfit', 'mendeleev',
-  'molmass', 'networkx', 'numpy', 'packaging', 'pandas', 'particle', 'periodictable',
-  'pint', 'pyfaidx', 'pyproj', 'pyrodigal', 'pyteomics', 'pytz', 'pywavelets', 'pyyaml', 'raytracing', 'salib',
+  'findiff', 'flint', 'fluids', 'freesasa', 'galpy', 'igraph', 'iminuit', 'intervaltree', 'joblib', 'lifelines', 'lmfit', 'mendeleev',
+  'molmass', 'networkx', 'nmrglue', 'numpy', 'packaging', 'pandas', 'particle', 'periodictable',
+  'pint', 'pot', 'pybaselines', 'pyfaidx', 'pyhf', 'pyproj', 'pyrodigal', 'pyteomics', 'pytz', 'pywavelets', 'pyyaml', 'raytracing', 'ripser', 'salib', 'samtools',
   'scikit-fem', 'scikit-image', 'scikit-learn', 'scikit-optimize', 'scipy', 'selfies',
   'seqtk', 'setuptools', 'sgp4', 'six', 'skyfield', 'spglib', 'statsmodels', 'sympy', 'thermo',
-  'tifffile', 'trimesh', 'uncertainties', 'viennarna', 'z3',
+  'tifffile', 'trimesh', 'uncertainties', 'vector', 'viennarna', 'z3',
 ]
 
 const KNOWN_JSWASM = [
-  'coolprop', 'eigen', 'geodesy', 'geos', 'gmp', 'highs-js', 'manifold', 'meshoptimizer', 'rapier2d', 'rapier3d', 'rdkit',
+  'coolprop', 'eigen', 'gemmi', 'geodesy', 'geos', 'gmp', 'highs-js', 'kalign', 'manifold', 'meshoptimizer', 'rapier2d', 'rapier3d', 'rdkit',
 ]
 
 describe('seed kits', () => {
   it('kit dirs are all within the known sets and include the seeds', () => {
-    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(60)
-    expect(new Set(KNOWN_JSWASM).size).toBe(11)
+    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(77)
+    expect(new Set(KNOWN_JSWASM).size).toBe(13)
     expect(kitIds.every((id) => KNOWN_PYODIDE_WASI.includes(id) || KNOWN_JSWASM.includes(id))).toBe(true)
     expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })

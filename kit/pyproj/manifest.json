@@ -1,0 +1,11 @@
+{
+	"kit": "pyproj",
+	"mode": "loose",
+	"imports": [
+		"pyproj"
+	],
+	"golden": {
+		"code": "from pyproj import Transformer; t=Transformer.from_crs(4326,3857,always_xy=True); x,y=t.transform(2.2945,48.8584); f'{round(x,2)},{round(y,2)}'",
+		"expect": "255534.78,6250916.49"
+	}
+}

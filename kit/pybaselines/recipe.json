@@ -1,0 +1,8 @@
+{
+	"kit": "pybaselines",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/3d/66/f044d53935b142d47ce2a65b8c4f51fdb5ca85ee1035fb2b7857971b122e/pybaselines-1.2.1-py3-none-any.whl",
+		"sha256": "d8f224a0b5ac4cdcef861bc60533131c37255b4d1193f18a410bc37fe5217c73"
+	}
+}

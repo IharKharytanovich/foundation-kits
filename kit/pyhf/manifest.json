@@ -1,0 +1,9 @@
+{
+	"kit": "pyhf",
+	"mode": "loose",
+	"imports": ["pyhf"],
+	"golden": {
+		"code": "import pyhf\nmodel = pyhf.simplemodels.uncorrelated_background(signal=[10.0], bkg=[50.0], bkg_uncertainty=[7.0])\ndata = [60.0] + model.config.auxdata\nCLs_obs, CLs_exp = pyhf.infer.hypotest(1.0, data, model, return_expected=True)\nstr(round(float(CLs_obs), 6))",
+		"expect": "0.602043"
+	}
+}

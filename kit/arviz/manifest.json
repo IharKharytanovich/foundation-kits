@@ -1,0 +1,11 @@
+{
+	"kit": "arviz",
+	"mode": "loose",
+	"imports": [
+		"arviz"
+	],
+	"golden": {
+		"code": "import numpy as np, arviz as az; d=az.from_dict(posterior={'x': np.array([[1.,2.,3.,4.,5.]])}); str(float(d.posterior['x'].mean()))",
+		"expect": "3.0"
+	}
+}

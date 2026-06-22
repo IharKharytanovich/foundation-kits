@@ -1,0 +1,39 @@
+{
+	"id": "gemmi",
+	"version": "0.6.7-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"structure",
+		"chemistry"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "project-gemmi/wasm",
+		"repo": "https://github.com/project-gemmi/wasm",
+		"ref": "075e2a01d4bd243ea33171a2c2f9834eaf0ea655",
+		"license": "MPL-2.0",
+		"buildNote": "Dual MPL-2.0 OR LGPL-3.0; recorded MPL-2.0. Official single-threaded Emscripten build of gemmi's `convert` tool (embedded gemmi v0.6.7-115-g76f405ea), vendored from project-gemmi/wasm at commit 075e2a01. Non-MODULARIZE: convert.js defines a global Module, exports it in Node, and auto-runs; readiness via Module.onRuntimeInitialized."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/convert.js",
+			"sha256": "1bf6d6dbb3f6fb64ef52be018d9a0c297113570d222cfd3db6357069e6e780bd",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/gemmi@0.6.7-1.0.0/convert.js",
+			"role": "loader"
+		},
+		{
+			"file": "artifacts/convert.wasm",
+			"sha256": "21ade3a8bc6ebc8f71d1f983700ab7fdab7e26dccd7005f7768ad41594c18a42",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/gemmi@0.6.7-1.0.0/convert.wasm",
+			"role": "binary"
+		}
+	],
+	"loader": {
+		"entry": "artifacts/convert.js",
+		"moduleSystem": "cjs",
+		"initStyle": "default-init",
+		"wasmSupply": "locateFile"
+	},
+	"dependencies": []
+}

@@ -1,0 +1,8 @@
+{
+	"kit": "nmrglue",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/cb/e4/79b679185d83a7b2513997203afd6c23359063d97738968f51d34e3ee9c8/nmrglue-0.11-py2.py3-none-any.whl",
+		"sha256": "6e698b07cd71d12034664a3414ce0bb7bf5cd87cf750b03e33e439fb31dc13bd"
+	}
+}

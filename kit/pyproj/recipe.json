@@ -1,0 +1,8 @@
+{
+	"kit": "pyproj",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/pyproj-3.7.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "fc755afc404ce5e4c747163033bd9e2e4677170a957a87d7ebe03b8138f8987b"
+	}
+}

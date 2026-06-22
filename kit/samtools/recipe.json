@@ -1,0 +1,13 @@
+{
+	"kit": "samtools",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/samtools/samtools",
+		"ref": "1.21"
+	},
+	"build": {
+		"dockerfile": "build/samtools/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

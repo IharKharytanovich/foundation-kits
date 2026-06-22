@@ -1,0 +1,26 @@
+{
+	"id": "flint",
+	"version": "0.8.0",
+	"runtime": "pyodide",
+	"tags": [
+		"math",
+		"symbolic"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/flintlib/python-flint",
+		"ref": "v0.8.0",
+		"license": "MIT",
+		"buildNote": "python-flint binding is MIT-licensed. Bundled native libraries (FLINT: LGPL-3.0-or-later, Arb: LGPL-2.1-or-later, GMP: LGPL-3.0-or-later, MPFR: LGPL-3.0-or-later) are linked inside the pyodide-built emscripten wheel."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/python_flint-0.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "52991ca068476fb6a72c82879885a6ecd23a7904bb770e68ae4970b02b504664",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/flint@0.8.0/python_flint-0.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": []
+}

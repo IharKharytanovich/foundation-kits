@@ -1,0 +1,42 @@
+{
+	"id": "cvxpy",
+	"version": "1.6.3",
+	"runtime": "pyodide",
+	"tags": [
+		"optimization",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/cvxpy/cvxpy",
+		"ref": "v1.6.3",
+		"license": "Apache-2.0",
+		"buildNote": "cvxpy-base build (no optional solver extras) from the v0.28.0 CDN; bundles clarabel 0.11.0 (Apache-2.0) — the only in-sandbox solver (no osqp/ecos/scs)."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/cvxpy_base-1.6.3-py3-none-any.whl",
+			"sha256": "43bd3151bade968a1b8e9b047ec7170983cb88bf35145d6fccd5263fe341f08e",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cvxpy@1.6.3/cvxpy_base-1.6.3-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/clarabel-0.11.0-cp39-abi3-pyodide_2025_0_wasm32.whl",
+			"sha256": "37afbf23f26593d557f756b60b87ee3da4fbd16ee91e6f569550f845a7a5102b",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cvxpy@1.6.3/clarabel-0.11.0-cp39-abi3-pyodide_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"kit": "arviz",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/d2/37/e66d037fd935f40606fc5dc1c610d78653037dd62d656a25cead401d81dc/arviz-1.2.0-py3-none-any.whl",
+		"sha256": "3b2b313b4b57ebb2e028c5237e4eacbd4f56084d0162128f8f1f42266c7cf515"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/arviz_base-1.2.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/37/d7/82e5f456d50b6accf06d137594282bf6984526fa1b329a061f7b91b123aa/arviz_base-1.2.0-py3-none-any.whl",
+			"sha256": "a3f7023b665823068ff4b973bb6205eacc65f3c0a446cc099d7e5326b50f1ffc"
+		},
+		{
+			"file": "artifacts/arviz_stats-1.2.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/96/8f/73f43d90534d49a4af4c8e35d5b60e2838435b0318f44262dc6fe2dd39d8/arviz_stats-1.2.0-py3-none-any.whl",
+			"sha256": "f9084addeb1abdbab6e9816f0a063118bc4ff7c48ce9141a4dad20b0e41410ae"
+		},
+		{
+			"file": "artifacts/arviz_plots-1.2.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/1a/06/85b6f3d07c8b0bd232c05c236188575074fcb9006174e5a5ca5b6dd12a9f/arviz_plots-1.2.0-py3-none-any.whl",
+			"sha256": "2e16ed95ce6d6fbb171d60f7300f50c520ebeeb132be7539591a018076f66f16"
+		},
+		{
+			"file": "artifacts/xarray-2025.1.2-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/xarray-2025.1.2-py3-none-any.whl",
+			"sha256": "02a4f88148fcfb864a8261197662906763b7b087f347cee12144ed5779dde482"
+		},
+		{
+			"file": "artifacts/lazy_loader-0.4-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/lazy_loader-0.4-py3-none-any.whl",
+			"sha256": "922fd3357bd62c5dff8759a3be9b62d9da75aed5f94b8107b67898b566fe7136"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.14.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/typing_extensions-4.14.0-py3-none-any.whl",
+			"sha256": "ea55f317ad44571eea7bfaa916b81c857181f0a0971ab97b2fe251c01b510f90"
+		}
+	]
+}

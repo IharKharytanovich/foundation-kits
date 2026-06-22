@@ -1,0 +1,34 @@
+{
+	"id": "samtools",
+	"version": "1.21",
+	"runtime": "wasi",
+	"tags": [
+		"genomics",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/samtools/samtools",
+		"ref": "1.21",
+		"license": "MIT",
+		"buildNote": "Single-threaded multiplexed WASI build (samtools 1.21 + htslib 1.21 co-pinned). htslib cram/ subdirectory retained; carries its own permissive upstream license, documented here — primary token MIT."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/samtools.wasm",
+			"sha256": "df7537a07ffbe2374b40b60863d1b97509df73789534d99dabd57c70b926d7f9",
+			"wasiTools": [
+				"samtools",
+				"tabix",
+				"bgzip",
+				"htsfile"
+			],
+			"multiplexed": true,
+			"stdinAsFile": false,
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/samtools@1.21/samtools.wasm"
+		}
+	],
+	"dependencies": []
+}

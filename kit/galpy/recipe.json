@@ -1,0 +1,8 @@
+{
+	"kit": "galpy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/galpy-1.10.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+		"sha256": "22676bf99298cf19700b8aa94d86faa8c83251574ca19141c2e463ec0b493fb3"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"kit": "kalign",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const fasta = '>seq1\\nACGTACGTACGT\\n>seq2\\nACGTACGACGT\\n>seq3\\nACGTACGTCGT\\n'; handle.FS.writeFile('/input.fasta', fasta); handle.callMain(['-i', '/input.fasta', '-o', '/output.fasta']); return handle.FS.readFile('/output.fasta', { encoding: 'utf8' });",
+		"expect": ">seq1\nACGTACGTACGT\n>seq2\nACGTACG-ACGT\n>seq3\nACGTACG-TCGT\n"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"id": "vector",
+	"version": "1.8.1",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-hep/vector",
+		"ref": "v1.8.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/vector-1.8.1-py3-none-any.whl",
+			"sha256": "c9e7f66f6aa7fb40ccb68a8c5c172a99bf8985cce31e4cdb9a9f39ad1de33027",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/vector@1.8.1/vector-1.8.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

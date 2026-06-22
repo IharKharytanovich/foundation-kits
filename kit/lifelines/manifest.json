@@ -1,0 +1,11 @@
+{
+	"kit": "lifelines",
+	"mode": "loose",
+	"imports": [
+		"lifelines"
+	],
+	"golden": {
+		"code": "from lifelines import KaplanMeierFitter; import numpy as np; k=KaplanMeierFitter(); k.fit(np.array([1.,2.,3.,4.,5.]), np.array([1,1,1,1,1])); str(float(k.median_survival_time_))",
+		"expect": "3.0"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"kit": "pot",
+	"track": "pyodide-native",
+	"source": {
+		"repo": "https://github.com/PythonOT/POT",
+		"ref": "0.9.6.post1"
+	},
+	"build": {
+		"dockerfile": "build/pot/Dockerfile",
+		"args": [
+			"--disable-openmp",
+			"--single-threaded"
+		],
+		"exclude": []
+	}
+}

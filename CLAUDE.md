@@ -99,4 +99,4 @@ The artifact **build/vendor** toolchain (`build/`, `runtime/`) is still follow-o
 - Workflows: [.claude/skills/](.claude/skills/) — `scout-kits` (find/vet new kit
   candidates → spec-writer), `add-kit`, `verify-kit`, `publish-kit`
 - Large multi-kit work (e.g. batch-importing kits): `spec-writer` +
-  `spec-executor` + the orchestrator. 70 kits built (59 wasi/pyodide + 11 jswasm).
+  `spec-executor` + the orchestrator. 80 kits built (68 wasi/pyodide + 12 jswasm).

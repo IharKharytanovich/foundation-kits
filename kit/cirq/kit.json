@@ -1,0 +1,76 @@
+{
+	"id": "cirq",
+	"version": "1.6.1",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/quantumlib/Cirq",
+		"ref": "v1.6.1",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/cirq_core-1.6.1-py3-none-any.whl",
+			"sha256": "fbc809d7c6a228762ad92bb7870dc16f55b76728fcc7ef4c7aaceb7e5c63e8e6",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/cirq_core-1.6.1-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/attrs-26.1.0-py3-none-any.whl",
+			"sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/attrs-26.1.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/duet-0.2.9-py3-none-any.whl",
+			"sha256": "a16088b68b0faee8aee12cdf4d0a8af060ed958badb44f3e32f123f13f64119a",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/duet-0.2.9-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+			"sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/sortedcontainers-2.4.0-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/tqdm-4.68.3-py3-none-any.whl",
+			"sha256": "39832cc2def2789a6f29df83f172db7416cea70052c0907a57801c5f2fdccb03",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/tqdm-4.68.3-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cirq@1.6.1/typing_extensions-4.15.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "sympy",
+			"version": "1.13.3",
+			"sha256": "87a5b10d3ce6001fe5db3634e73ecfdf1475478bc0dbc114ce5b8c6e7959485f"
+		},
+		{
+			"id": "networkx",
+			"version": "3.4.2",
+			"sha256": "27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		}
+	]
+}

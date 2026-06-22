@@ -1,0 +1,68 @@
+{
+	"id": "pyhf",
+	"version": "0.7.6",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"statistics",
+		"fitting"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/scikit-hep/pyhf",
+		"ref": "v0.7.6",
+		"license": "Apache-2.0",
+		"buildNote": "Bundles click(BSD-3-Clause)+jsonpatch(BSD-3-Clause)+jsonpointer(BSD-3-Clause)+jsonschema(MIT)+tqdm(MIT+MPL-2.0) — pure-Python exclusive deps. jsonschema also bundled in basis-set-exchange (same version+sha256). tqdm also bundled in cirq (same version+sha256). jsonschema transitive deps (attrs, rpds-py, referencing, jsonschema-specifications) resolved by the Pyodide runtime from CDN."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pyhf-0.7.6-py3-none-any.whl",
+			"sha256": "01b2401b9fdc53d94fa28256128c4898c380c64f71446f1695580fb18fba349d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/pyhf-0.7.6-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/click-8.1.8-py3-none-any.whl",
+			"sha256": "63c132bbbed01578a06712a2d1f497bb62d9c1c0d329b7903a866228027263b2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/click-8.1.8-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/jsonpatch-1.33-py2.py3-none-any.whl",
+			"sha256": "0ae28c0cd062bbd8b8ecc26d7d164fbbea9652a1a3693f3b956c1eae5145dade",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/jsonpatch-1.33-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/jsonpointer-3.0.0-py2.py3-none-any.whl",
+			"sha256": "13e088adc14fca8b6aa8177c044e12701e6ad4b28ff10e65f2267a90109c9942",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/jsonpointer-3.0.0-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/jsonschema-4.23.0-py3-none-any.whl",
+			"sha256": "63ab394acb0e7574b2921e594c08f7a2fca3da47bf4649b6689c1b209ecbc3ef",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/jsonschema-4.23.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/tqdm-4.68.3-py3-none-any.whl",
+			"sha256": "39832cc2def2789a6f29df83f172db7416cea70052c0907a57801c5f2fdccb03",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyhf@0.7.6/tqdm-4.68.3-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "pyyaml",
+			"version": "6.0.2",
+			"sha256": "20b40e900704ae4e204a9978d9806f148205df4cbdf44b5eb73a189254a72757"
+		}
+	]
+}

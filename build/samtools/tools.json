@@ -1,0 +1,6 @@
+[
+  { "name": "samtools", "source": "samtools/bamtk.c" },
+  { "name": "tabix", "source": "htslib/tabix.c" },
+  { "name": "bgzip", "source": "htslib/bgzip.c" },
+  { "name": "htsfile", "source": "htslib/htsfile.c" }
+]

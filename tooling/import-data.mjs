@@ -32,6 +32,7 @@ const SHA_UNCERTAINTIES = '1f8f8c004a5c27e3baf88c84eb67b77a29e70cbd0bef1e5084fce
 const SHA_NETWORKX = '27b25a9226b329f00711026e8af0f865c4f193e32fe6c38c38f76542da317d76'
 const SHA_TIFFFILE  = '0d7382d2769b855b81ce358528e2b40c16d48aa39031746efa81215205332a8d'
 const SHA_PYWAVELETS = 'e8b11d6ad77ce1a53875b46a2315415b20863da5830e81833739920d12b75237'
+const SHA_AUTOGRAD  = '4ab9084294f814cf56c280adbe19612546a35574d67c574b04933c7d2ecb7d78'
 
 const CDN = 'https://cdn.jsdelivr.net/pyodide/v0.28.0/full/'
 
@@ -1546,6 +1547,234 @@ export const KITS = [
 		golden: {
 			code: "from raytracing import Space, Lens; m=Space(d=10)*Lens(f=5); f'A={round(m.A,1)} B={round(m.B,1)} C={round(m.C,1)} D={round(m.D,1)}'",
 			expect: 'A=-1.0 B=10.0 C=-0.2 D=1.0',
+		},
+	},
+
+	// ── batch-7 vendor kits ───────────────────────────────────────────────
+
+	{
+		id: 'pyproj',
+		runtime: 'pyodide',
+		version: '3.7.2',
+		tags: ['units', 'math'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/pyproj4/pyproj',
+			ref: '3.7.2',
+			license: 'MIT',
+			buildNote: 'Pyodide wheel bundles libproj.so + proj.db (PROJ MIT); runs offline.',
+		},
+		importName: 'pyproj',
+		artifacts: [
+			{ vendor: 'pyproj-3.7.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl' },
+		],
+		recipeBase: 'https://cdn.jsdelivr.net/pyodide/v0.29.4/full/',
+		dependencies: [],
+		golden: {
+			code: "from pyproj import Transformer; t=Transformer.from_crs(4326,3857,always_xy=True); x,y=t.transform(2.2945,48.8584); f'{round(x,2)},{round(y,2)}'",
+			expect: '255534.78,6250916.49',
+		},
+	},
+
+	{
+		id: 'vector',
+		runtime: 'pyodide',
+		version: '1.8.1',
+		tags: ['physics', 'math'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/scikit-hep/vector',
+			ref: 'v1.8.1',
+			license: 'BSD-3-Clause',
+		},
+		importName: 'vector',
+		artifacts: [
+			{ vendor: 'vector-1.8.1-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/c6/73/582abcd8d4439f4898969cac8aae998c74b28e79e6bd2cfc7d1516bc4518/vector-1.8.1-py3-none-any.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		golden: {
+			code: "import vector; str(vector.obj(px=1,py=2,pz=3,E=4).mass)",
+			expect: '1.4142135623730951',
+		},
+	},
+
+	{
+		id: 'basis-set-exchange',
+		runtime: 'pyodide',
+		version: '0.12',
+		tags: ['chemistry', 'data-science'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/MolSSI-BSE/basis_set_exchange',
+			ref: 'v0.12',
+			license: 'BSD-3-Clause',
+			buildNote: 'Bundles jsonschema(MIT)+argcomplete(Apache-2.0)+Unidecode(GPL-2.0+)+regex(Apache-2.0) — pure-Python/Pyodide exclusive deps. jsonschema transitive deps (attrs, rpds-py, referencing, jsonschema-specifications) resolved by the Pyodide runtime from CDN.',
+		},
+		importName: 'basis_set_exchange',
+		artifacts: [
+			{ vendor: 'basis_set_exchange-0.12-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/9a/64/6e8f5d1bd239ea91c0e8658b77183249cfe5106c97142711d168dbd04376/basis_set_exchange-0.12-py3-none-any.whl' },
+			{ vendor: 'jsonschema-4.23.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://cdn.jsdelivr.net/pyodide/v0.29.4/full/jsonschema-4.23.0-py3-none-any.whl' },
+			{ vendor: 'argcomplete-3.6.3-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/74/f5/9373290775639cb67a2fce7f629a1c240dce9f12fe927bc32b2736e16dfc/argcomplete-3.6.3-py3-none-any.whl' },
+			{ vendor: 'Unidecode-1.4.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/8f/b7/559f59d57d18b44c6d1250d2eeaa676e028b9c527431f5d0736478a73ba1/Unidecode-1.4.0-py3-none-any.whl' },
+			{ vendor: 'regex-2024.11.6-cp313-cp313-pyemscripten_2025_0_wasm32.whl', bundled: true,
+			  sourceUrl: 'https://cdn.jsdelivr.net/pyodide/v0.29.4/full/regex-2024.11.6-cp313-cp313-pyemscripten_2025_0_wasm32.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [],
+		golden: {
+			code: "import basis_set_exchange as bse; str('3.42525091' in bse.get_basis('sto-3g',elements=[1],fmt='nwchem'))",
+			expect: 'True',
+		},
+	},
+
+	// ── batch-8 vendor kits ───────────────────────────────────────────────
+
+	{
+		id: 'galpy',
+		runtime: 'pyodide',
+		version: '1.10.2',
+		tags: ['astronomy', 'physics'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/jobovy/galpy',
+			ref: 'v1.10.2',
+			license: 'BSD-3-Clause',
+			buildNote: 'Pyodide-built compiled wheel (GSL-backed) from the v0.28.0 CDN; pin 1.10.2 (NOT PyPI HEAD 1.11.2). matplotlib plotting unavailable in Pyodide.',
+		},
+		importName: 'galpy',
+		artifacts: [
+			{ vendor: 'galpy-1.10.2-cp313-cp313-pyodide_2025_0_wasm32.whl' },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		golden: {
+			code: "from galpy.potential import MiyamotoNagaiPotential, vcirc; p=MiyamotoNagaiPotential(a=0.5,b=0.0375,normalize=1.); '%.1f'%float(vcirc(p,1.))",
+			expect: '1.0',
+		},
+	},
+
+	{
+		id: 'cvxpy',
+		runtime: 'pyodide',
+		version: '1.6.3',
+		tags: ['optimization', 'math'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/cvxpy/cvxpy',
+			ref: 'v1.6.3',
+			license: 'Apache-2.0',
+			buildNote: 'cvxpy-base build (no optional solver extras) from the v0.28.0 CDN; bundles clarabel 0.11.0 (Apache-2.0) — the only in-sandbox solver (no osqp/ecos/scs).',
+		},
+		importName: 'cvxpy',
+		artifacts: [
+			{ vendor: 'cvxpy_base-1.6.3-py3-none-any.whl' },
+			{ vendor: 'clarabel-0.11.0-cp39-abi3-pyodide_2025_0_wasm32.whl', bundled: true },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+		],
+		golden: {
+			code: "import cvxpy as cp, numpy as np; x=cp.Variable(2); A=np.array([[1.,0.],[0.,1.]]); b=np.array([1.,2.]); cp.Problem(cp.Minimize(cp.sum_squares(A@x-b))).solve(solver='CLARABEL'); '%.2f,%.2f'%(x.value[0],x.value[1])",
+			expect: '1.00,2.00',
+		},
+	},
+
+	{
+		id: 'arviz',
+		runtime: 'pyodide',
+		version: '1.2.0',
+		tags: ['statistics', 'sampling', 'uncertainty'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/arviz-devs/arviz',
+			ref: 'v1.2.0',
+			license: 'Apache-2.0',
+			buildNote: 'Bundles arviz-base 1.2.0 (Apache-2.0), arviz-stats 1.2.0 (Apache-2.0), arviz-plots 1.2.0 (Apache-2.0), xarray 2025.1.2 (Apache-2.0), lazy_loader 0.4 (BSD-3-Clause), typing_extensions 4.14.0 (PSF-2.0) — exclusive deps. matplotlib/bokeh/plotly plotting backends unavailable in Pyodide.',
+		},
+		importName: 'arviz',
+		artifacts: [
+			{ vendor: 'arviz-1.2.0-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/d2/37/e66d037fd935f40606fc5dc1c610d78653037dd62d656a25cead401d81dc/arviz-1.2.0-py3-none-any.whl' },
+			{ vendor: 'arviz_base-1.2.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/37/d7/82e5f456d50b6accf06d137594282bf6984526fa1b329a061f7b91b123aa/arviz_base-1.2.0-py3-none-any.whl' },
+			{ vendor: 'arviz_stats-1.2.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/96/8f/73f43d90534d49a4af4c8e35d5b60e2838435b0318f44262dc6fe2dd39d8/arviz_stats-1.2.0-py3-none-any.whl' },
+			{ vendor: 'arviz_plots-1.2.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/1a/06/85b6f3d07c8b0bd232c05c236188575074fcb9006174e5a5ca5b6dd12a9f/arviz_plots-1.2.0-py3-none-any.whl' },
+			{ vendor: 'xarray-2025.1.2-py3-none-any.whl', bundled: true },
+			{ vendor: 'lazy_loader-0.4-py3-none-any.whl', bundled: true },
+			{ vendor: 'typing_extensions-4.14.0-py3-none-any.whl', bundled: true },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'pandas', version: '2.3.3', sha256: SHA_PANDAS },
+			{ id: 'packaging', version: '26.2', sha256: SHA_PACKAGING },
+		],
+		golden: {
+			code: "import numpy as np, arviz as az; d=az.from_dict(posterior={'x': np.array([[1.,2.,3.,4.,5.]])}); str(float(d.posterior['x'].mean()))",
+			expect: '3.0',
+		},
+	},
+
+	{
+		id: 'lifelines',
+		runtime: 'pyodide',
+		version: '0.30.3',
+		tags: ['statistics', 'fitting'],
+		tier: 'library',
+		provenance: {
+			source: 'pypi',
+			repo: 'https://github.com/CamDavidsonPilon/lifelines',
+			ref: 'v0.30.3',
+			license: 'MIT',
+			buildNote: 'Bundles autograd-gamma 0.4.2 (MIT), formulaic 1.1.1 (MIT), interface-meta 1.3.0 (MIT), typing_extensions 4.14.0 (PSF-2.0), wrapt 1.17.2 (BSD-2-Clause) — exclusive deps. matplotlib plotting unavailable in Pyodide.',
+		},
+		importName: 'lifelines',
+		artifacts: [
+			{ vendor: 'lifelines-0.30.3-py3-none-any.whl',
+			  sourceUrl: 'https://files.pythonhosted.org/packages/8a/fb/5ed80a8932630d4ae33af186a87008c9b48f02bc515380acc1a4b1fec162/lifelines-0.30.3-py3-none-any.whl' },
+			{ vendor: 'autograd_gamma-0.4.2-py2.py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/0a/07/d99339c9420b58b723a9189d1373e5c3889758b2202a1a7fe4a3b7a10c5a/autograd_gamma-0.4.2-py2.py3-none-any.whl' },
+			{ vendor: 'formulaic-1.1.1-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/d2/c2/a34097e53efe70a538ae97574ff9e9866e60fc1c792c19da5fd6b56ce7b5/formulaic-1.1.1-py3-none-any.whl' },
+			{ vendor: 'interface_meta-1.3.0-py3-none-any.whl', bundled: true,
+			  sourceUrl: 'https://files.pythonhosted.org/packages/02/3f/a6ec28c88e2d8e54d32598a1e0b5208a4baa72a8e7f6e241beab5731eb9d/interface_meta-1.3.0-py3-none-any.whl' },
+			{ vendor: 'typing_extensions-4.14.0-py3-none-any.whl', bundled: true },
+			{ vendor: 'wrapt-1.17.2-cp313-cp313-pyodide_2025_0_wasm32.whl', bundled: true },
+		],
+		recipeBase: CDN,
+		dependencies: [
+			{ id: 'numpy', version: '2.2.5', sha256: SHA_NUMPY },
+			{ id: 'scipy', version: '1.14.1', sha256: SHA_SCIPY },
+			{ id: 'pandas', version: '2.3.3', sha256: SHA_PANDAS },
+			{ id: 'autograd', version: '1.8.0', sha256: SHA_AUTOGRAD },
+		],
+		golden: {
+			code: "from lifelines import KaplanMeierFitter; import numpy as np; k=KaplanMeierFitter(); k.fit(np.array([1.,2.,3.,4.,5.]), np.array([1,1,1,1,1])); str(float(k.median_survival_time_))",
+			expect: '3.0',
 		},
 	},
 ]

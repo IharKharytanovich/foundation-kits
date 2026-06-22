@@ -1,0 +1,26 @@
+{
+	"id": "pyproj",
+	"version": "3.7.2",
+	"runtime": "pyodide",
+	"tags": [
+		"units",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/pyproj4/pyproj",
+		"ref": "3.7.2",
+		"license": "MIT",
+		"buildNote": "Pyodide wheel bundles libproj.so + proj.db (PROJ MIT); runs offline."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pyproj-3.7.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "fc755afc404ce5e4c747163033bd9e2e4677170a957a87d7ebe03b8138f8987b",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pyproj@3.7.2/pyproj-3.7.2-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": []
+}

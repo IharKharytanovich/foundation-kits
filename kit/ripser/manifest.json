@@ -1,0 +1,30 @@
+{
+	"kit": "ripser",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "barcode",
+			"summary": "Vietoris-Rips persistence barcode from a lower-distance matrix",
+			"tool": "ripser",
+			"params": {
+				"matrix": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "matrix",
+			"argsTemplate": [
+				"--format",
+				"lower-distance"
+			],
+			"output": {
+				"format": "persistence intervals per dimension on stdout, one line per interval: dim N:\n [birth, death)"
+			},
+			"golden": {
+				"input": {
+					"matrix": "2\n2 2\n"
+				},
+				"expect": "value range: [2,2]\ndistance matrix with 3 points, using threshold at enclosing radius 2\npersistence intervals in dim 0:\n [0,2)\n [0,2)\n [0, )\npersistence intervals in dim 1:\n"
+			}
+		}
+	]
+}

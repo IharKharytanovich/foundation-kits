@@ -1,0 +1,11 @@
+{
+	"kit": "cirq",
+	"mode": "loose",
+	"imports": [
+		"cirq"
+	],
+	"golden": {
+		"code": "import cirq, numpy as np; q0, q1 = cirq.LineQubit.range(2); c = cirq.Circuit([cirq.H(q0), cirq.CNOT(q0, q1)]); sv = cirq.Simulator().simulate(c).final_state_vector; '[' + ', '.join(f'{x.real:.3f}' for x in sv) + ']'",
+		"expect": "[0.707, 0.000, 0.000, 0.707]"
+	}
+}

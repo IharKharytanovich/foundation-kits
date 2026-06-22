@@ -341,4 +341,85 @@ export const JSWASM_KITS = [
 		],
 		dependencies: [],
 	},
+
+	// ── batch-8 Emscripten kits ────────────────────────────────────────────
+
+	// gemmi: vendored from project-gemmi/wasm's official single-threaded
+	// Emscripten build of the `convert` tool (gemmi v0.6.7-115-g76f405ea, pinned
+	// to repo commit 075e2a01). Non-MODULARIZE classic build: `convert.js` defines
+	// a global Module, sets `module.exports = Module` in Node, and auto-runs;
+	// readiness is signalled via `Module.onRuntimeInitialized` (initStyle
+	// default-init, like the eigen kit). The C surface exposes structure-file
+	// conversion (`_pdb2cif`, `_cif2pdb`, `_cif2mtz`, `_mtz2cif`) plus the string
+	// helpers (`_malloc`, `writeArrayToMemory`, `_get_global_str_size`,
+	// `_clear_string`, `UTF8ToString`, `HEAP8`). Single-threaded (no
+	// pthread/SAB/worker). Verified to load + run in Node; golden captured live.
+	{
+		id: 'gemmi',
+		version: '0.6.7-1.0.0',
+		family: 'emscripten',
+		tags: ['structure', 'chemistry'],
+		tier: 'library',
+		provenance: {
+			source: 'project-gemmi/wasm',
+			repo: 'https://github.com/project-gemmi/wasm',
+			ref: '075e2a01d4bd243ea33171a2c2f9834eaf0ea655',
+			license: 'MPL-2.0',
+			buildNote: "Dual MPL-2.0 OR LGPL-3.0; recorded MPL-2.0. Official single-threaded Emscripten build of gemmi's `convert` tool (embedded gemmi v0.6.7-115-g76f405ea), vendored from project-gemmi/wasm at commit 075e2a01. Non-MODULARIZE: convert.js defines a global Module, exports it in Node, and auto-runs; readiness via Module.onRuntimeInitialized.",
+		},
+		loader: {
+			entry: 'artifacts/convert.js',
+			moduleSystem: 'cjs',
+			initStyle: 'default-init',
+			wasmSupply: 'locateFile',
+		},
+		artifacts: [
+			{ vendor: 'convert.js', role: 'loader' },
+			{ vendor: 'convert.wasm', role: 'binary' },
+		],
+		source: { package: 'project-gemmi/wasm', version: '0.6.7-115-g76f405ea' },
+		vendored: [
+			{ vendor: 'convert.js', url: 'https://raw.githubusercontent.com/project-gemmi/wasm/075e2a01d4bd243ea33171a2c2f9834eaf0ea655/convert/convert.js' },
+			{ vendor: 'convert.wasm', url: 'https://raw.githubusercontent.com/project-gemmi/wasm/075e2a01d4bd243ea33171a2c2f9834eaf0ea655/convert/convert.wasm' },
+		],
+		dependencies: [],
+	},
+
+	// ── batch-9 Emscripten kits ────────────────────────────────────────────
+
+	// kalign: vendored from biowasm v3 single-threaded Emscripten build of
+	// kalign 3.3.1 (Timo Lassmann's multiple sequence alignment tool).
+	// Standard MODULARIZE factory (function(Module){...}); CJS/UMD export;
+	// separate .wasm binary (locateFile). CLI surface via callMain([...argv]).
+	// No pthread/SAB/Worker artifacts — verified single-threaded.
+	{
+		id: 'kalign',
+		version: '3.3.1-1.0.0',
+		family: 'emscripten',
+		tags: ['biology', 'sequences'],
+		tier: 'library',
+		provenance: {
+			source: 'kalign',
+			repo: 'https://github.com/TimoLassmann/kalign',
+			ref: 'v3.3.1',
+			license: 'Apache-2.0',
+			buildNote: 'Single-threaded biowasm v3 Emscripten build (USE_PTHREADS=0, no SAB)',
+		},
+		loader: {
+			entry: 'artifacts/kalign.js',
+			moduleSystem: 'cjs',
+			initStyle: 'factory',
+			wasmSupply: 'locateFile',
+		},
+		artifacts: [
+			{ vendor: 'kalign.js', role: 'loader' },
+			{ vendor: 'kalign.wasm', role: 'binary' },
+		],
+		source: { package: 'kalign', version: '3.3.1' },
+		vendored: [
+			{ vendor: 'kalign.js', url: 'https://biowasm.com/cdn/v3/kalign/3.3.1/kalign.js' },
+			{ vendor: 'kalign.wasm', url: 'https://biowasm.com/cdn/v3/kalign/3.3.1/kalign.wasm' },
+		],
+		dependencies: [],
+	},
 ]

@@ -1,0 +1,8 @@
+{
+	"kit": "vector",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/c6/73/582abcd8d4439f4898969cac8aae998c74b28e79e6bd2cfc7d1516bc4518/vector-1.8.1-py3-none-any.whl",
+		"sha256": "c9e7f66f6aa7fb40ccb68a8c5c172a99bf8985cce31e4cdb9a9f39ad1de33027"
+	}
+}

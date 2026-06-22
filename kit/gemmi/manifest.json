@@ -1,0 +1,10 @@
+{
+	"kit": "gemmi",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "const pdb = \"CRYST1   10.000   20.000   30.000  90.00  90.00  90.00 P 1           1\\nATOM      1  CA  ALA A   1       1.000   2.000   3.000  1.00 10.00           C\\nEND\\n\";\nconst arr = new TextEncoder().encode(pdb);\nconst buf = handle._malloc(arr.length);\nhandle.writeArrayToMemory(arr, buf);\nconst ret = handle._pdb2cif(buf, arr.length);\nconst size = handle._get_global_str_size();\nconst cif = new TextDecoder().decode(new Uint8Array(handle.HEAP8.buffer, ret, size));\nhandle._clear_string();\nreturn [\"a\",\"b\",\"c\"].map(x => (cif.match(new RegExp(\"_cell\\\\.length_\"+x+\" (\\\\d+)\"))||[])[1]).join(\",\");",
+		"expect": "10,20,30"
+	}
+}

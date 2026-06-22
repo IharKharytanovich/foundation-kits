@@ -1,0 +1,11 @@
+{
+	"kit": "igraph",
+	"mode": "loose",
+	"imports": [
+		"igraph"
+	],
+	"golden": {
+		"code": "import igraph; g = igraph.Graph.Famous('zachary'); str((g.vcount(), g.ecount()))",
+		"expect": "(34, 78)"
+	}
+}

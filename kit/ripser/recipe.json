@@ -1,0 +1,13 @@
+{
+	"kit": "ripser",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/Ripser/ripser",
+		"ref": "v1.2.1"
+	},
+	"build": {
+		"dockerfile": "build/ripser/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

@@ -1,0 +1,32 @@
+{
+	"id": "casadi",
+	"version": "3.7.0",
+	"runtime": "pyodide",
+	"tags": [
+		"optimization",
+		"symbolic",
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/casadi/casadi",
+		"ref": "v3.7.0",
+		"license": "LGPL-3.0-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/casadi-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+			"sha256": "6b5b641e1e7bb7b4d4cbaccd4b981a0f301f7649adcce92a671eb613a46821fc",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/casadi@3.7.0/casadi-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

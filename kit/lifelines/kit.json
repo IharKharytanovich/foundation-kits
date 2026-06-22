@@ -1,0 +1,72 @@
+{
+	"id": "lifelines",
+	"version": "0.30.3",
+	"runtime": "pyodide",
+	"tags": [
+		"statistics",
+		"fitting"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/CamDavidsonPilon/lifelines",
+		"ref": "v0.30.3",
+		"license": "MIT",
+		"buildNote": "Bundles autograd-gamma 0.4.2 (MIT), formulaic 1.1.1 (MIT), interface-meta 1.3.0 (MIT), typing_extensions 4.14.0 (PSF-2.0), wrapt 1.17.2 (BSD-2-Clause) — exclusive deps. matplotlib plotting unavailable in Pyodide."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/lifelines-0.30.3-py3-none-any.whl",
+			"sha256": "44802480a28d6cb836c7fea4a54ec0ba220eb31c6d7444589637a8bd66066e8c",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/lifelines-0.30.3-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/autograd_gamma-0.4.2-py2.py3-none-any.whl",
+			"sha256": "83fd9c76ffa6803710124404fc6e4ef33d2a01557d26f7dd36073aa2be05fb1d",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/autograd_gamma-0.4.2-py2.py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/formulaic-1.1.1-py3-none-any.whl",
+			"sha256": "bbb7e38f99e4bcdc62cb0a6a818ad33b370b4e98e9e4f0b276561448482c8268",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/formulaic-1.1.1-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/interface_meta-1.3.0-py3-none-any.whl",
+			"sha256": "de35dc5241431886e709e20a14d6597ed07c9f1e8b4bfcffde2190ca5b700ee8",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/interface_meta-1.3.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.14.0-py3-none-any.whl",
+			"sha256": "ea55f317ad44571eea7bfaa916b81c857181f0a0971ab97b2fe251c01b510f90",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/typing_extensions-4.14.0-py3-none-any.whl"
+		},
+		{
+			"file": "artifacts/wrapt-1.17.2-cp313-cp313-pyodide_2025_0_wasm32.whl",
+			"sha256": "749ad6578f49a76218f7b9a081d22610752a8f76cbb845dc604c364bcdf8d828",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/lifelines@0.30.3/wrapt-1.17.2-cp313-cp313-pyodide_2025_0_wasm32.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "pandas",
+			"version": "2.3.3",
+			"sha256": "2579a3d8e9f040421836365ccf7886fc4054c87381d4d481840a97785cd78923"
+		},
+		{
+			"id": "autograd",
+			"version": "1.8.0",
+			"sha256": "4ab9084294f814cf56c280adbe19612546a35574d67c574b04933c7d2ecb7d78"
+		}
+	]
+}

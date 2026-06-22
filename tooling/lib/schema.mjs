@@ -56,10 +56,18 @@ export const KitJsonSchema = z.object({
   tier: z.enum(['default', 'library']),
   verified: z.boolean(),
   provenance: Provenance,
-  artifacts: z.array(Artifact).min(1),
+  artifacts: z.array(Artifact),
   dependencies: z.array(Dependency),
   loader: Loader.optional(),
 }).strict().superRefine((v, ctx) => {
+  // a verified kit requires at least one artifact
+  if (v.verified === true && v.artifacts.length < 1) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: 'a verified kit requires at least one artifact',
+      path: ['artifacts'],
+    })
+  }
   // loader is required iff runtime === 'jswasm'
   if (v.runtime === 'jswasm' && !v.loader) {
     ctx.addIssue({

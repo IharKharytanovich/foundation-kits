@@ -1,0 +1,8 @@
+{
+	"kit": "casadi",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/casadi-3.7.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "6b5b641e1e7bb7b4d4cbaccd4b981a0f301f7649adcce92a671eb613a46821fc"
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"kit": "pyhf",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/de/43/91d24c1b64f576f59b5aa5cbd8e732815bfeb8cf87fcc6fb65027c132e7f/pyhf-0.7.6-py3-none-any.whl",
+		"sha256": "01b2401b9fdc53d94fa28256128c4898c380c64f71446f1695580fb18fba349d"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/click-8.1.8-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/7e/d4/7ebdbd03970677812aac39c869717059dbb71a4cfc033ca6e5221787892c/click-8.1.8-py3-none-any.whl",
+			"sha256": "63c132bbbed01578a06712a2d1f497bb62d9c1c0d329b7903a866228027263b2"
+		},
+		{
+			"file": "artifacts/jsonpatch-1.33-py2.py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/73/07/02e16ed01e04a374e644b575638ec7987ae846d25ad97bcc9945a3ee4b0e/jsonpatch-1.33-py2.py3-none-any.whl",
+			"sha256": "0ae28c0cd062bbd8b8ecc26d7d164fbbea9652a1a3693f3b956c1eae5145dade"
+		},
+		{
+			"file": "artifacts/jsonpointer-3.0.0-py2.py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/71/92/5e77f98553e9e75130c78900d000368476aed74276eb8ae8796f65f00918/jsonpointer-3.0.0-py2.py3-none-any.whl",
+			"sha256": "13e088adc14fca8b6aa8177c044e12701e6ad4b28ff10e65f2267a90109c9942"
+		},
+		{
+			"file": "artifacts/jsonschema-4.23.0-py3-none-any.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/jsonschema-4.23.0-py3-none-any.whl",
+			"sha256": "63ab394acb0e7574b2921e594c08f7a2fca3da47bf4649b6689c1b209ecbc3ef"
+		},
+		{
+			"file": "artifacts/tqdm-4.68.3-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/d8/8e/bb97bb0c71802080bfc8952937d174e49cfc50de5c951dd47b2496f0dcdb/tqdm-4.68.3-py3-none-any.whl",
+			"sha256": "39832cc2def2789a6f29df83f172db7416cea70052c0907a57801c5f2fdccb03"
+		}
+	]
+}

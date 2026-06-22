@@ -1,0 +1,8 @@
+{
+	"kit": "flint",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.29.4/full/python_flint-0.8.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl",
+		"sha256": "52991ca068476fb6a72c82879885a6ecd23a7904bb770e68ae4970b02b504664"
+	}
+}

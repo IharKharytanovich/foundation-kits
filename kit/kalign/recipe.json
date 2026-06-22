@@ -1,0 +1,21 @@
+{
+	"kit": "kalign",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "kalign",
+		"version": "3.3.1"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/kalign.js",
+			"url": "https://biowasm.com/cdn/v3/kalign/3.3.1/kalign.js",
+			"sha256": "e9fcb1299e4580bdd2694cbce3096f5a320ab0d2cf62919cdcfacf00c37293e9"
+		},
+		{
+			"file": "artifacts/kalign.wasm",
+			"url": "https://biowasm.com/cdn/v3/kalign/3.3.1/kalign.wasm",
+			"sha256": "722a42e7dfa1a8012e1dd35b5cc444b24ca059d95ead4ce7f9e36f6277951a02"
+		}
+	]
+}

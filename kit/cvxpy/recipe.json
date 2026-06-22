@@ -1,0 +1,15 @@
+{
+	"kit": "cvxpy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/cvxpy_base-1.6.3-py3-none-any.whl",
+		"sha256": "43bd3151bade968a1b8e9b047ec7170983cb88bf35145d6fccd5263fe341f08e"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/clarabel-0.11.0-cp39-abi3-pyodide_2025_0_wasm32.whl",
+			"url": "https://cdn.jsdelivr.net/pyodide/v0.28.0/full/clarabel-0.11.0-cp39-abi3-pyodide_2025_0_wasm32.whl",
+			"sha256": "37afbf23f26593d557f756b60b87ee3da4fbd16ee91e6f569550f845a7a5102b"
+		}
+	]
+}

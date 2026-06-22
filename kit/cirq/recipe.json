@@ -1,0 +1,35 @@
+{
+	"kit": "cirq",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/f2/ec/64554f2231775b22e99a80cf3105348b926e46e4b3374b6c04d68c7718e2/cirq_core-1.6.1-py3-none-any.whl",
+		"sha256": "fbc809d7c6a228762ad92bb7870dc16f55b76728fcc7ef4c7aaceb7e5c63e8e6"
+	},
+	"bundled": [
+		{
+			"file": "artifacts/attrs-26.1.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl",
+			"sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+		},
+		{
+			"file": "artifacts/duet-0.2.9-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/be/95/03c8215f675349ff719cb44cd837c2468fdc0c05f55f523f3cad86bbdcc6/duet-0.2.9-py3-none-any.whl",
+			"sha256": "a16088b68b0faee8aee12cdf4d0a8af060ed958badb44f3e32f123f13f64119a"
+		},
+		{
+			"file": "artifacts/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+			"sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"
+		},
+		{
+			"file": "artifacts/tqdm-4.68.3-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/d8/8e/bb97bb0c71802080bfc8952937d174e49cfc50de5c951dd47b2496f0dcdb/tqdm-4.68.3-py3-none-any.whl",
+			"sha256": "39832cc2def2789a6f29df83f172db7416cea70052c0907a57801c5f2fdccb03"
+		},
+		{
+			"file": "artifacts/typing_extensions-4.15.0-py3-none-any.whl",
+			"url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+			"sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+		}
+	]
+}

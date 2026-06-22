@@ -1,0 +1,11 @@
+{
+	"kit": "vector",
+	"mode": "loose",
+	"imports": [
+		"vector"
+	],
+	"golden": {
+		"code": "import vector; str(vector.obj(px=1,py=2,pz=3,E=4).mass)",
+		"expect": "1.4142135623730951"
+	}
+}
