@@ -1,0 +1,8 @@
+{
+	"kit": "fdtd",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/df/83/bbc683db9b6d979793818e6a030838099282ad32247d58774ed1040470b1/fdtd-0.3.5-py3-none-any.whl",
+		"sha256": "ce2f4fbb86a8e5592871a977877e6d27dc89e9701d3f39dcf71d3fd7f6335cdc"
+	}
+}

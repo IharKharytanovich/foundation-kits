@@ -1,0 +1,15 @@
+{
+	"kit": "fasttree",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/morgannprice/fasttree",
+		"ref": "v2.2.0"
+	},
+	"build": {
+		"dockerfile": "build/fasttree/Dockerfile",
+		"args": [
+			"-DNO_SSE"
+		],
+		"exclude": []
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"kit": "pymap3d",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/4e/ce/3714d0d67a83577017b1e7c40193bc1cf768a1de39c4adff750b7d3c1539/pymap3d-3.2.0-py3-none-any.whl",
+		"sha256": "fccd44f2f6021a95adec19771c603b8dac104eab120d863c463d76b9bc298669"
+	}
+}

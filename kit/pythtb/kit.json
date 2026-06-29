@@ -1,0 +1,31 @@
+{
+	"id": "pythtb",
+	"version": "2.0.2",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"structure"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/pythtb/pythtb",
+		"ref": "v2.0.2",
+		"license": "GPL-3.0-or-later"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pythtb-2.0.2-py3-none-any.whl",
+			"sha256": "bfa169c0bbb949788044fccb1ede3f3cbe058e9a3f5cc6cdff862fc730b19d26",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pythtb@2.0.2/pythtb-2.0.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		}
+	]
+}

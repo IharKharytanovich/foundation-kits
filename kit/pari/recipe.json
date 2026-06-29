@@ -1,0 +1,21 @@
+{
+	"kit": "pari",
+	"track": "jswasm-vendor",
+	"family": "emscripten",
+	"source": {
+		"package": "@sagemath/pari",
+		"version": "1.0.5"
+	},
+	"vendored": [
+		{
+			"file": "artifacts/gp-sta.js",
+			"url": "https://unpkg.com/@sagemath/pari@1.0.5/dist/gp-sta.js",
+			"sha256": "9ae90dae1a2b1d389ad3c4a81b884dff84a3b882b67731234563dbc18c223f29"
+		},
+		{
+			"file": "artifacts/gp-sta.wasm",
+			"url": "https://unpkg.com/@sagemath/pari@1.0.5/dist/gp-sta.wasm",
+			"sha256": "00f759233a50252c63ea471ad9d0c49d016e83d8e53d96d0fcbfc740605832c4"
+		}
+	]
+}

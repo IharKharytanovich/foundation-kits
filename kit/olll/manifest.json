@@ -1,0 +1,11 @@
+{
+	"kit": "olll",
+	"mode": "loose",
+	"imports": [
+		"olll"
+	],
+	"golden": {
+		"code": "import olll; str(olll.reduction([[1,1,1],[-1,0,2],[3,5,6]], 0.75))",
+		"expect": "[[0, 1, 0], [1, 0, 1], [-1, 0, 2]]"
+	}
+}

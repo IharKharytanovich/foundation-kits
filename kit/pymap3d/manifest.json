@@ -1,0 +1,11 @@
+{
+	"kit": "pymap3d",
+	"mode": "loose",
+	"imports": [
+		"pymap3d"
+	],
+	"golden": {
+		"code": "import pymap3d; str(tuple(round(v, 4) for v in pymap3d.geodetic2ecef(42.0, -82.0, 200.0)))",
+		"expect": "(660675.2518, -4700948.6832, 4245737.6622)"
+	}
+}

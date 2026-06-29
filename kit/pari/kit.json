@@ -1,0 +1,39 @@
+{
+	"id": "pari",
+	"version": "2.13.2-1.0.0",
+	"runtime": "jswasm",
+	"tags": [
+		"math",
+		"symbolic"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "@sagemath/pari",
+		"repo": "https://github.com/sagemathinc/sagejs",
+		"ref": "1.0.5",
+		"license": "GPL-3.0-or-later",
+		"buildNote": "PARI/GP upstream GPL-2.0-or-later; vendored from the prebuilt single-threaded Emscripten npm package @sagemath/pari@1.0.5 (bundles PARI 2.13.2). No worker/SAB build."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/gp-sta.js",
+			"sha256": "9ae90dae1a2b1d389ad3c4a81b884dff84a3b882b67731234563dbc18c223f29",
+			"role": "loader",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pari@2.13.2-1.0.0/gp-sta.js"
+		},
+		{
+			"file": "artifacts/gp-sta.wasm",
+			"sha256": "00f759233a50252c63ea471ad9d0c49d016e83d8e53d96d0fcbfc740605832c4",
+			"role": "binary",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pari@2.13.2-1.0.0/gp-sta.wasm"
+		}
+	],
+	"dependencies": [],
+	"loader": {
+		"entry": "artifacts/gp-sta.js",
+		"moduleSystem": "cjs",
+		"initStyle": "factory",
+		"wasmSupply": "locateFile"
+	}
+}

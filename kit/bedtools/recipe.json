@@ -1,0 +1,13 @@
+{
+	"kit": "bedtools",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/arq5x/bedtools2",
+		"ref": "v2.31.1"
+	},
+	"build": {
+		"dockerfile": "build/bedtools/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"kit": "prysm",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/34/c6/d96f8c29d2c0a1fe0e23e438324521f7b8cc2fb17c2ba38c3d73b0d2a6f8/prysm-0.21.1.tar.gz",
+		"sha256": "461e55bb032d3db2891c895903912c4bcc6c9930d7a5e8c040351791ac97f1fd"
+	}
+}

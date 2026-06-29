@@ -1,0 +1,8 @@
+{
+	"kit": "impedance",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/5c/a9/7aba8b417222813c1fc1b73c742bf9abf0bf2da2c8edb11ba57d331f3017/impedance-1.7.1-py3-none-any.whl",
+		"sha256": "aeaf2208377bd4e0ea9a8eca557df784759ff794599cd56cdc68cc1fe4218fe6"
+	}
+}

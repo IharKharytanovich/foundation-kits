@@ -1,0 +1,31 @@
+{
+	"kit": "minimap2",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "map",
+			"summary": "Map a query FASTA/FASTQ against a reference with seed-chain-align → PAF",
+			"tool": "minimap2",
+			"params": {
+				"reference": {
+					"type": "string"
+				},
+				"query": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "query",
+			"argsTemplate": ["-x", "map-ont", "-t", "1", "{reference}", "-"],
+			"output": {
+				"format": "PAF: tab-separated mapping records (qname qlen qstart qend strand tname tlen tstart tend matches alnlen mapq ...)"
+			},
+			"golden": {
+				"input": {
+					"reference": ">chrT\nGATCAAGTTTCAGTTCGATCCTAAGCTTGACTTACCGATATGCATCAGCGATCGATCTTAAGCTGGATTCAACTGGTCAAGCTTACCGATCGATCCTAAGTTT",
+					"query": ">read1\nCAGTTCGATCCTAAGCTTGACTTACCGATATGCATCAGCGATCGATCTTAAGCTGG"
+				},
+				"expect": "read1\t56\t5\t52\t+\tchrT\t103\t15\t62\t47\t47\t10\ttp:A:P\tcm:i:7\ts1:i:47\ts2:i:0\tdv:f:0.0089\trl:i:0\n"
+			}
+		}
+	]
+}

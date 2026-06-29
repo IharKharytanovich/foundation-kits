@@ -1,0 +1,8 @@
+{
+	"kit": "pygsp",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/78/20/e70bb515584fafe1114be442b47554df6a22c57b7bd2641a6dcfabe9004b/pygsp-0.6.1-py3-none-any.whl",
+		"sha256": "8a19d843aac7a72bb0b950340a647ab3ce2499cc965dde93d011d3f9ca5444cd"
+	}
+}

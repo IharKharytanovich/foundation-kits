@@ -1,0 +1,11 @@
+{
+	"kit": "prysm",
+	"mode": "loose",
+	"imports": [
+		"prysm"
+	],
+	"golden": {
+		"code": "from prysm.otf import diffraction_limited_mtf; import numpy as np; print(round(float(diffraction_limited_mtf(5.6, 0.55, np.array([100.0]))[0]), 10))",
+		"expect": "0.6141338586"
+	}
+}

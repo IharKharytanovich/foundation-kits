@@ -1,0 +1,11 @@
+{
+	"kit": "pythtb",
+	"mode": "loose",
+	"imports": [
+		"pythtb"
+	],
+	"golden": {
+		"code": "from pythtb import tb_model\nimport warnings\nwarnings.filterwarnings('ignore', category=DeprecationWarning)\nmy_model = tb_model(1, 1, lat=[[1.0]], orb=[[0.0],[0.5]])\nmy_model.set_onsite([0.0, 0.0])\nmy_model.set_hop(1.0, 0, 1, [0])\neval_k = my_model.solve_ham(k_pts=[[0.0]])\nprint(str([round(float(x),6) for x in sorted(eval_k)]))",
+		"expect": "[-1.0, 1.0]"
+	}
+}

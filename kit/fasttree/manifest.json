@@ -1,0 +1,29 @@
+{
+	"kit": "fasttree",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "infer-nt",
+			"summary": "Infer an approximately-ML phylogenetic tree from a nucleotide multiple sequence alignment → Newick",
+			"tool": "fasttree",
+			"params": {
+				"alignment": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "alignment",
+			"argsTemplate": [
+				"-nt"
+			],
+			"output": {
+				"format": "Newick tree string on stdout"
+			},
+			"golden": {
+				"input": {
+					"alignment": ">seqA\nATGCATGCATGCATGC\n>seqB\nATGCATGCATGCATGA\n>seqC\nATGGATGCATGCATGC\n>seqD\nTTGCATGCATGCATGC\n"
+				},
+				"expect": "(seqC:0.065683200,seqD:0.065683200,(seqA:0.000000005,seqB:0.065683200)0.000:0.000000005);\n"
+			}
+		}
+	]
+}

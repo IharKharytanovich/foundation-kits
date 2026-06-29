@@ -1,0 +1,11 @@
+{
+	"kit": "cclib",
+	"mode": "loose",
+	"imports": [
+		"cclib"
+	],
+	"golden": {
+		"code": "import io; from cclib.io import ccread; frag=' Entering Gaussian System, Link 0=g16\\n Gaussian, Inc.  All Rights Reserved.\\n #p hf/sto-3g\\n\\n water single point\\n\\n 0 1\\n O\\n H 1 0.96\\n H 1 0.96 2 104.5\\n\\n                          Input orientation:\\n ---------------------------------------------------------------------\\n Center     Atomic      Atomic             Coordinates (Angstroms)\\n Number     Number       Type             X           Y           Z\\n ---------------------------------------------------------------------\\n      1          8           0        0.000000    0.000000    0.117176\\n      2          1           0        0.000000    0.757160   -0.468706\\n      3          1           0        0.000000   -0.757160   -0.468706\\n ---------------------------------------------------------------------\\n Charge =  0 Multiplicity = 1\\n SCF Done:  E(RHF) = -75.5859030882 A.U.\\n Normal termination of Gaussian 16\\n'; d=ccread(io.StringIO(frag)); str([int(d.natom), int(d.charge)])",
+		"expect": "[3, 0]"
+	}
+}

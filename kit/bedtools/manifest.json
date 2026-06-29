@@ -1,0 +1,48 @@
+{
+	"kit": "bedtools",
+	"mode": "strict",
+	"operations": [
+		{
+			"id": "merge",
+			"summary": "Merge overlapping/adjacent intervals in a single sorted BED/GFF/VCF stream",
+			"tool": "merge",
+			"params": {
+				"input": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "input",
+			"argsTemplate": ["-i", "-"],
+			"output": {
+				"format": "BED: merged interval records (chrom start end)"
+			},
+			"golden": {
+				"input": {
+					"input": "chr1\t100\t200\nchr1\t150\t250\n"
+				},
+				"expect": "chr1\t100\t250\n"
+			}
+		},
+		{
+			"id": "sort",
+			"summary": "Coordinate-sort intervals in a single BED/GFF/VCF stream",
+			"tool": "sort",
+			"params": {
+				"input": {
+					"type": "string"
+				}
+			},
+			"stdinParam": "input",
+			"argsTemplate": ["-i", "-"],
+			"output": {
+				"format": "BED: coordinate-sorted interval records (chrom start end)"
+			},
+			"golden": {
+				"input": {
+					"input": "chr1\t150\t250\nchr1\t100\t200\n"
+				},
+				"expect": "chr1\t100\t200\nchr1\t150\t250\n"
+			}
+		}
+	]
+}

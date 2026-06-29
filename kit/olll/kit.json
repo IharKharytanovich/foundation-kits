@@ -1,0 +1,24 @@
+{
+	"id": "olll",
+	"version": "1.0.2",
+	"runtime": "pyodide",
+	"tags": [
+		"math"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/orisano/olll",
+		"ref": "1.0.2",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/olll-1.0.2-py3-none-any.whl",
+			"sha256": "a170454f10976bcaa6ca89a6d94f709544fd5dad5b4b30a82f651862541bc343",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/olll@1.0.2/olll-1.0.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

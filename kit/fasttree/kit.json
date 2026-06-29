@@ -1,0 +1,31 @@
+{
+	"id": "fasttree",
+	"version": "2.2.0",
+	"runtime": "wasi",
+	"tags": [
+		"phylogenetics",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/morgannprice/fasttree",
+		"ref": "v2.2.0",
+		"license": "GPL-2.0-or-later",
+		"buildNote": "Built — single-threaded wasi-sdk cross-compile (clang, wasi-sdk 24) of the single upstream FastTree.c (v2.2.0), no CLI wrapper (FastTree.c has its own main(): FASTA alignment on stdin → Newick on stdout). Scalar path -DNO_SSE; single-thread (omit -DOPENMP, so <omp.h> stays off); default double-precision (USE_SSE3 never set, <xmmintrin.h> stays off). One source patch (P1): rewrote `#include <malloc.h>` to `#include <stdlib.h>` since wasi-sysroot has no <malloc.h> (the include was already guarded by #ifdef TRACK_MEMORY, which we never define, but the rewrite is defensive). No other patches needed — FastTree.c uses only stdio/stdlib/string/math/ctype, <sys/time.h> (gettimeofday) and <unistd.h> (isatty), all provided by wasi-sdk; mallinfo usage is behind #ifdef TRACK_MEMORY. libc+libm only; wasm-opt -Oz + strip. Smoke test: wasm output matches the native-captured golden byte-for-byte. Dual fact: FastTree.c grants GPL-2.0-or-later (version 2 … or (at your option) any later version); repo LICENSE is GPLv3 (a permitted later version); recorded as GPL-2.0-or-later."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/fasttree.wasm",
+			"sha256": "d6ef0c72cb89f520e5c9977c462f37497c48b98cfbda1ea00b5c840d1340d648",
+			"wasiTools": [
+				"fasttree"
+			],
+			"multiplexed": false,
+			"stdinAsFile": false,
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/fasttree@2.2.0/fasttree.wasm"
+		}
+	],
+	"dependencies": []
+}

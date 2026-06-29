@@ -1,0 +1,11 @@
+{
+	"kit": "impedance",
+	"mode": "loose",
+	"imports": [
+		"impedance"
+	],
+	"golden": {
+		"code": "import numpy as np; from impedance.models.circuits import CustomCircuit; f = np.array([0.01, 0.1, 1.0, 10.0, 100.0]); Z = 100.0 + 200.0 / (1 + 1j * 2 * np.pi * f * 200.0 * 1e-3); c = CustomCircuit('R0-p(R1,C1)', initial_guess=[100, 200, 1e-3]); c.fit(f, Z); ', '.join(f'{p:.6e}' for p in c.parameters_)",
+		"expect": "1.000000e+02, 2.000000e+02, 1.000000e-03"
+	}
+}

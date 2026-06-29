@@ -1,0 +1,46 @@
+{
+	"id": "cclib",
+	"version": "1.8.1",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"data-science"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/cclib/cclib",
+		"ref": "v1.8.1",
+		"license": "BSD-3-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/cclib-1.8.1-py3-none-any.whl",
+			"sha256": "ac86cc5f013b7173c5bc62bfae0637ac83ad34de1ed57a1c7c7fb7b3e512c92f",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/cclib@1.8.1/cclib-1.8.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "periodictable",
+			"version": "2.1.0",
+			"sha256": "e9155d2bf5ac10050abeff2f99096d4f04312c0c8a6bb432e28744367c5064b3"
+		},
+		{
+			"id": "packaging",
+			"version": "26.2",
+			"sha256": "7a0e80a4de677fefa2782ea4d34063708a3ac3d54469298f22cedcc4c7bebb4b"
+		}
+	]
+}

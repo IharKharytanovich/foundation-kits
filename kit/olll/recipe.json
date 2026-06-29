@@ -1,0 +1,8 @@
+{
+	"kit": "olll",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/70/8e/92ccfd109344b9b75e8b0d87c492f9dc8b8b276ae1bd5bf2463fb33f3459/olll-1.0.2-py3-none-any.whl",
+		"sha256": "a170454f10976bcaa6ca89a6d94f709544fd5dad5b4b30a82f651862541bc343"
+	}
+}

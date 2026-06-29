@@ -1,0 +1,36 @@
+{
+	"id": "fdtd",
+	"version": "0.3.5",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"pde"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/flaport/fdtd",
+		"ref": "0.3.5",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/fdtd-0.3.5-py3-none-any.whl",
+			"sha256": "ce2f4fbb86a8e5592871a977877e6d27dc89e9701d3f39dcf71d3fd7f6335cdc",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/fdtd@0.3.5/fdtd-0.3.5-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

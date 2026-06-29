@@ -1,0 +1,10 @@
+{
+	"kit": "pari",
+	"mode": "callable",
+	"operations": [],
+	"scriptable": true,
+	"scriptGolden": {
+		"script": "handle.ccall('gp_embedded_init', null, ['number', 'number'], [536608768, 536608768]); const gp = handle.cwrap('gp_embedded', 'string', ['string']); return gp('nextprime(10^9)');",
+		"expect": "%1 = 1000000007\n"
+	}
+}

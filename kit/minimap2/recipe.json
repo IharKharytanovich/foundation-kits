@@ -1,0 +1,13 @@
+{
+	"kit": "minimap2",
+	"track": "wasi",
+	"source": {
+		"repo": "https://github.com/lh3/minimap2",
+		"ref": "v2.31"
+	},
+	"build": {
+		"dockerfile": "build/minimap2/Dockerfile",
+		"args": [],
+		"exclude": []
+	}
+}

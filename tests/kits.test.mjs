@@ -9,24 +9,24 @@ const KIT_DIR = 'kit'
 const kitIds = readdirSync(KIT_DIR).filter((d) => statSync(join(KIT_DIR, d)).isDirectory())
 
 const KNOWN_PYODIDE_WASI = [
-  'arviz', 'ase', 'astropy', 'autograd', 'basis-set-exchange', 'biopython', 'casadi', 'chaospy', 'chempy', 'cirq', 'control', 'cvxpy', 'deap',
-  'decorator', 'dendropy', 'diffraction', 'dill', 'dynesty', 'earcut', 'edlib', 'emcee',
-  'findiff', 'flint', 'fluids', 'freesasa', 'galpy', 'igraph', 'iminuit', 'intervaltree', 'joblib', 'lifelines', 'lmfit', 'mendeleev',
-  'molmass', 'networkx', 'nmrglue', 'numpy', 'packaging', 'pandas', 'particle', 'periodictable',
-  'pint', 'pot', 'pybaselines', 'pyfaidx', 'pyhf', 'pyproj', 'pyrodigal', 'pyteomics', 'pytz', 'pywavelets', 'pyyaml', 'raytracing', 'ripser', 'salib', 'samtools',
-  'scikit-fem', 'scikit-image', 'scikit-learn', 'scikit-optimize', 'scipy', 'selfies',
+  'arviz', 'ase', 'astropy', 'autograd', 'basis-set-exchange', 'bedtools', 'biopython', 'casadi', 'cclib', 'chaospy', 'chempy', 'cirq', 'control', 'cvxpy', 'deap',
+  'decorator', 'dendropy', 'diffraction', 'dill', 'dynesty', 'earcut', 'edlib', 'emcee', 'fasttree',
+  'fdtd', 'findiff', 'flint', 'fluids', 'freesasa', 'galpy', 'igraph', 'impedance', 'ikpy', 'iminuit', 'intervaltree', 'joblib', 'lifelines', 'lmfit', 'mendeleev', 'minimap2',
+  'molmass', 'networkx', 'nmrglue', 'numpy', 'olll', 'packaging', 'pandas', 'particle', 'periodictable',
+  'pint', 'pot', 'prysm', 'pybaselines', 'pyfaidx', 'pygsp', 'pyhf', 'pymap3d', 'pyproj', 'pyrodigal', 'pyteomics', 'pythtb', 'pytz', 'pywavelets', 'pyyaml', 'raytracing', 'ripser', 'salib', 'samtools',
+  'scikit-fem', 'scikit-image', 'scikit-learn', 'scikit-optimize', 'scikit-rf', 'scipy', 'selfies',
   'seqtk', 'setuptools', 'sgp4', 'six', 'skyfield', 'spglib', 'statsmodels', 'sympy', 'thermo',
   'tifffile', 'trimesh', 'uncertainties', 'vector', 'viennarna', 'z3',
 ]
 
 const KNOWN_JSWASM = [
-  'coolprop', 'eigen', 'gemmi', 'geodesy', 'geos', 'gmp', 'highs-js', 'kalign', 'manifold', 'meshoptimizer', 'rapier2d', 'rapier3d', 'rdkit',
+  'coolprop', 'eigen', 'gemmi', 'geodesy', 'geos', 'gmp', 'highs-js', 'kalign', 'manifold', 'meshoptimizer', 'pari', 'rapier2d', 'rapier3d', 'rdkit',
 ]
 
 describe('seed kits', () => {
   it('kit dirs are all within the known sets and include the seeds', () => {
-    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(77)
-    expect(new Set(KNOWN_JSWASM).size).toBe(13)
+    expect(new Set(KNOWN_PYODIDE_WASI).size).toBe(90)
+    expect(new Set(KNOWN_JSWASM).size).toBe(14)
     expect(kitIds.every((id) => KNOWN_PYODIDE_WASI.includes(id) || KNOWN_JSWASM.includes(id))).toBe(true)
     expect(['numpy', 'scipy', 'seqtk', 'sympy'].every((id) => kitIds.includes(id))).toBe(true)
   })

@@ -1,0 +1,11 @@
+{
+	"kit": "pygsp",
+	"mode": "loose",
+	"imports": [
+		"pygsp"
+	],
+	"golden": {
+		"code": "from pygsp import graphs; G = graphs.Ring(N=8); G.compute_laplacian(); G.compute_fourier_basis(); print(round(float(G.e[-1]), 6))",
+		"expect": "4.0"
+	}
+}

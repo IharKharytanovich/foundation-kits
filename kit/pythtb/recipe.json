@@ -1,0 +1,8 @@
+{
+	"kit": "pythtb",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/d4/ab/bd69c37a93fc804da448ec0363f4303bcca3774191c070f0f879d2e0f009/pythtb-2.0.2-py3-none-any.whl",
+		"sha256": "bfa169c0bbb949788044fccb1ede3f3cbe058e9a3f5cc6cdff862fc730b19d26"
+	}
+}

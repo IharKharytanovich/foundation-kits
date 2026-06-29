@@ -1,0 +1,3 @@
+# Build scratch + output (never committed; artifacts ship via GitHub Release)
+out/
+*.wasm

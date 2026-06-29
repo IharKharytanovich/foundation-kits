@@ -1,0 +1,25 @@
+{
+	"id": "pymap3d",
+	"version": "3.2.0",
+	"runtime": "pyodide",
+	"tags": [
+		"astronomy",
+		"physics"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/geospace-code/pymap3d",
+		"ref": "3.2.0",
+		"license": "BSD-2-Clause"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/pymap3d-3.2.0-py3-none-any.whl",
+			"sha256": "fccd44f2f6021a95adec19771c603b8dac104eab120d863c463d76b9bc298669",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/pymap3d@3.2.0/pymap3d-3.2.0-py3-none-any.whl"
+		}
+	],
+	"dependencies": []
+}

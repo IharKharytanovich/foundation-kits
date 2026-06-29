@@ -1,0 +1,8 @@
+{
+	"kit": "scikit-rf",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/12/53/68af1750c8251638d967bbec37fb0979572050d3da4804cb14aafd91c3a6/scikit_rf-2.0.0-py3-none-any.whl",
+		"sha256": "60f4ad1d4cfea408b56311950b5e5085408b03cab3c77fcd924df00b7f69576e"
+	}
+}

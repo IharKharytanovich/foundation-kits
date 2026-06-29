@@ -1,0 +1,8 @@
+{
+	"kit": "ikpy",
+	"track": "pypi-vendor",
+	"source": {
+		"url": "https://files.pythonhosted.org/packages/12/c8/1f611b05c89004c399d5cc8a6d33550316d35fe1d7802243e404c43e3324/ikpy-3.4.2-py3-none-any.whl",
+		"sha256": "9ead7b2085f057822e563786a70b52a4f5d0db03de9d562f1488df38ccef36af"
+	}
+}

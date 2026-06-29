@@ -1,0 +1,36 @@
+{
+	"id": "impedance",
+	"version": "1.7.1",
+	"runtime": "pyodide",
+	"tags": [
+		"chemistry",
+		"fitting"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/ECSHackWeek/impedance.py",
+		"ref": "v1.7.1",
+		"license": "MIT"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/impedance-1.7.1-py3-none-any.whl",
+			"sha256": "aeaf2208377bd4e0ea9a8eca557df784759ff794599cd56cdc68cc1fe4218fe6",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/impedance@1.7.1/impedance-1.7.1-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"id": "bedtools",
+	"version": "2.31.1",
+	"runtime": "wasi",
+	"tags": [
+		"genomics",
+		"sequences"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "wasm",
+		"repo": "https://github.com/arq5x/bedtools2",
+		"ref": "v2.31.1",
+		"license": "MIT",
+		"buildNote": "Single-binary WASI build (bedtools self-multiplexes on argv[1]) via build/bedtools/Dockerfile + build.sh, wasi-sdk 33, single-threaded. Built with the WASM exception-handling proposal (-fwasm-exceptions; bedtools throws/catches on normal paths — same recipe as kit/z3), so the runtime must enable WASM-EH (Foundation's wasi runtime already hosts z3). Bundled htslib 1.9 built zlib-only (bz2/lzma/libcurl disabled; knetfile/hfile_net network backend stripped — no sockets in WASI); zlib 1.3.1 cross-compiled from source. Exposed surface is single-input stdin ops only (merge, sort): Foundation's wasi runtime supplies one stdin and preopens only /tmp, so two-input ops (intersect -a/-b, subtract, closest) cannot run under today's contract — they are compiled into the binary but NOT exposed (see instruction.md, 'requires multi-file runtime contract'). License MIT (arq5x/bedtools2)."
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/bedtools.wasm",
+			"sha256": "53306ea7685621af885e72e3363db8aff72b6e3833e80ce941f8c10c1096cb64",
+			"wasiTools": [
+				"merge",
+				"sort"
+			],
+			"multiplexed": true,
+			"stdinAsFile": false,
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/bedtools@2.31.1/bedtools.wasm"
+		}
+	],
+	"dependencies": []
+}

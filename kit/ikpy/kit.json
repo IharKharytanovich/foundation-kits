@@ -1,0 +1,41 @@
+{
+	"id": "ikpy",
+	"version": "3.4.2",
+	"runtime": "pyodide",
+	"tags": [
+		"physics",
+		"optimization"
+	],
+	"tier": "library",
+	"verified": true,
+	"provenance": {
+		"source": "pypi",
+		"repo": "https://github.com/Phylliade/ikpy",
+		"ref": "v3.4.2",
+		"license": "Apache-2.0"
+	},
+	"artifacts": [
+		{
+			"file": "artifacts/ikpy-3.4.2-py3-none-any.whl",
+			"sha256": "9ead7b2085f057822e563786a70b52a4f5d0db03de9d562f1488df38ccef36af",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/releases/download/ikpy@3.4.2/ikpy-3.4.2-py3-none-any.whl"
+		}
+	],
+	"dependencies": [
+		{
+			"id": "numpy",
+			"version": "2.2.5",
+			"sha256": "800c98edc0c864dfa49f07005680c699b4b42b84eae1f8cb19d35b3634e7f05c"
+		},
+		{
+			"id": "scipy",
+			"version": "1.14.1",
+			"sha256": "7a60ad5e52acd8d8059f4acc0932d701c3e07723d82e567523dd1a6e0e85ec3e"
+		},
+		{
+			"id": "sympy",
+			"version": "1.13.3",
+			"sha256": "87a5b10d3ce6001fe5db3634e73ecfdf1475478bc0dbc114ce5b8c6e7959485f"
+		}
+	]
+}

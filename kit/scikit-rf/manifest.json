@@ -1,0 +1,11 @@
+{
+	"kit": "scikit-rf",
+	"mode": "loose",
+	"imports": [
+		"skrf"
+	],
+	"golden": {
+		"code": "import skrf, numpy as np; n = skrf.Network(s=np.array([[[0.5]]]), z0=50); str(round(n.z[0,0,0].real, 1))",
+		"expect": "150.0"
+	}
+}
