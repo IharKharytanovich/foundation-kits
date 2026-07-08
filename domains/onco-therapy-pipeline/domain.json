@@ -1,0 +1,89 @@
+{
+	"name": "onco-therapy-pipeline",
+	"version": "0.1.0",
+	"description": "Systems-level knowledge base for the end-to-end personalized oncolytic / CRISPR cancer-therapy pipeline: tumor-normal diff → target-ID → guide → construct → delivery → bioreactor manufacturing → speed. Holds the whole process as one map and marks every claim's provenance — separating what is computable from what is wet-lab engineering.",
+	"tags": [
+		"oncology",
+		"pipeline",
+		"gene-therapy",
+		"delivery",
+		"bioreactor",
+		"manufacturing",
+		"systems"
+	],
+	"dcc": "foundation-free@2.1",
+	"editable": true,
+	"math": true,
+	"workspace": [
+		"default"
+	],
+	"kits": [
+		{
+			"name": "biopython",
+			"version": "1.85",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/biopython",
+			"sha256": "20442b3790de49ba611c5ee9167666ef85e13e2585ba399344409223ca4e28bc"
+		},
+		{
+			"name": "viennarna",
+			"version": "2.7.2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/viennarna",
+			"sha256": "a0e49fd343bc681d9b36145e362519cc24e7fa27b6993c40098692d0d1c8d4c2"
+		},
+		{
+			"name": "numpy",
+			"version": "2.2.5",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/numpy",
+			"sha256": "3480226fdbe74a750e0941ff71f2dc0cfab0a911a10412259a8dba1490d8604b"
+		},
+		{
+			"name": "scipy",
+			"version": "1.14.1",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/scipy",
+			"sha256": "953939288009ed067e3fc8087a1bbc2cef12fe57a2369040f4b92cea6cbb43c3"
+		},
+		{
+			"name": "pandas",
+			"version": "2.3.3",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/pandas",
+			"sha256": "71ebb7d1bc77d0dbd85278c3690f14af4e7487dd347adc21c56c2bfdd44f0670"
+		},
+		{
+			"name": "networkx",
+			"version": "3.4.2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/networkx",
+			"sha256": "f5a7fd2e5345c950e8914d693c88afde17cbc139b03961d74ec6d74e5b914b95"
+		},
+		{
+			"name": "rdkit",
+			"version": "2025.3.4-1.0.0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/rdkit",
+			"sha256": "7106960cac7944706b2088c6750246e3f93d5c95c5abc8541e4c69f1cec4952a"
+		},
+		{
+			"name": "salib",
+			"version": "1.5.2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/salib",
+			"sha256": "fc8479a632ad1405a7f48397d0742a8398c3fea74793a7e663e1d8c344e6374c"
+		},
+		{
+			"name": "uncertainties",
+			"version": "3.2.2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/uncertainties",
+			"sha256": "f6f9688083449537f497807fbeb2208720809e0a9bee02bb890428cc54fc4c26"
+		},
+		{
+			"name": "pint",
+			"version": "0.25.3",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/pint",
+			"sha256": "5a44746ffec76898c7e0ef1eb5163eb471945b51b6cfb73ac7c497f88a588870"
+		},
+		{
+			"name": "lmfit",
+			"version": "1.3.4",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/lmfit",
+			"sha256": "e16d307ebc3ffe8f1d1bd3e69ef7be4ea918c94e153df1d73de6c46171170cbb"
+		}
+	],
+	"pinned": true
+}
