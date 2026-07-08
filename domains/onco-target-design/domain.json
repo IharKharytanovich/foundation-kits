@@ -1,0 +1,82 @@
+{
+	"name": "onco-target-design",
+	"version": "0.1.0",
+	"description": "Computational-oncology agent for personal cancer-target identification and allele-specific guide design: from a tumor-normal sequence diff to a clonal, DNA-unique, targetable mutation and a specificity-scored CRISPR/retron guide — every choice scored on the sequence, never asserted.",
+	"tags": [
+		"oncology",
+		"crispr",
+		"guide-design",
+		"tumor-normal",
+		"neoantigen",
+		"precision-medicine"
+	],
+	"dcc": "foundation-free@2.1",
+	"editable": true,
+	"math": true,
+	"workspace": [
+		"default"
+	],
+	"kits": [
+		{
+			"name": "biopython",
+			"version": "1.85",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/biopython",
+			"sha256": "20442b3790de49ba611c5ee9167666ef85e13e2585ba399344409223ca4e28bc"
+		},
+		{
+			"name": "viennarna",
+			"version": "2.7.2",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/viennarna",
+			"sha256": "a0e49fd343bc681d9b36145e362519cc24e7fa27b6993c40098692d0d1c8d4c2"
+		},
+		{
+			"name": "seqtk",
+			"version": "1.5-r133",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/seqtk",
+			"sha256": "6fd712e14508f91aa0c24a9ab9f1fe82cb50dee9e09ae4080daef70388959a1f"
+		},
+		{
+			"name": "numpy",
+			"version": "2.2.5",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/numpy",
+			"sha256": "3480226fdbe74a750e0941ff71f2dc0cfab0a911a10412259a8dba1490d8604b"
+		},
+		{
+			"name": "scipy",
+			"version": "1.14.1",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/scipy",
+			"sha256": "953939288009ed067e3fc8087a1bbc2cef12fe57a2369040f4b92cea6cbb43c3"
+		},
+		{
+			"name": "pandas",
+			"version": "2.3.3",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/pandas",
+			"sha256": "71ebb7d1bc77d0dbd85278c3690f14af4e7487dd347adc21c56c2bfdd44f0670"
+		},
+		{
+			"name": "edlib",
+			"version": "1.2.7",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/edlib",
+			"sha256": "c31ae542e1bd02a12e2b0a5f6c4b81b6d80282bdd6c2f96ebb0db0daf644b573"
+		},
+		{
+			"name": "pyfaidx",
+			"version": "0.9.0.4",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/pyfaidx",
+			"sha256": "181f2ef274826314d879f68eca008cf1609de17e6b278d3e9a248303a367b5e4"
+		},
+		{
+			"name": "bedtools",
+			"version": "2.31.1",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/bedtools",
+			"sha256": "d09c7b62dc0fde1a42c09b5826f5894877a48e72e19e0da7bc3a0eb549fa8dd9"
+		},
+		{
+			"name": "scikit-learn",
+			"version": "1.7.0",
+			"url": "https://github.com/IharKharytanovich/foundation-kits/tree/main/kit/scikit-learn",
+			"sha256": "20d08149ee51cfe1ea7baf344d8d910dc9934d27c4edf43d77a45e6c6a533cbd"
+		}
+	],
+	"pinned": true
+}
