@@ -1,37 +1,35 @@
 ---
-topic: Bioreactor production of therapeutic vectors — titre, yield, and throughput modeling
-keywords: [bioreactor, viral vector, titre, yield, particles, growth kinetics, purification, QC, scale-up, throughput]
-related: [../speed/timeline.md, ../pipeline/stages.md]
+topic: Manufacturing throughput — the rate ceiling of therapeutic production, modeled but empirically bounded
+keywords: [manufacturing, throughput, bioreactor, titre, yield, particles, growth kinetics, QC, release, scale-up]
+related: [../speed/timeline.md, ../map.md, models.md, ../walls/cmc.md]
 anchors:
   the-numbers: [titre, particles, 10^12, 10^14, dose, yield]
-  modeling: [growth kinetics, Monod, logistic, throughput, DOE]
+  modeling: [growth kinetics, Monod, logistic, throughput, sensitivity]
 defines:
-  manufacturing-throughput: "The rate at which therapeutic-dose vector can be produced, set by bioreactor titre, run time, and purification/QC yield"
-  vector-yield: "Usable therapeutic particles recovered per bioreactor run after purification and QC"
-  growth-kinetics-model: "A model of producer-cell growth and product formation (e.g. logistic / Monod) used to estimate run time and titre"
+  manufacturing-throughput: "The rate at which therapeutic-dose product can be produced, set by titre, run time, and purification/QC yield — a contributing floor, not the pipeline's binding constraint (that is delivery)"
 kinds:
   manufacturing-throughput: metric
-  vector-yield: metric
-  growth-kinetics-model: method
-source: "Conversation analysis, 2026-07 — therapeutic dose 10^12-10^14 particles is an empirical/literature figure, not computed here"
-source_type: agent-inference
+epistemics: hybrid
+source: "research/onco stages 04/08; therapeutic dose 10^12–10^14 particles and titres are empirical/literature, not computed here"
+source_type: paper
 asserted_at: "2026-07"
 ---
 
-# Bioreactor Manufacturing
+# Manufacturing Throughput
 
-This is the pipeline's binding constraint, and it is **empirical territory** — the domain models it, but real titres and yields come from experiment, not from the model.
+This is a hard CMC floor — **not** the pipeline's binding constraint (that is delivery, [[solid-tumor-delivery]]) — and it is **empirical territory**: the domain models it, but real titres and yields come from experiment.
 
 <!-- @anchor: the-numbers -->
 ## The Numbers
 
-A therapeutic dose is on the order of 10¹²–10¹⁴ particles (empirical, literature). [[vector-yield]] — usable particles per run after purification and QC — sets how many runs a dose needs, and therefore the time and cost floor. These figures are cited with provenance, never presented as computed.
+A therapeutic dose is ~10¹²–10¹⁴ particles (empirical). mRNA/LNP is cell-free and the only truly N-of-1-scalable platform; viral vectors and cell products are bioculture, where [[vector-yield]] and batch outcome are empirical and batch failure is a real risk. These figures are cited with provenance, never presented as computed.
 
 <!-- @anchor: modeling -->
 ## What the Domain Can Actually Compute
 
-[[manufacturing-throughput]] can be *modelled* from producer-cell kinetics even when true titres are empirical:
+[[manufacturing-throughput]] can be *modelled* from producer-cell kinetics even when true titres are empirical — the honest computable layer beneath figures that must ultimately be measured:
 
-manufacturing-throughput measured-by:: [[growth-kinetics-model]]
+measured-by:: [[growth-kinetics-model]]
+contradicts:: [[thirty-minute-target]]
 
-[[growth-kinetics-model]]: fit or assume a logistic / Monod growth curve, integrate product formation over the run in `scipy`, and estimate run time, titre trajectory, and the number of runs per dose. This is the honest computable layer — a sensitivity analysis over assumed parameters — sitting beneath figures that must ultimately be measured.
+Fit a logistic / Monod curve, integrate product formation over the run in `scipy`/`lmfit`, run a `salib` sensitivity to find which parameter binds throughput, and propagate empirical titre error with `uncertainties` + `pint`.
