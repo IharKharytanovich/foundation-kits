@@ -1,7 +1,7 @@
 ---
 topic: Manufacturing model concepts — vector yield and the growth-kinetics model
 keywords: [vector yield, growth kinetics, Monod, logistic, producer cell, titre, purification, run time, model]
-related: [bioreactor.md]
+related: [bioreactor.md, sources/hong-2024-bioprocess-modeling.md]
 defines:
   vector-yield: "Usable therapeutic particles recovered per bioreactor run after purification and QC — sets how many runs a dose needs, and the time/cost floor"
   growth-kinetics-model: "A producer-cell growth and product-formation model (e.g. logistic / Monod) used to estimate run time, titre trajectory, and runs per dose — the computable layer under empirical titres"

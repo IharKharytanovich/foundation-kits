@@ -6,5 +6,10 @@
 
 | from-id | type | to-id | valid-from | valid-to | recorded-at | superseded-by | provenance | confidence | grounding | corroboration |
 |---|---|---|---|---|---|---|---|---|---|---|
+| cmc-wall | rate-limits | manufacturing-throughput |  |  |  |  | authored | 1.00 | bare | 0 |
+| manufacturing-sensitivity-analysis | measured-by | growth-kinetics-model |  |  |  |  | authored | 1.00 | bare | 0 |
 | manufacturing-throughput | contradicts | thirty-minute-target |  |  |  |  | authored | 1.00 | bare | 0 |
 | manufacturing-throughput | measured-by | growth-kinetics-model |  |  |  |  | authored | 1.00 | bare | 0 |
+| platform-scalability | derived-from | manufacturing-throughput |  |  |  |  | authored | 1.00 | bare | 0 |
+| qc-release-bottleneck | gated-by | cmc-wall |  |  |  |  | authored | 1.00 | grounded | 0 |
+| qc-release-bottleneck | rate-limits | manufacturing-throughput |  |  |  |  | authored | 1.00 | grounded | 0 |

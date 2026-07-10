@@ -1,7 +1,7 @@
 ---
 topic: Manufacturing throughput — the rate ceiling of therapeutic production, modeled but empirically bounded
 keywords: [manufacturing, throughput, bioreactor, titre, yield, particles, growth kinetics, QC, release, scale-up]
-related: [../speed/timeline.md, ../map.md, models.md, ../walls/cmc.md]
+related: [../speed/timeline.md, ../map.md, models.md, ../walls/cmc.md, sources/hong-2024-bioprocess-modeling.md, sources/levine-2017-car-t-manufacturing.md]
 anchors:
   the-numbers: [titre, particles, 10^12, 10^14, dose, yield]
   modeling: [growth kinetics, Monod, logistic, throughput, sensitivity]

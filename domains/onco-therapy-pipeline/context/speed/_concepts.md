@@ -7,5 +7,6 @@
 | concept-id | definition | owner-file | keywords |
 |---|---|---|---|
 | end-to-end-timeline | The wall-clock time to produce a personalized therapy for one patient, from diff to dose | speed/timeline.md | timeline, speed, tumor-normal calling, vector assembly, QC, manufacturing, weeks, compressible, hard floor |
+| manufacturing-time-floor | The hard lower bound on personalized therapy manufacturing time (~3–4 weeks), set by compendial QC/release testing (14-day sterility) and GMP overheads — not by the computational or synthetic steps the sub-hour aspiration targets | speed/manufacturing-time-floor.md | manufacturing floor, QC floor, sterility testing, release testing, compressible, hard floor, turnaround, mRNA vaccine, neoantigen, tumor evolution, stale target |
 | stage-time-model | A per-stage time model summed along the pipeline to estimate the end-to-end timeline | speed/targets.md | stage-time model, timeline model, thirty-minute target, aspiration, sub-hour, throughput, compressible |
 | thirty-minute-target | The aspirational goal of a sub-hour diff-to-dose loop — a target, not a current capability | speed/targets.md | stage-time model, timeline model, thirty-minute target, aspiration, sub-hour, throughput, compressible |

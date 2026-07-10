@@ -7,5 +7,8 @@
 | target-file | source-files |
 |---|---|
 | delivery/delivery-wall.md | manufacturing/bioreactor.md |
-| manufacturing/models.md | manufacturing/bioreactor.md |
+| manufacturing/bioreactor.md | manufacturing/cmc-wall.md, manufacturing/platform-comparison.md, manufacturing/qc-release.md, manufacturing/sensitivity-model.md |
+| manufacturing/cmc-wall.md | manufacturing/qc-release.md |
+| manufacturing/models.md | manufacturing/bioreactor.md, manufacturing/sensitivity-model.md |
+| map.md | manufacturing/cmc-wall.md |
 | speed/targets.md | manufacturing/bioreactor.md |

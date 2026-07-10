@@ -6,7 +6,7 @@
 
 | target-file | source-files |
 |---|---|
-| delivery/barriers.md | delivery/delivery-wall.md |
+| delivery/barriers.md | delivery/delivery-wall.md, delivery/ionizable-lipid-chemistry.md |
 | delivery/bypass.md | delivery/delivery-wall.md |
-| delivery/delivery-wall.md | delivery/bypass.md |
+| delivery/delivery-wall.md | delivery/bypass.md, delivery/in-vivo-car-t.md, delivery/lnp-vs-aav.md, delivery/local-delivery.md |
 | map.md | delivery/delivery-wall.md |

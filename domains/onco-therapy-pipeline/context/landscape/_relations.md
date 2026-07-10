@@ -6,3 +6,6 @@
 
 | from-id | type | to-id | valid-from | valid-to | recorded-at | superseded-by | provenance | confidence | grounding | corroboration |
 |---|---|---|---|---|---|---|---|---|---|---|
+| bispecific-t-cell-engager | extends | adoptive-cell-therapy |  |  |  |  | authored | 1.00 | bare | 0 |
+| oncolytic-virotherapy | supports | neoantigen-vaccine |  |  |  |  | authored | 1.00 | bare | 0 |
+| targeted-protein-degrader | refines | genome-editing-modality |  |  |  |  | authored | 1.00 | bare | 0 |

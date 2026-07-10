@@ -7,3 +7,5 @@
 | from-id | type | to-id | valid-from | valid-to | recorded-at | superseded-by | provenance | confidence | grounding | corroboration |
 |---|---|---|---|---|---|---|---|---|---|---|
 | end-to-end-timeline | measured-by | stage-time-model |  |  |  |  | authored | 1.00 | bare | 0 |
+| manufacturing-time-floor | contradicts | thirty-minute-target |  |  |  |  | authored | 1.00 | bare | 0 |
+| manufacturing-time-floor | derived-from | end-to-end-timeline |  |  |  |  | authored | 1.00 | bare | 0 |

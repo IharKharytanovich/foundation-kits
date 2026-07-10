@@ -6,3 +6,5 @@
 
 | target-file | source-files |
 |---|---|
+| landscape/bispecific-engager.md | landscape/antibody-drug-conjugate.md |
+| landscape/modalities.md | landscape/bispecific-engager.md, landscape/oncolytic-virotherapy.md, landscape/radioligand-therapy.md, landscape/targeted-protein-degrader.md |

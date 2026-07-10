@@ -12,7 +12,7 @@ epistemics: computable
 source: "research/onco stage 08; conversation framing of the sub-hour aspiration"
 source_type: agent-inference
 asserted_at: "2026-07"
-superseded-by: [manufacturing/bioreactor.md]
+superseded-by: [manufacturing/bioreactor.md, speed/manufacturing-time-floor.md]
 ---
 
 # Speed Model Concepts

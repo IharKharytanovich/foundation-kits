@@ -6,5 +6,5 @@
 
 | target-file | source-files |
 |---|---|
-| speed/targets.md | speed/timeline.md |
-| speed/timeline.md | speed/targets.md |
+| speed/targets.md | speed/manufacturing-time-floor.md, speed/timeline.md |
+| speed/timeline.md | speed/manufacturing-time-floor.md, speed/targets.md |
