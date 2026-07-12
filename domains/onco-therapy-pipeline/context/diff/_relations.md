@@ -8,8 +8,18 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | clonal-architecture-inference | feeds-into | neoantigen-prediction-pipeline |  |  |  |  | authored | 1.00 | grounded | 0 |
 | clonal-architecture-inference | gated-by | somatic-variant-calling |  |  |  |  | authored | 1.00 | bare | 0 |
+| copy-number-loh-analysis | feeds-into | clonal-architecture-inference |  |  |  |  | authored | 1.00 | bare | 0 |
+| copy-number-loh-analysis | feeds-into | neoantigen-prediction-pipeline |  |  |  |  | authored | 1.00 | bare | 0 |
+| immunogenicity-prediction-model | gated-by | neoantigen-immunogenicity |  |  |  |  | authored | 1.00 | bare | 0 |
+| immunogenicity-prediction-model | refines | neoantigen-prediction-pipeline |  |  |  |  | authored | 1.00 | grounded | 0 |
+| mutational-signature-analysis | derived-from | somatic-variant-calling |  |  |  |  | authored | 1.00 | bare | 0 |
+| mutational-signature-analysis | feeds-into | tumor-mutational-burden |  |  |  |  | authored | 1.00 | grounded | 0 |
 | neoantigen-prediction-pipeline | gated-by | neoantigen-immunogenicity |  |  |  |  | authored | 1.00 | bare | 0 |
 | neoantigen-prediction-pipeline | precedes | neoantigen-vaccine |  |  |  |  | authored | 1.00 | grounded | 0 |
+| noncanonical-neoantigen-discovery | extends | neoantigen-prediction-pipeline |  |  |  |  | authored | 1.00 | bare | 0 |
+| noncanonical-neoantigen-discovery | feeds-into | neoantigen-vaccine |  |  |  |  | authored | 1.00 | bare | 0 |
+| read-alignment-preprocessing | feeds-into | end-to-end-timeline |  |  |  |  | authored | 1.00 | bare | 0 |
+| read-alignment-preprocessing | precedes | somatic-variant-calling |  |  |  |  | authored | 1.00 | bare | 0 |
 | somatic-variant-calling | feeds-into | end-to-end-timeline |  |  |  |  | authored | 1.00 | grounded | 0 |
 | somatic-variant-calling | precedes | neoantigen-prediction-pipeline |  |  |  |  | authored | 1.00 | bare | 0 |
 | somatic-variant-calling | precedes | tumor-mutational-burden |  |  |  |  | authored | 1.00 | bare | 0 |

@@ -6,10 +6,11 @@
 
 | target-file | source-files |
 |---|---|
-| diff/neoantigen-prediction-pipeline.md | diff/clonal-architecture-inference.md, diff/somatic-variant-calling.md |
-| diff/somatic-variant-calling.md | diff/clonal-architecture-inference.md, diff/tumor-mutational-burden.md |
-| diff/tumor-mutational-burden.md | diff/somatic-variant-calling.md |
-| landscape/modalities.md | diff/neoantigen-prediction-pipeline.md |
+| diff/clonal-architecture-inference.md | diff/copy-number-and-loh.md |
+| diff/neoantigen-prediction-pipeline.md | diff/clonal-architecture-inference.md, diff/copy-number-and-loh.md, diff/immunogenicity-prediction-models.md, diff/rna-and-noncanonical-neoantigens.md, diff/somatic-variant-calling.md |
+| diff/somatic-variant-calling.md | diff/alignment-and-preprocessing.md, diff/clonal-architecture-inference.md, diff/mutational-signatures.md, diff/tumor-mutational-burden.md |
+| diff/tumor-mutational-burden.md | diff/mutational-signatures.md, diff/somatic-variant-calling.md |
+| landscape/modalities.md | diff/neoantigen-prediction-pipeline.md, diff/rna-and-noncanonical-neoantigens.md |
 | map.md | diff/tumor-mutational-burden.md |
-| speed/timeline.md | diff/somatic-variant-calling.md |
-| walls/immunogenicity.md | diff/clonal-architecture-inference.md, diff/neoantigen-prediction-pipeline.md |
+| speed/timeline.md | diff/alignment-and-preprocessing.md, diff/somatic-variant-calling.md |
+| walls/immunogenicity.md | diff/clonal-architecture-inference.md, diff/immunogenicity-prediction-models.md, diff/neoantigen-prediction-pipeline.md |
