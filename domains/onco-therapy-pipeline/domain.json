@@ -87,5 +87,10 @@
 		}
 	],
 	"pinned": true,
-	"semantic": true
+	"semantic": true,
+	"tools": [
+		"fetchDocument",
+		"httpRequest",
+		"scholarlySearch"
+	]
 }
