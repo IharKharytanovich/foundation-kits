@@ -78,5 +78,11 @@
 			"sha256": "20d08149ee51cfe1ea7baf344d8d910dc9934d27c4edf43d77a45e6c6a533cbd"
 		}
 	],
-	"pinned": true
+	"pinned": true,
+	"semantic": true,
+	"tools": [
+		"scholarlySearch",
+		"fetchDocument",
+		"httpRequest"
+	]
 }
