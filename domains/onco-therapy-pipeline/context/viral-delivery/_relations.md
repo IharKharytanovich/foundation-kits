@@ -17,6 +17,9 @@
 | engineered-vlp-delivery | supports | transient-editor-advantage |  |  |  |  | authored | 1.00 | bare | 0 |
 | in-vivo-cart-generation | bypasses | solid-tumor-delivery |  |  |  |  | authored | 1.00 | bare | 0 |
 | in-vivo-cart-generation | supports | delivery-bypass |  |  |  |  | authored | 1.00 | bare | 0 |
+| neoantigen-encoded-oncolytic-virus | bypasses | solid-tumor-delivery |  |  |  |  | authored | 1.00 | bare | 0 |
+| neoantigen-encoded-oncolytic-virus | derived-from | armored-oncolytic-virus |  |  |  |  | authored | 1.00 | bare | 0 |
+| neoantigen-encoded-oncolytic-virus | gated-by | neoantigen-immunogenicity |  |  |  |  | authored | 1.00 | bare | 0 |
 | ov-cell-carrier-delivery | bypasses | ov-neutralizing-antibody |  |  |  |  | authored | 1.00 | bare | 0 |
 | ov-local-payload-secretion | supports | armored-oncolytic-virus |  |  |  |  | authored | 1.00 | bare | 0 |
 | ov-neutralizing-antibody | blocks | systemic-ov-delivery |  |  |  |  | authored | 1.00 | bare | 0 |
