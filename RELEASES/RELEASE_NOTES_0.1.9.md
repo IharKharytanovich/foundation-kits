@@ -34,9 +34,12 @@ the release where that gets addressed.
   after the context that caused it was gone.
 - 0.1.9 adds a **blocking write gate** in front of the five tools that mutate a
   domain (`editFile`, `createFile`, `deleteFile`, `moveItem`, `renameConcept`).
-  A write that would introduce a **new** dangling reference is rejected before
-  any filesystem mutation, and the error names the exact files and concepts that
-  still depend on it.
+  It fires exactly when a write **removes a concept definition** — that being the
+  only way to strand a reference that already exists. If the removal would leave
+  live references pointing at nothing, the write is rejected before any
+  filesystem mutation, and the error names the exact files and concepts that
+  still depend on it. A rename that drops a definition from one file and adds it
+  to another nets to zero and passes untouched.
 - The gate is deliberately narrow: **only new violations block.** Pre-existing
   dangling references in a domain never stand in the way of an unrelated edit,
   so turning this on doesn't hold your existing work hostage. And it
@@ -88,10 +91,14 @@ the release where that gets addressed.
   content of the top hits — one call where it used to take a search plus N
   reads.
 - **Reranking shipped with a measurement, not a hunch.** Against the retrieval
-  harness, a Voyage `rerank-2.5` pass moved **NDCG@10 from 0.1631 to 0.2000**
-  and **MRR from 0.1500 to 0.2000**. It stays **off by default** — it needs a
-  configured provider — but the verdict is recorded: worth enabling where you
-  have one.
+  harness, a Voyage `rerank-2.5` pass over the candidate pool moved **NDCG@10
+  from 0.1631 to 0.2000** and **MRR from 0.1500 to 0.2000**. Six provider kinds
+  are supported — `cohere`, `voyage`, and `jina` in the cloud, `tei`, `infinity`,
+  and any OpenAI-compatible endpoint locally — and the pass re-scores the top 50
+  candidates by default. It stays **off unless you ask for it twice**: a provider
+  must be configured in settings *and* the domain must opt in through its
+  contract, so a configured provider never fires on a domain that didn't ask.
+  The verdict is recorded: worth enabling where you have one.
 
 ### 🧠 An agent that remembers what just failed
 
@@ -249,17 +256,20 @@ The server-readiness track continues: every item here is behavior-neutral by
 design and gated on byte-identical output.
 
 - **The last god-hub is decomposed.** `services/sessions/` reached directly into
-  **46 sibling services**; three hand-synchronized dependency bags described the
-  same set of services in three different shapes (~40 fields, ~90 fields, and a
-  third). It now sits behind a flat `ToolEnvironment` seam with a dedicated
-  `StreamRunner`, and the fan-out is **down to 16** — enforced by a ratchet test,
-  not by review discipline.
+  dozens of sibling services, and three hand-synchronized dependency bags
+  described the same set of services in three different shapes (~40 fields, ~90
+  fields, and a third). It now sits behind a `ToolEnvironment` seam with a
+  dedicated `StreamRunner`, and the sibling-service fan-out is **ratchet-locked
+  at 17** — enforced by a test, not by review discipline. Honest caveat:
+  `ToolEnvironment` is itself still a flat 54-field bag. The coupling is now
+  declared in one place instead of three, which is what the ratchet guards; the
+  bag itself is a later problem.
 - **Tools are coupled only to what they read.** `ToolContext` was a flat
   **70-field god-object** (4 mandatory, 66 optional) handed identically to all 60
   tools — a tool that reads zero fields saw all 70, and a missing service
-  surfaced only at runtime. It's now **12 capability-group interfaces**, each
-  tool declares the slice it needs, and the mismatch is a compile error. The
-  builder went from 487 lines to 37.
+  surfaced only at runtime. It's now **11 capability-group interfaces** over a
+  small base, each tool declares the slice it needs, and the mismatch is a
+  compile error. The builder went from 487 lines to 37.
 - **The file-size control loop was dead and is now real.** The Biome rule the
   project rules claimed to enforce **did not exist in the config**, and every
   watch-list entry was stale. There's now a ratchet test that blocks any
